@@ -1,0 +1,28 @@
+{
+  "name": "behind-the-code",
+  "version": "1.0.0",
+  "description": "Behind The Code - my Web Notes [2007-2017] about tools, libraries, frameworks and people...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "./node_modules/.bin/eslint ./js/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alundiak/behind-the-code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alundiak/behind-the-code/issues"
+  },
+  "homepage": "https://github.com/alundiak/behind-the-code#readme",
+  "devDependencies": {
+    "eslint": "^4.6.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}

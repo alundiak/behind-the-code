@@ -1,0 +1,5 @@
+properties
+node_modules
+bower_components
+*.log
+.DS_Strore
