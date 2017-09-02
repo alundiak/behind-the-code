@@ -1,57 +1,116 @@
 export const apiUrl = 'https://api.github.com';
 
-export function testApi() {
+/**
+ * @param  myData {Array}
+ * @param  TOKEN {String}
+ * @return {Promise?}
+ */
+export function getInfo(myData, TOKEN) {
+    getBasicRepoInfo(myData);
+    // todo using other API url
+}
+
+function getBasicRepoInfo(myData) {
+    // var urls = [];
+
+    myData.forEach(function(element) {
+        let str = apiUrl + '/repos/' + element.owner + '/' + element.repo;
+        // urls.push(str);
+        fetch(str)
+            .then(response => response.json())
+            .then(data => renderList(data));
+    });
+}
+
+function renderList(data) {
+    // maybe internal model
+    let str = `${data.full_name} owned by ${data.owner.login} (${data.owner.type})
+            and has ${data.stargazers_count} stars, ${data.subscribers_count} subscribers, ${data.watchers_count} watchers,
+            ${data.forks_count} forks. Created ${data.created_at}, Last updated: ${data.updated_at}`;
+
+    var listContainer = document.querySelector('.list');
+    let paragraph = `<p>${str}</p>`;
+    listContainer.appendChild(document.createElement('div')).innerHTML = paragraph;
+}
+
+export function testApi(TOKEN) {
     // 
     // https://developer.github.com/v3/
     //
 
     // GET /user/repos
-    var url = apiUrl + '/user/repos';
+    // var url = apiUrl + '/user/repos'; // => 401. requires Authentication 
+    // var url = apiUrl + '/user/repos?type=private';
 
     // GET /users/:username/repos - // List public repositories for the specified user.
-    // var url = apiUrl + '/users/alundiak/repos'; // (data[].owner.type = 'User')
+    // var url = apiUrl + '/users/alundiak/repos?type=owner'; // including forks. // (data[].owner.type = 'User')
+    // var url = apiUrl + '/users/alundiak/repos?type=member'; // (data[].owner.type = 'User')
     // var url = apiUrl + '/users/facebook/repos'; // (data[].owner.type = 'Organization', but no data[].organization object).
+    // var url = apiUrl + '/users/facebook/repos?type=fork'; // (data[].owner.type = 'Organization', but no data[].organization object).
 
     // GET /orgs/:org/repos - // List repositories for the specified org.    
     // var url = apiUrl + '/orgs/mongodb/repos';  // + data[].organization object
     // var url = apiUrl + '/orgs/facebook/repos'; // + data[].organization object 
-
     // alundiak is NOT organization, but facebook or mongodb is user AND organization !!!
 
-    // GET /repositories
-    // var url = apiUrl + 'repositories?since=1'; // dump of every public repository, in the order that they were created. 
+    // GET /repositories - // dump of every public repository, in the order that they were created. 
+    // var url = apiUrl + '/repositories?since=1';
 
-    // GET /repos/:owner/:repo - // info about user's repo?
+    // GET /repos/:owner/:repo - // info about user's/org's repo.
     // var url = apiUrl + '/repos/facebook/react'; 
 
-    // GET /repos/:owner/:repo/contributors - // info about user's repo contributors
+    // GET /repos/:owner/:repo/contributors - // info about user's/org's repo contributors
     // var url = apiUrl + '/repos/facebook/react/contributors';
+
+    // GET /repos/:owner/:repo/teams
+    // var url = apiUrl + '/repos/facebook/react/teams';
+
+    // GET /repos/:owner/:repo/tags
+    // var url = apiUrl + '/repos/facebook/react/tags';
+
+    // GET /repos/:owner/:repo/commits
+    // var url = apiUrl + '/repos/mongodb/mongo/commits';
+
+    // GET /repos/:owner/:repo/commits/:sha - single commit
+    // var url = apiUrl + '/repos/facebook/react/commits/3f6e8d28031c85dd3d101e6f259db572d82fe1a1'; 
+    // if I know SHA of of first and last commit... would be great....
+
+    // GET /repos/:owner/:repo/stargazers
+    // var url = apiUrl + '/repos/facebook/react/stargazers';
+    // GET /user/starred - List repositories being starred by the authenticated user.
+    // GET /users/:username/starred - List repositories being starred by a user.
+
+    // GET /notifications
+    // var url = apiUrl + '/notifications?page=10&per_page=60&access_token=' + TOKEN;
+    // without token => 401
+    // with ??access_token="value" => "Requires authentication"
+    // If to use "participating=true" => In fact there was 1 notif from https://api.github.com/repos/niklasvh/html2canvas/issues/1115 - I marked as read.
+    // GET /repos/:owner/:repo/notifications - List all notifications for the current user.
+    // GET /notifications/threads/:id - View a single thread
+
+    // GET /applications/grants
+    // var url = apiUrl + '/applications/grants?access_token='+TOKEN; 
+    // without token => 401
+    // with token:
+    // "This API can only be accessed with username and password Basic Auth"
+
+    // GET /gists/public
+    // var url = apiUrl + '/gists/public'; 
+
+    // GET /users/:username/gists
+    // var url = apiUrl + '/users/alundiak/gists'; 
+
+    // GET /user/issues
+    // var url = apiUrl + '/issues?filter=created&access_token='+TOKEN; 
+    // var url = apiUrl + '/user/issues'; 
+
+    // GET /organizations
+    var url = apiUrl + '/organizations';
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
             console.log(data);
-        });
-}
-
-export function getInfo(myData) {
-    var urls = [];
-    myData.forEach(function(element, index, arr) {
-        let str = apiUrl + '/repos/' + element.owner + '/' + element.repo;
-        urls.push(str);
-    });
-
-    console.log(urls);
-
-    return fetch(urls[1])
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            console.log('ID?: ' + data.id);
-            console.log('Created: ' + data.created_at);
-            console.log('Updated: ' + data.updated_at);
-            console.log('Fork?: ' + data.fork);
-            console.log('stargazers_count?: ' + data.stargazers_count);
         });
 }
 

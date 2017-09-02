@@ -1,5 +1,5 @@
 // .js ext still needed. !!!
-import dataPromise from './js/getMyData.js'; 
+import * as dataPromises from './js/dataPromises.js'; 
 import * as bestOfJsApi from './js/use-best-of-js-org.js';
 import * as gitHubApi3 from './js/use-github-v3.js';
 import * as gitHubApi4 from './js/use-github-v4.js';
@@ -7,14 +7,20 @@ import * as gitHubApi4 from './js/use-github-v4.js';
 (function() {
     'use strict';
 
-	dataPromise.then(data => {
+	dataPromises.getMyData.then(data => {
 		// bestOfJsApi.getInfo(data);
+
+		// var t = dataPromises.getMyTokenFunc();
+		// console.log(t); // but here still Promise...
+
+		dataPromises.getMyToken.then(tokenData => {
+			// gitHubApi3.testApi(tokenData);
+			gitHubApi3.getInfo(data, tokenData);
+
+			gitHubApi4.testApi();
+			// gitHubApi4.getInfo(data, tokenData);
+		});
 		
-		// gitHubApi3.testApi();
-		gitHubApi3.getInfo(data);
-		
-		// gitHubApi4.testApi();
-		gitHubApi4.getInfo(data);
     });
 
 }());

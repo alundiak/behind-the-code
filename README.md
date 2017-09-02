@@ -5,6 +5,10 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 ## Goal
 
 - Create (static) web page with content, like I've done for UI2HR.pptx for GL.
+- Represent next entities: 
+-- repo author/maintainer, guess it's `commits[].author.site_admin = true`
+-- first commit date ("since" date), 
+-- last commit date ("update" date), 
 - Use then the page for article on @medium
 
 
@@ -12,6 +16,7 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 
 - Use ES6 modules (export/import), since Chrome 60 (w/ flag), since 61 released.
 - Use ES6 async function and Fetch API.
+- Use ES6 String/Template literals
 - Use GitHub Public API v3 or v4 (GraphQL). The REST API v3 has numerous endpoints; the GraphQL API v4 has a single endpoint: https://api.github.com/graphql
 - Maybe use bestof.js.org Public JSONs. 
 
@@ -35,6 +40,7 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - https://github.com/RisingStack/risingstack-bootcamp
 - https://githubengineering.com/the-github-graphql-api/ (since Sep-2016)
 - https://bestof.js.org
+- https://www.digitalocean.com/community/questions/what-is-the-difference-between-an-api-token-and-a-personal-token
 
 
 ## Credits
