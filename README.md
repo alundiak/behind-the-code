@@ -27,9 +27,15 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 
 ## Browser Support
 
-- Chrome 61+ (due to export/import)
-- Not IE11 not even Edge (because Fetch API)
-- 
+- Modularization (export/import): Chrome 61+ (Canary), -Chrome 60, -Firefox
+- Fetch API: Chrome+, Firefox+, Safari+, Opera+, Edge+, IE11-
+- HTML Imports: Chrome+, Opera, Firefox-, IE11-, Edge-
+- Template Literals: Chrome+, Firefox+, Safari+, Opera+, -IE11, Edge+
+- Async functions: Chrome+, Firefox+, Safari+, Opera+, -IE11, Edge+
+
+## Notes
+
+- HTML imports works, but JS files are loaded later, than simple HTML inside inside of main index.html file. Somtimes MomentJS is not yet available. 
 
 ## Resources
 

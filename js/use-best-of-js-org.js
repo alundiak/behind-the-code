@@ -8,12 +8,11 @@ export function getInfo(myData) {
     //
     // Public BestOfJs API (project.json + hof.json)
     //
-    var useUrl = false;
 
     var getProjects = function() {
         let projectsUrl = apiUrl + '/projects.json';
         let projectsJSON = '/data/projects_bestofjs_version.json';
-        let url = useUrl ? projectsUrl : projectsJSON;
+        let url = window.useUrl ? projectsUrl : projectsJSON;
 
         return fetch(url)
             .then(response => response.json())
@@ -26,7 +25,7 @@ export function getInfo(myData) {
     var getHeroes = function() {
         let hofUrl = apiUrl + '/hof.json';
         let hofJSON = '/data/hof_bestofjs_version.json';
-        let url = useUrl ? hofUrl : hofJSON;
+        let url = window.useUrl ? hofUrl : hofJSON;
 
         return fetch(url)
             .then(response => response.json())

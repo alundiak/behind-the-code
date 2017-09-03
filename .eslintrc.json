@@ -1,7 +1,9 @@
 {
     "extends": "standard",
     "globals": {
-        "fetch": true
+        "fetch": true,
+        "moment": true,
+        "$": true
     },
     "rules": {
         "indent": [1, 4],

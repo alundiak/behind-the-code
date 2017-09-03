@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Behind The Code (local)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Chrome Canary: 
+    [Deprecation] Styling master document from stylesheets defined in HTML Imports is deprecated, and is planned to be removed in M65, around March 2018. Please refer to https://goo.gl/EGXzpw for possible migration paths. 
+    -->
+    <!-- That is why, link to style should be in main file -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        window.useUrl = false;
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-3">Behind The Code (local)</h1>
+        <p class="lead">This is page where I collect list of famous frontend tools in modern web development (2017).</p>
+    </div>
+    <ul class="list-group"></ul>
+    
+    <!-- <link rel="import" href="libs_local.html"> -->
+
+    <script type="application/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="application/javascript" src="bower_components/popper.js/dist/umd/popper.js"></script>
+    <script type="application/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    
+    <script type="application/javascript" src="bower_components/moment/min/moment.min.js"></script>
+
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>

@@ -37,3 +37,7 @@ export async function getMyTokenFunc() {
  return await doesn’t actually do anything except add extra time before the overarching Promise resolves or rejects. 
  This pattern is almost certainly due to programmer ignorance of the return semantics of async functions.
  */
+
+export function mockGitHubApiCall() {
+    //todo - return once fetched JSON for every endpoint
+}

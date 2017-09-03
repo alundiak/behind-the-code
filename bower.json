@@ -1,0 +1,21 @@
+{
+  "name": "behind-the-code",
+  "description": "Behind The Code - my Web Notes [2007-2017] about tools, libraries, frameworks and people...",
+  "main": "index.js",
+  "authors": [
+    "Andrii Lundiak <landike@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/alundiak/behind-the-code",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "momentjs#^2.18.1",
+    "bootstrap": "v4-dev"
+  }
+}

@@ -11,26 +11,42 @@ export function getInfo(myData, TOKEN) {
 }
 
 function getBasicRepoInfo(myData) {
-    // var urls = [];
-
     myData.forEach(function(element) {
-        let str = apiUrl + '/repos/' + element.owner + '/' + element.repo;
-        // urls.push(str);
-        fetch(str)
+        let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.repo;
+        let strJSON = 'data/_' + element.repo + '.json';
+
+        fetch(window.useUrl ? strUrl : strJSON)
             .then(response => response.json())
             .then(data => renderList(data));
     });
 }
 
 function renderList(data) {
-    // maybe internal model
-    let str = `${data.full_name} owned by ${data.owner.login} (${data.owner.type})
-            and has ${data.stargazers_count} stars, ${data.subscribers_count} subscribers, ${data.watchers_count} watchers,
-            ${data.forks_count} forks. Created ${data.created_at}, Last updated: ${data.updated_at}`;
+    console.log(data);
 
-    var listContainer = document.querySelector('.list');
-    let paragraph = `<p>${str}</p>`;
-    listContainer.appendChild(document.createElement('div')).innerHTML = paragraph;
+    var m = {
+        fullName: data.full_name,
+        name: data.name,
+        login: data.owner.login,
+        userType: data.owner.type,
+        stars: data.stargazers_count,
+        forks: data.forks_count,
+        watchers: data.watchers_count,
+        subscribers: data.subscribers_count,
+        created: moment(data.created_at).format('YYYY/MM/DD'),
+        updated: moment(data.updated_at).format('YYYY/MM/DD')
+    };
+    // The closed by native Date is using (new Date(data.created_at)).toLocaleDateString() => 9/3/2017 format
+
+    let str = `${m.name} owned by ${m.login} (${m.userType}) 
+        and has ${m.stars} stars, ${m.subscribers} subscribers, ${m.watchers} watchers, ${m.forks} forks. 
+        Created ${m.created}, Updated: ${m.updated}`;
+
+    // STARS = WATCHERS => BUG !!! in GitHub API v3
+    var span = $('<span class="badge badge-primary badge-pill">').html(m.stars);
+    var li = $('<li class="list-group-item d-flex justify-content-between align-items-center">').html(str);
+    li.append(span);
+    $('.list-group').append(li);
 }
 
 export function testApi(TOKEN) {
@@ -115,7 +131,6 @@ export function testApi(TOKEN) {
 }
 
 export function testPerf() {
-
     //
     // => http://jsben.ch/gBLGu
     //
@@ -130,5 +145,4 @@ export function testPerf() {
     //  for (let e in repositories) { 
     //  console.log(e);
     // }
-
 }

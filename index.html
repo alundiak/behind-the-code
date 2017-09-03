@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Behind The Code</title>
     <meta charset="utf-8" />
-	<script type="module" src="./index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Chrome Canary: 
+    [Deprecation] Styling master document from stylesheets defined in HTML Imports is deprecated, and is planned to be removed in M65, around March 2018. Please refer to https://goo.gl/EGXzpw for possible migration paths. 
+    -->
+    <!-- That is why, link to style should be in main file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <script type="text/javascript">
+        window.useUrl = true;
+    </script>
 </head>
+
 <body>
-	<h1>Behind The Code</h1>
-	<p>This is page where I collect list of famous frontend tools in modern web development (2017)</p>
-	
-	<!-- Render table of repositories -->
-	<div class="list"></div>
-	<!-- Add button to fetch data from GitHub -->
+    <div class="container">
+        <h1 class="display-3">Behind The Code</h1>
+        <p class="lead">This is page where I collect list of famous frontend tools in modern web development (2017).</p>
+    </div>
+    <ul class="list-group"></ul>
+
+    <!-- <link rel="import" href="libs_remote.html"> -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" 
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     
-    <!-- <button>Fetch Github Repositories</button> -->
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+
+    <script type="module" src="./index.js"></script>
 </body>
+
 </html>
