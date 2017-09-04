@@ -17,11 +17,11 @@ import * as gitHubApi4 from './js/use-github-v4.js';
 
         dataPromises.getMyToken.then(tokenData => {
             // gitHubApi3.testApi(tokenData);
-            gitHubApi3.getInfo(data, tokenData);
+            // gitHubApi3.getInfo(data, tokenData);
             // => "API rate limit exceeded for 89.64.1.254. 
             // (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
 
-            // gitHubApi4.testApi();
+            gitHubApi4.testApi(tokenData);
             // gitHubApi4.getInfo(data, tokenData);
         });
 

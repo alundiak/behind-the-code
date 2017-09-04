@@ -18,7 +18,8 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - Use ES6 async function and Fetch API.
 - Use ES6 String/Template literals
 - Use GitHub Public API v3 or v4 (GraphQL). The REST API v3 has numerous endpoints; the GraphQL API v4 has a single endpoint: https://api.github.com/graphql
-- Maybe use bestof.js.org Public JSONs. 
+- Maybe use bestof.js.org Public JSONs.
+- GraphQL http://graphql.org/code/#javascript
 
 ## Design
 
@@ -47,7 +48,18 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - https://githubengineering.com/the-github-graphql-api/ (since Sep-2016)
 - https://bestof.js.org
 - https://www.digitalocean.com/community/questions/what-is-the-difference-between-an-api-token-and-a-personal-token
+- https://github.com/github-tools/github - github.js API wrapper
 
+## Timeline resources
+- https://platform.github.community/t/get-releases-including-tags/3088/2 - here is nice vertical timeline related to comments date.
+- http://visjs.org/index.html#download_install
+- http://visjs.org/timeline_examples.html
+- http://visjs.org/examples/timeline/other/verticalScroll.html
+
+## Other
+
+- https://dev.twitter.com/rest/reference - Twitter API ?
+- https://twitter.jeffprod.com/
 
 ## Credits
 

@@ -1,0 +1,10 @@
+{
+	repository(owner: "facebook", name: "react") {
+		name
+		nameWithOwner
+		description
+		createdAt
+		updatedAt
+		isFork
+	}
+}
