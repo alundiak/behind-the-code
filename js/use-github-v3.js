@@ -1,19 +1,19 @@
 export const apiUrl = 'https://api.github.com';
 
 /**
- * @param  myData {Array}
  * @param  TOKEN {String}
+ * @param  myData {Array}
  * @return {Promise?}
  */
-export function getInfo(myData, TOKEN) {
+export function getInfo(TOKEN, myData) {
     getBasicRepoInfo(myData);
     // todo using other API url
 }
 
 function getBasicRepoInfo(myData) {
     myData.forEach(function(element) {
-        let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.repo;
-        let strJSON = 'data/_' + element.repo + '.json';
+        let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name;
+        let strJSON = 'data/_' + element.name + '.json';
 
         fetch(window.useUrl ? strUrl : strJSON)
             .then(response => response.json())

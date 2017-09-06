@@ -1,40 +1,29 @@
-/* eslint-disable no-tabs */
+/* eslint-disable indent, no-tabs, no-mixed-spaces-and-tabs */
 
 export const apiUrl = 'https://api.github.com/graphql';
 
 /**
- * @param  myData {Array}
  * @param  TOKEN {String}
+ * @param  myData {Array}
  * @return {Promise?}
  */
-export function getInfo(myData, TOKEN) {
+export function getInfo(TOKEN, myData) {
     // First token was generated on GitHub settings page, Sep-02-2017, for mostly read-only access. 
     // I added it to js file content, and committed to repo.
     // Then I received email, about warning, that it's not ok.
     // So I regenerated token, and this time, put it into local, but hidden/ignored file 'token.json'
     // And when I need to use GitHub API v4, I use GET to fetch the token. Not yet sure if it's also incorrect from GitHub pov.
 
-    myData.forEach(function(element){
-		getRepositoryInfoByOwnerAndName(TOKEN, element.owner, element.repo)
-			.then(data => {
-				console.log(data);
-				renderList(data);
-			});
-    });
-
-}
-
-export function testApi(TOKEN) {
-
-	// Test 1
-	// getRepositoryInfoByOwnerAndName(TOKEN, 'facebook','react');
-	getRepositoryInfoByOwnerAndName(TOKEN, 'vuejs','vue')
-		.then(data => {
-				console.log(data);
-		});
-
-	// Test 2
-
+    getRepositories(TOKEN, myData)
+        .then(data => {
+            console.log(data);
+            //
+            // data is OBJECT
+            // 
+            data && data.forEach(function(repo) {
+                renderList(repo);
+            });
+        });
 }
 
 function renderList(data) {
@@ -48,17 +37,86 @@ function renderList(data) {
     $('.list-group').append(li);
 }
 
-function getRepositoryInfoByOwnerAndName(TOKEN, owner, name){
-	let queryBody1 = `{
-		repository(owner: "${owner}", name: "${name}") {
-			name
-			nameWithOwner
-			description
-			createdAt
-			updatedAt
-			isFork
-		}
-	}`;
+export function testApi1(TOKEN) {
+    let queryObject = {
+        query: `{
+          repositoryOwner(login: "alundiak") {
+            repositories(first: 30) {
+              edges {
+                org: node {
+                  name
+                }
+              }
+            }
+          }
+        }`
+    };
+
+    // after stringifying
+    // {
+    //     "query": "{\n\t\t  repositoryOwner(login: \"alundiak\") {\n\t\t    repositories(first: 30) {\n\t\t      edges {\n\t\t       
+    //      org: node {\n\t\t          name\n\t\t        }\n\t\t      }\n\t\t    }\n\t\t  }\n\t\t}"
+    // }
+
+    let graphqlString = `
+    {
+        repositoryOwner(login: "alundiak") {
+            repositories(first: 30) {
+                edges {
+                    org: node {
+                        name
+                    }
+                }
+            }
+        }
+    }
+    `;
+
+    // let str = " \
+    // { \
+    // \"query\": \"query { viewer { login }}\" \
+    // } \
+    // ";
+
+    let options = {
+        method: 'post',
+        _headers: {
+            // 'Content-Type': 'application/json'
+            'Content-Type': 'application/graphql'
+        },
+        body: JSON.stringify(queryObject)
+
+        // body: graphqlString
+        // body: escape(graphqlString)
+        // body: encodeURI(graphqlString)
+        // body: JSON.stringify(graphqlString)
+
+        // body: str
+    }
+
+    fetch(apiUrl + '?access_token=' + TOKEN, options)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        });
+}
+
+export function testApi2(TOKEN) {
+    // getRepositoryInfoByOwnerAndName(TOKEN, 'facebook','react');
+    getRepositoryInfoByOwnerAndName(TOKEN, 'vuejs', 'vue');
+}
+
+function getRepositoryInfoByOwnerAndName(TOKEN, owner, name) {
+    let queryBody1 = `{
+       repository(owner: "${owner}", name: "${name}") {
+           name
+           nameWithOwner
+           description
+           createdAt
+           updatedAt
+           isFork
+       }
+   }`;
 
     return performRequest(TOKEN, queryBody1).then(data => {
         // console.log(data.repository);
@@ -66,37 +124,122 @@ function getRepositoryInfoByOwnerAndName(TOKEN, owner, name){
     })
 }
 
-function prepareGraphqlOptions(queryBody) {
-	if (!queryBody){
-		return;
-	}
+/**
+ * [getRepositories description]
+ *
+ * @example - basic example using fragment and repository() aggregation
+ 
+    fragment repository on Repository {
+        name
+        nameWithOwner
+        description
+        createdAt
+        updatedAt
+        isFork
+    }
+
+    query {
+      react: repository(owner: "facebook", name: "react") { ...repository }
+      vue: repository(owner: "vuejs", name: "vue") { ...repository }
+      angular: repository(owner: "angular", name: "angular.js") { ...repository }
+    }
+ 
+ * 
+ * @param  {[type]} TOKEN  [description]
+ * @param  {[type]} myData [description]
+ * @return {[type]}        [description]
+ */
+function getRepositories(TOKEN, myData) {
+    let fragmentString = `
+        fragment repository on Repository {
+            name
+            nameWithOwner
+            description
+            createdAt
+            updatedAt
+            isFork
+        }
+    `;
+
+    let strings = [];
+    myData.forEach(function(repo, index) {
+        let lineTemplate = `repo${++index}: repository(owner: "${repo.owner}", name: "${repo.name}") { ...repository }`;
+        strings.push(lineTemplate);
+    });
+
+    let queryString = `
+        query {
+            ${strings.join('\n')}
+        }
+    `;
+
+    let queryBody = fragmentString + queryString;
+
+    return performRequest(TOKEN, queryBody)
+        .then(data => {
+            console.log(data);
+            return data;
+        })
+}
+
+function performRequest(TOKEN, queryBody, contentType) {
+    let graphqlOptions = prepareGraphqlOptions(queryBody, contentType);
+    if (!graphqlOptions) {
+        return;
+    }
+    return fetch(apiUrl + '?access_token=' + TOKEN, graphqlOptions)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            return data.data;
+        });
+}
+
+function prepareGraphqlOptions(queryBody, type) {
+    if (!queryBody) {
+        return;
+    }
 
     let queryObject = {
         query: queryBody
     };
 
-    // console.log(queryBody, queryObject, JSON.stringify(queryObject));
-    return {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(queryObject)
+    let options = {
+        method: 'post'
     };
-}
 
-function performRequest(TOKEN, queryBody){
-	let graphqlOptions = prepareGraphqlOptions(queryBody);
-	if (!graphqlOptions){
-		return;
-	}
-	// console.log(graphqlOptions);
-	return fetch(apiUrl + '?access_token=' + TOKEN, graphqlOptions)
-        .then(response => response.json())
-        .then(data => {
-        	console.log(data);
-        	return data.data;
-        });
+    if (type === 'json') {
+        options.headers = {
+            'Content-Type': 'application/json'
+        };
+        options.body = JSON.stringify(queryObject);
+        // options.body = queryObject // ??
+    } else if (type === 'graphql') {
+        options.headers = {
+            'Content-Type': 'application/graphql'
+        };
+        options.body = JSON.stringify(queryBody); // ??
+        // options.body = queryBody // ??
+    } else {
+        options.body = JSON.stringify(queryObject);
+    }
+
+    return options;
+
+    /*
+    http://graphql.org/learn/serving-over-http/ =>
+
+    A standard GraphQL POST request should use the application/json content type, and include a JSON-encoded body of the following form:
+
+    {
+      "query": "...",
+      "operationName": "...",
+      "variables": { "myVariable": "someValue", ... }
+    }
+    operationName and variables are optional fields. operationName is only required if multiple operations are present in the query.
+
+    If the "application/graphql" Content-Type header is present, treat the HTTP POST body contents as the GraphQL query string.
+    */
 }
 
 // no semicolon at the end!  if default

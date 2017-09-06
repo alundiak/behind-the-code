@@ -1,19 +1,19 @@
 [{
     "owner": "jashkenas",
-    "repo": "backbone"
+    "name": "backbone"
 }, {
     "owner": "angular",
-    "repo": "angular.js"
+    "name": "angular.js"
 }, {
     "owner": "facebook",
-    "repo": "react"
+    "name": "react"
 }, {
     "owner": "astoilkov",
-    "repo": "jsblocks"
+    "name": "jsblocks"
 }, {
     "owner": "vuejs",
-    "repo": "vue"
+    "name": "vue"
 }, {
     "owner": "mongodb",
-    "repo": "mongo"
+    "name": "mongo"
 }]

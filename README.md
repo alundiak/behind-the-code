@@ -49,6 +49,9 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - https://bestof.js.org
 - https://www.digitalocean.com/community/questions/what-is-the-difference-between-an-api-token-and-a-personal-token
 - https://github.com/github-tools/github - github.js API wrapper
+- http://graphql.org/learn/serving-over-http/
+- Express GraphQL and CORS https://github.com/graphql/express-graphql/issues/14
+
 
 ## Timeline resources
 - https://platform.github.community/t/get-releases-including-tags/3088/2 - here is nice vertical timeline related to comments date.
