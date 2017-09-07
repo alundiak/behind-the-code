@@ -17,23 +17,36 @@ export function getInfo(TOKEN, myData) {
     getRepositories(TOKEN, myData)
         .then(data => {
             console.log(data);
-            //
-            // data is OBJECT
-            // 
-            data && data.forEach(function(repo) {
-                renderList(repo);
-            });
+            if (Array.isArray(data)) {
+                //
+                // data is ARRAY
+                // 
+                data.forEach(function(repo) {
+                    renderList(repo);
+                });
+            } else {
+                //
+                // data is OBJECT
+                // 
+                // for...in for enumerable objects. Return indexes.
+                for (let key in data) {
+                    renderList(data[key])
+                }
+            }
         });
 }
 
 function renderList(data) {
     let str = `${data.name} owned by ${data.owner.login} (${data.owner.__typename}) 
-        and has ${data.stars} stars, ${data.subscribers} subscribers, ${data.watchers} watchers, ${data.forks} forks. 
-        Created ${moment(data.createdAt).format('YYYY/MM/DD')}, Updated: ${moment(data.updatedAt).format('YYYY/MM/DD')}`;
+        and has 
+        <span class="badge badge-primary badge-pill">${data.stargazers.totalCount}</span> stars,  
+        <span class="badge badge-primary badge-pill">${data.watchers.totalCount}</span> watchers, 
+        <span class="badge badge-primary badge-pill">${data.forks.totalCount}</span> forks. 
+        Created ${moment(data.createdAt).format('YYYY/MM/DD')}, 
+        Pushed ${moment(data.pushedAt).format('YYYY/MM/DD')}, 
+        Updated: ${moment(data.updatedAt).format('YYYY/MM/DD')}`;
 
-    var span = $('<span class="badge badge-primary badge-pill">').html(data.stars);
-    var li = $('<li class="list-group-item d-flex justify-content-between align-items-center">').html(str);
-    li.append(span);
+    let li = $('<li class="list-group-item d-flex justify-content-between align-items-center">').html(str);
     $('.list-group').append(li);
 }
 
@@ -127,23 +140,7 @@ function getRepositoryInfoByOwnerAndName(TOKEN, owner, name) {
 /**
  * [getRepositories description]
  *
- * @example - basic example using fragment and repository() aggregation
- 
-    fragment repository on Repository {
-        name
-        nameWithOwner
-        description
-        createdAt
-        updatedAt
-        isFork
-    }
-
-    query {
-      react: repository(owner: "facebook", name: "react") { ...repository }
-      vue: repository(owner: "vuejs", name: "vue") { ...repository }
-      angular: repository(owner: "angular", name: "angular.js") { ...repository }
-    }
- 
+ * @example - basic example using fragment and repository() aggregation - see idl/query2.idl
  * 
  * @param  {[type]} TOKEN  [description]
  * @param  {[type]} myData [description]
@@ -151,19 +148,36 @@ function getRepositoryInfoByOwnerAndName(TOKEN, owner, name) {
  */
 function getRepositories(TOKEN, myData) {
     let fragmentString = `
-        fragment repository on Repository {
+        fragment repositoryFragment on Repository {
             name
             nameWithOwner
             description
             createdAt
             updatedAt
+            pushedAt
             isFork
+            forks {
+                totalCount
+            }
+            viewerHasStarred
+            viewerSubscription
+            owner {
+                login
+                __typename
+            }
+            stargazers {
+                totalCount
+            }
+            watchers {
+                totalCount
+            }
         }
     `;
+    // updatedAt - @deprecated
 
     let strings = [];
     myData.forEach(function(repo, index) {
-        let lineTemplate = `repo${++index}: repository(owner: "${repo.owner}", name: "${repo.name}") { ...repository }`;
+        let lineTemplate = `repo${++index}: repository(owner: "${repo.owner}", name: "${repo.name}") { ...repositoryFragment }`;
         strings.push(lineTemplate);
     });
 
@@ -175,11 +189,7 @@ function getRepositories(TOKEN, myData) {
 
     let queryBody = fragmentString + queryString;
 
-    return performRequest(TOKEN, queryBody)
-        .then(data => {
-            console.log(data);
-            return data;
-        })
+    return performRequest(TOKEN, queryBody);
 }
 
 function performRequest(TOKEN, queryBody, contentType) {
@@ -190,7 +200,6 @@ function performRequest(TOKEN, queryBody, contentType) {
     return fetch(apiUrl + '?access_token=' + TOKEN, graphqlOptions)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             return data.data;
         });
 }

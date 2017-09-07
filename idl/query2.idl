@@ -1,0 +1,30 @@
+fragment repositoryFragment on Repository {
+    name
+    nameWithOwner
+    description
+    createdAt
+    updatedAt
+    pushedAt
+    isFork
+    forks {
+        totalCount
+    }
+    viewerHasStarred
+    viewerSubscription
+    owner {
+        login
+        __typename
+    }
+    stargazers {
+        totalCount
+    }
+    watchers {
+        totalCount
+    }
+}
+
+query {
+	react: repository(owner: "facebook", name: "react") { ...repositoryFragment }
+	vue: repository(owner: "vuejs", name: "vue") { ...repositoryFragment }
+	angular: repository(owner: "angular", name: "angular.js") { ...repositoryFragment }
+}
