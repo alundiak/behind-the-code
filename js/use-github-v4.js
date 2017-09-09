@@ -1,4 +1,4 @@
-/* eslint-disable indent, no-tabs, no-mixed-spaces-and-tabs */
+/* eslint-disable indent, no-tabs, no-mixed-spaces-and-tabs, no-trailing-spaces */
 
 export const apiUrl = 'https://api.github.com/graphql';
 
@@ -119,6 +119,41 @@ export function testApi2(TOKEN) {
     getRepositoryInfoByOwnerAndName(TOKEN, 'vuejs', 'vue');
 }
 
+export function testApi3(TOKEN) {
+    let queryBody = `
+        {
+            repository(owner: "facebook", name: "react") {
+                name
+            }
+        }
+    `;
+
+    let queryObject = {
+        query: queryBody
+    };
+    
+    var xhr = new window.XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open('POST', apiUrl + '?access_token=' + TOKEN);
+    // If we provide Content-Type then we have OPTIONS (204) + POST (200) requests. If no content type, just POST (200)
+    // xhr.setRequestHeader('Content-Type', 'application/json');
+    // xhr.setRequestHeader('Content-Type', 'application/graphql');
+    // 
+    // xhr.setRequestHeader('Accept', 'application/json'); // not yet sure why this needed
+    xhr.onload = function() {
+        console.log(xhr.response.data);
+    }
+
+    xhr.send(JSON.stringify(queryObject)); // works well with all Content-Types
+    // xhr.send(JSON.stringify(queryBody)); // doesn't work with any Content-Type
+    // xhr.send({query: queryBody});  // doesn't work with any Content-Type
+    // xhr.send(queryBody); // doesn't work with any Content-Type
+    
+    performRequest(TOKEN, queryBody);
+    // performRequest(TOKEN, queryBody,'json'); // doesn't work with Fetch API
+    // performRequest(TOKEN, queryBody, 'graphql');
+}
+
 function getRepositoryInfoByOwnerAndName(TOKEN, owner, name) {
     let queryBody1 = `{
        repository(owner: "${owner}", name: "${name}") {
@@ -198,8 +233,20 @@ function performRequest(TOKEN, queryBody, contentType) {
         return;
     }
     return fetch(apiUrl + '?access_token=' + TOKEN, graphqlOptions)
-        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            let contentType = response.headers.get('content-type')
+            let accept = response.headers.get('accept')
+
+            console.log(contentType, accept);
+            // if (contentType.includes('application/json')) {
+            //     return response.json()
+            // }
+            return response.json();
+        })
+        // .then(data => data.data)
         .then(data => {
+            console.log(data);
             return data.data;
         });
 }
@@ -219,16 +266,18 @@ function prepareGraphqlOptions(queryBody, type) {
 
     if (type === 'json') {
         options.headers = {
+            // 'Accept': 'application/json', // looks no effect
             'Content-Type': 'application/json'
         };
         options.body = JSON.stringify(queryObject);
-        // options.body = queryObject // ??
     } else if (type === 'graphql') {
         options.headers = {
+            // 'Accept': 'application/json', // looks no effect
             'Content-Type': 'application/graphql'
         };
-        options.body = JSON.stringify(queryBody); // ??
-        // options.body = queryBody // ??
+        // options.body = JSON.stringify(queryBody);
+        options.body = JSON.stringify(queryObject); // Based on xhr example, should be stringified object with "query"
+        // options.body = queryBody // will cause parse error
     } else {
         options.body = JSON.stringify(queryObject);
     }

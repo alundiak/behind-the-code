@@ -39,5 +39,5 @@ export async function getMyTokenFunc() {
  */
 
 export function mockGitHubApiCall() {
-    //todo - return once fetched JSON for every endpoint
+    // todo - return once fetched JSON for every endpoint
 }

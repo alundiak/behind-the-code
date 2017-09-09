@@ -23,6 +23,7 @@ import * as gitHubApi4 from './js/use-github-v4.js';
 
             // gitHubApi4.testApi1(token);
             // gitHubApi4.testApi2(token);
+            // gitHubApi4.testApi3(token);
             gitHubApi4.getInfo(token, repoData);
         });
 
