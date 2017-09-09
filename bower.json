@@ -17,6 +17,6 @@
   "dependencies": {
     "moment": "momentjs#^2.18.1",
     "bootstrap": "v4-dev",
-    "github": "git@github.com:github-tools/github.git"
+    "github-api": "^3.1.0"
   }
 }

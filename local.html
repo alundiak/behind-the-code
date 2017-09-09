@@ -18,6 +18,17 @@
     <script type="application/javascript" src="bower_components/popper.js/dist/umd/popper.js"></script>
     <script type="application/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script type="application/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    
+    <!-- <script type="application/javascript" src="bower_components/github-api/lib/GitHub.js"></script> -->
+    <!-- => Uncaught SyntaxError: Unexpected token import -->
+
+    <!-- <script type="module" src="bower_components/github-api/lib/GitHub.js"></script> -->
+    <!-- => GET http://localhost:8080/bower_components/github-api/lib/Gist net::ERR_ABORTED -->
+
+    <!-- <script src="https://unpkg.com/github-api/dist/GitHub.min.js"></script> -->
+    <!-- => Uncaught Error: Cannot find module 'axios' -->
+    
+    <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
 
     <script type="module" src="./index.js"></script>
     

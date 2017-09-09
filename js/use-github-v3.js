@@ -17,13 +17,11 @@ function getBasicRepoInfo(myData) {
 
         fetch(window.useUrl ? strUrl : strJSON)
             .then(response => response.json())
-            .then(data => renderList(data));
+            .then(data => renderListv3(data));
     });
 }
 
-function renderList(data) {
-    console.log(data);
-
+export function renderListv3(data) {
     var m = {
         fullName: data.full_name,
         name: data.name,
