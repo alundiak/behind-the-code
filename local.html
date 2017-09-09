@@ -9,35 +9,37 @@
     [Deprecation] Styling master document from stylesheets defined in HTML Imports is deprecated, and is planned to be removed in M65, around March 2018. Please refer to https://goo.gl/EGXzpw for possible migration paths. 
     -->
     <!-- That is why, link to style should be in main file -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    
+    <!-- Bootstrap as Bower component has been dropped Sep-05-2017 -->
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap-css/lib/list-group.css"> -->
+    
     <script type="text/javascript">
         window.useUrl = false;
     </script>
 
-    <script type="application/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-    <script type="application/javascript" src="bower_components/popper.js/dist/umd/popper.js"></script>
-    <script type="application/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script type="application/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="application/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="application/javascript" src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script type="application/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="application/javascript" src="node_modules/moment/min/moment.min.js"></script>
     
     <!-- <script type="application/javascript" src="bower_components/github-api/lib/GitHub.js"></script> -->
     <!-- => Uncaught SyntaxError: Unexpected token import -->
-
     <!-- <script type="module" src="bower_components/github-api/lib/GitHub.js"></script> -->
     <!-- => GET http://localhost:8080/bower_components/github-api/lib/Gist net::ERR_ABORTED -->
-
     <!-- <script src="https://unpkg.com/github-api/dist/GitHub.min.js"></script> -->
     <!-- => Uncaught Error: Cannot find module 'axios' -->
-    
-    <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+    <!-- <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script> -->
+    <script type="application/javascript" src="node_modules/github-api/dist/GitHub.bundle.min.js"></script>
 
     <script type="module" src="./index.js"></script>
-    
 </head>
 
 <body>
     <div class="container">
         <h1 class="display-3">Behind The Code (local)</h1>
-        <p class="lead">This is page where I collect list of famous frontend tools in modern web development (2017).</p>
+        <p class="lead">List of famous frontend tools in modern web development (2017).</p>
     </div>
     <ul class="list-group"></ul>
     

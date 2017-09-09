@@ -26,6 +26,13 @@
     "eslint-plugin-standard": "^3.0.1"
   },
   "dependencies": {
-    "github-api": "^3.0.0"
+    "@wrakky-bootstrap/bootstrap": "^1.0.5",
+    "bootstrap": "^4.0.0-beta",
+    "bootstrap-css": "^4.0.0-alpha.5",
+    "github-api": "^3.0.0",
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1",
+    "momentjs": "^2.0.0",
+    "popper.js": "^1.12.5"
   }
 }

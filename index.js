@@ -10,6 +10,9 @@ import * as gitHubApi3 from './js/use-github-v3.js';
 import * as gitHubTools from './js/use-github-tools.js';
 import * as gitHubApi4 from './js/use-github-v4.js';
 
+// import bootstrap from './node_modules/bootstrap/dist/js/bootstrap.js';
+// console.log(bootstrap);
+
 (function() {
     'use strict';
 
@@ -25,7 +28,7 @@ import * as gitHubApi4 from './js/use-github-v4.js';
             // => "API rate limit exceeded for 89.64.1.254. 
             // (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
             
-            // gitHubTools.testApiv3(token);
+            gitHubTools.testApiv3(token);
             gitHubTools.getInfo(token, repoData);
 
             // gitHubApi4.testApi1(token);

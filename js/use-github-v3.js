@@ -27,6 +27,7 @@ export function renderListv3(data) {
         name: data.name,
         login: data.owner.login,
         userType: data.owner.type,
+        html_url: data.html_url,
         stars: data.stargazers_count,
         forks: data.forks_count,
         watchers: data.watchers_count,
@@ -36,9 +37,9 @@ export function renderListv3(data) {
     };
     // The closed by native Date is using (new Date(data.created_at)).toLocaleDateString() => 9/3/2017 format
 
-    let str = `${m.name} owned by ${m.login} (${m.userType}) 
+    let str = `<a href="${m.html_url}" target="_blank">${m.name}</a> <span>owned by ${m.login} (${m.userType}) 
         and has ${m.stars} stars, ${m.subscribers} subscribers, ${m.watchers} watchers, ${m.forks} forks. 
-        Created ${m.created}, Updated: ${m.updated}`;
+        Created ${m.created}, Updated: ${m.updated}</span>`;
 
     // STARS = WATCHERS => BUG !!! in GitHub API v3
     var span = $('<span class="badge badge-primary badge-pill">').html(m.stars);

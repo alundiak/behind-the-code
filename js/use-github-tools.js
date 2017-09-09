@@ -7,9 +7,9 @@ export function getInfo(TOKEN, myData) {
     let gh = getGitHubInstance(TOKEN);
     myData.forEach(function(element) {
         let requestableObject = getUserRepos(gh, element.owner, element.name);
-        requestableObject.then(function(response){
-        	console.log(response);
-        	renderListv3(response.data);
+        requestableObject.then(function(response) {
+            console.log(response);
+            renderListv3(response.data);
         });
     });
 }
@@ -26,18 +26,19 @@ function getGitHubInstance(TOKEN) {
     // unauthenticated client
     // return new GitHub(); // can be used to create a anonymous gist for example
 
-    // basic auth
+    // basic auth - the same - limited to POST requests per day. But with TOKEN provided no limits.
     return new GitHub({
         // username: 'alundiak',
         // password: 'TBD',
         // also acceptable:
-        // token: TOKEN   
+        token: TOKEN
     });
 }
 
 function getUserRepos(gh, user, repo) {
     var ghUserRepo = gh.getRepo(user, repo);
-    return ghUserRepo.getDetails(/*can be passes callback function aka renderListv3*/);
+    // can be passes callback function aka renderListv3*
+    return ghUserRepo.getDetails();
 }
 
 function createGist(gh) {

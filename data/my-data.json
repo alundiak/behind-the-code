@@ -16,4 +16,7 @@
 }, {
     "owner": "mongodb",
     "name": "mongo"
+}, {
+    "owner": "ionic-team",
+    "name": "ionic"
 }]
