@@ -21,6 +21,9 @@ fragment repositoryFragment on Repository {
     watchers {
         totalCount
     }
+    homepageUrl
+    projectsUrl
+    url
 }
 
 query {
@@ -28,3 +31,5 @@ query {
 	vue: repository(owner: "vuejs", name: "vue") { ...repositoryFragment }
 	angular: repository(owner: "angular", name: "angular.js") { ...repositoryFragment }
 }
+
+# would be great if we can use repository(nameWithOwner: "facebook/react")

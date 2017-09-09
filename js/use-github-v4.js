@@ -8,6 +8,9 @@ export const apiUrl = 'https://api.github.com/graphql';
  * @return {Promise?}
  */
 export function getInfo(TOKEN, myData) {
+    if (!TOKEN){
+        return;
+    }
     // First token was generated on GitHub settings page, Sep-02-2017, for mostly read-only access. 
     // I added it to js file content, and committed to repo.
     // Then I received email, about warning, that it's not ok.
@@ -37,8 +40,8 @@ export function getInfo(TOKEN, myData) {
 }
 
 function renderList(data) {
-    let str = `${data.name} owned by ${data.owner.login} (${data.owner.__typename}) 
-        and has 
+    let str = `<a href="${data.url}" target="_blank">${data.name}</a> <span>owned by ${data.owner.login} (${data.owner.__typename}) 
+        and has </span>
         <span class="badge badge-primary badge-pill">${data.stargazers.totalCount}</span> stars,  
         <span class="badge badge-primary badge-pill">${data.watchers.totalCount}</span> watchers, 
         <span class="badge badge-primary badge-pill">${data.forks.totalCount}</span> forks. 
@@ -206,6 +209,9 @@ function getRepositories(TOKEN, myData) {
             watchers {
                 totalCount
             }
+            homepageUrl
+            url
+            projectsUrl
         }
     `;
     // updatedAt - @deprecated
@@ -229,7 +235,7 @@ function getRepositories(TOKEN, myData) {
 
 function performRequest(TOKEN, queryBody, contentType) {
     let graphqlOptions = prepareGraphqlOptions(queryBody, contentType);
-    if (!graphqlOptions) {
+    if (!graphqlOptions || !TOKEN) {
         return;
     }
     return fetch(apiUrl + '?access_token=' + TOKEN, graphqlOptions)
@@ -242,7 +248,12 @@ function performRequest(TOKEN, queryBody, contentType) {
             // if (contentType.includes('application/json')) {
             //     return response.json()
             // }
-            return response.json();
+            if (response.ok){
+                return response.json();    
+            } else {
+                return 'ERROR';
+            }
+            
         })
         // .then(data => data.data)
         .then(data => {

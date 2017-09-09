@@ -1,14 +1,14 @@
-/*
-https://github.com/jashkenas/backbone/
-https://sencha.com/products/extjs/
-https://github.com/angular/angular.js
-https://github.com/facebook/react
-https://github.com/astoilkov/jsblocks
-*/
 export var getMyData = fetch('data/my-data.json').then(response => response.json());
 
 // url is related to web-root, not to the folder - location of file.
-export var getMyToken = fetch('data/properties').then(response => response.text())
+export var getMyToken = fetch('data/properties').then(response => {
+    if (response.ok){
+        return response.text();
+    } else {
+        // TODO GitHub App Registration 
+        return '';
+    }
+})
 
 // await works only inside of async function
 

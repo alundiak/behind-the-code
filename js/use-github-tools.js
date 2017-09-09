@@ -7,10 +7,11 @@ export function getInfo(TOKEN, myData) {
     let gh = getGitHubInstance(TOKEN);
     myData.forEach(function(element) {
         let requestableObject = getUserRepos(gh, element.owner, element.name);
-        requestableObject.then(function(response) {
-            console.log(response);
-            renderListv3(response.data);
-        });
+        // Looks like using one more Promise level cause delay, and list records rednered in diff. seq.
+        // requestableObject.then(function(response) {
+        //     console.log(response);
+        //     renderListv3(response.data);
+        // });
     });
 }
 
@@ -38,7 +39,9 @@ function getGitHubInstance(TOKEN) {
 function getUserRepos(gh, user, repo) {
     var ghUserRepo = gh.getRepo(user, repo);
     // can be passes callback function aka renderListv3*
-    return ghUserRepo.getDetails();
+    return ghUserRepo.getDetails(function(err, data){
+        renderListv3(data);
+    });
 }
 
 function createGist(gh) {

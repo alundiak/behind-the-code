@@ -37,7 +37,7 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 
 - HTML imports works, but JS files are loaded later, than simple HTML inside inside of main index.html file. Sometimes MomentJS is not yet available.
 - Fetch API doesn't work the same as XHR.
-- GraphQL is the winner for sure.
+- GraphQL is the winner for sure. Using simple Fetch calls to GitHu API v3 is ok, but to much request. And using github-api with Requestable is the slowest.
 - Twitter Bootstrap v4.0.0-beta is not stable enough. Sep-05-2017 they dropped being bower component. And now we have 2 node modules: bootstrap which contains js css and scss and bootstrap-css which contains css files but also scss file pointing to `../node_modules/bootstrap/scss` folder. Odd. What if custom user will change folder?
 - https://github.com/twbs/bootstrap/issues/23557
 - https://github.com/twbs/bootstrap/pull/23614 - @wrakky/bootstrap suggestion
@@ -50,6 +50,7 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - https://www.digitalocean.com/community/questions/what-is-the-difference-between-an-api-token-and-a-personal-token
 - http://graphql.org/learn/serving-over-http/
 - https://github.com/graphql/express-graphql/issues/14 - Express GraphQL and CORS discussion
+- https://github.com/github-tools/github/issues/392#issuecomment-328295155 - Discussion about errors with importing github-api
 
 
 ## Timeline resources

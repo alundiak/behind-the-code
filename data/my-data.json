@@ -1,4 +1,7 @@
 [{
+    "owner": "jquery",
+    "name": "jquery"
+}, {
     "owner": "jashkenas",
     "name": "backbone"
 }, {
@@ -19,4 +22,28 @@
 }, {
     "owner": "ionic-team",
     "name": "ionic"
+}, {
+    "owner": "knockout",
+    "name": "knockout"
+}, {
+    "owner": "emberjs",
+    "name": "ember.js"
+}, {
+    "owner": "aurelia",
+    "name": "framework"
+}, {
+    "owner": "karma-runner",
+    "name": "karma"
+}, {
+    "owner": "jasmine",
+    "name": "jasmine"
+}, {
+    "owner": "jspm",
+    "name": "jspm-cli"
+}, {
+    "owner": "gulpjs",
+    "name": "gulp"
+}, {
+    "owner": "gruntjs",
+    "name": "grunt"
 }]

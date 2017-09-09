@@ -23,18 +23,22 @@ import * as gitHubApi4 from './js/use-github-v4.js';
         // console.log(t); // but here still Promise...
 
         dataPromises.getMyToken.then(token => {
+            if (!token){
+                return;
+            }
+            console.log(token);
             // gitHubApi3.testApi(token);
             // gitHubApi3.getInfo(token, repoData);
             // => "API rate limit exceeded for 89.64.1.254. 
             // (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
             
-            gitHubTools.testApiv3(token);
-            gitHubTools.getInfo(token, repoData);
+            // gitHubTools.testApiv3(token);
+            // gitHubTools.getInfo(token, repoData);
 
             // gitHubApi4.testApi1(token);
             // gitHubApi4.testApi2(token);
             // gitHubApi4.testApi3(token);
-            // gitHubApi4.getInfo(token, repoData);
+            gitHubApi4.getInfo(token, repoData);
         });
 
     });
