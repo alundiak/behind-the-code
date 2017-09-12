@@ -63,6 +63,6 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 ## Credits / Thanks to
 
 - Authors of BestOf.JS.Org
-- AUthors of [github-api](https://github.com/github-tools/github) repo.
+- Authors of [github-api](https://github.com/github-tools/github) repo.
 - Github API v4 (GraphQL)
 - https://platform.github.community
