@@ -2,6 +2,8 @@ var express = require('express');
 var path    = require("path");
 var app = express();
 
+console.log(process.env.GITHUB_TOKEN);
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/'));
