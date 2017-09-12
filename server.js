@@ -2,13 +2,12 @@ var express = require('express');
 var path    = require("path");
 var app = express();
 
-console.log(process.env.GITHUB_TOKEN);
-
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 5000)); // process.env.PORT is for Heroku instance
 
 app.use(express.static(__dirname + '/'));
 
 app.get('/', function(request, response) {
+	console.log(process.env.GITHUB_TOKEN);
     response.sendFile(path.join(__dirname+'/index.html'));
 });
 
