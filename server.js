@@ -7,8 +7,12 @@ app.set('port', (process.env.PORT || 5000)); // process.env.PORT is for Heroku i
 app.use(express.static(__dirname + '/'));
 
 app.get('/', function(request, response) {
-	console.log(process.env.GITHUB_TOKEN);
     response.sendFile(path.join(__dirname+'/index.html'));
+});
+
+app.get('/properties', function(request, response) {
+    // GITHUB_TOKEN created manually by me, on Heroku control panel (configs)
+  	response.send(process.env.GITHUB_TOKEN);
 });
 
 app.listen(app.get('port'), function() {

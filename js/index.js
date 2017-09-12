@@ -3,14 +3,12 @@
 // import GitHub from '../bower_components/github-api/lib/GitHub.js'; // doesn't work in Chrome Canary
 // var GitHub = require('github-api'); // from node_modules (using NodeJS env or RequireJS)
 
-console.log(process.env.GITHUB_TOKEN);
-
 // .js ext still needed. !!!
-import * as dataPromises from './js/dataPromises.js';
-import * as bestOfJsApi from './js/use-best-of-js-org.js';
-import * as gitHubApi3 from './js/use-github-v3.js';
-import * as gitHubTools from './js/use-github-tools.js';
-import * as gitHubApi4 from './js/use-github-v4.js';
+import * as dataPromises from './dataPromises.js';
+import * as bestOfJsApi from './use-best-of-js-org.js';
+import * as gitHubApi3 from './use-github-v3.js';
+import * as gitHubTools from './use-github-tools.js';
+import * as gitHubApi4 from './use-github-v4.js';
 
 // import bootstrap from './node_modules/bootstrap/dist/js/bootstrap.js';
 // console.log(bootstrap);

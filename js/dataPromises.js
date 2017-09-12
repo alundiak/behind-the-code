@@ -1,7 +1,7 @@
 export var getMyData = fetch('data/my-data.json').then(response => response.json());
 
 // url is related to web-root, not to the folder - location of file.
-export var getMyToken = fetch('data/properties').then(response => {
+export var getMyToken = fetch('/properties').then(response => {
     if (response.ok){
         return response.text();
     } else {
@@ -17,7 +17,7 @@ export var getMyToken = fetch('data/properties').then(response => {
  * @return {Promise}
  */
 export async function getMyTokenFunc() {
-    var a = await fetch('data/properties')
+    var a = await fetch('/properties')
         .then(response => response.text())
         // If we use then() and NOT return data, it return/pass undefined for any next .then() calls. 
         // Also, we can change data by passing from .then() to next .then()
