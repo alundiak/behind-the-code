@@ -32,6 +32,7 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - HTML Imports: Chrome+, Opera, Firefox-, IE11-, Edge-
 - Template Literals: Chrome+, Firefox+, Safari+, Opera+, -IE11, Edge+
 - Async functions: Chrome+, Firefox+, Safari+, Opera+, -IE11, Edge+
+- Performance API, Navigation Timing API - looks like supported by all major browsers.
 
 ## Notes / Conclusions / Lessons Learned
 
@@ -45,6 +46,7 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - https://www.freshdesignweb.com/jquery-css3-loading-progress-bar/
 - https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading
 - http://blog.trasatti.it/2012/12/measuring-the-speed-of-resource-loading-with-javascript-and-html5.html
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content + http://caniuse.com/#search=preload
 
 ## Resources
 

@@ -14,6 +14,9 @@ export function getInfo(TOKEN, myData) {
         let strJSON = 'data/_' + element.name + '.json';
         let options = {
             headers: {
+                // For request to github api v3 go 2 requests: OPTIOSN => GET ??? Again fetch vs. XHR issue?
+                // 'Content-Type': 'application/json',
+                // 'Content-Type': 'text/plain',
                 'Authorization': `token ${TOKEN}`
             }
         }
@@ -101,7 +104,8 @@ export function testApi(TOKEN) {
     // var url = apiUrl + '/notifications?page=10&per_page=60&access_token=' + TOKEN;
     // without token => 401
     // with ??access_token="value" => "Requires authentication"
-    // If to use "participating=true" => In fact there was 1 notif from https://api.github.com/repos/niklasvh/html2canvas/issues/1115 - I marked as read.
+    // If to use "participating=true" => In fact there was 1 notif from 
+    // https://api.github.com/repos/niklasvh/html2canvas/issues/1115 - I marked as read.
     // GET /repos/:owner/:repo/notifications - List all notifications for the current user.
     // GET /notifications/threads/:id - View a single thread
 

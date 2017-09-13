@@ -5,7 +5,8 @@
         "moment": true,
         "$": true,
         "GitHub": true,
-        "performance": true
+        "performance": true,
+        "Image": true
     },
     "rules": {
         "indent": 0,

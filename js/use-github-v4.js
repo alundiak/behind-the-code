@@ -86,7 +86,7 @@ export function testApi1(TOKEN) {
     }
     `;
 
-    // let str = " \
+    // for curl: " \
     // { \
     // \"query\": \"query { viewer { login }}\" \
     // } \
@@ -104,8 +104,6 @@ export function testApi1(TOKEN) {
         // body: escape(graphqlString)
         // body: encodeURI(graphqlString)
         // body: JSON.stringify(graphqlString)
-
-        // body: str
     }
 
     fetch(apiUrl + '?access_token=' + TOKEN, options)
@@ -150,7 +148,10 @@ export function testApi3(TOKEN) {
     // xhr.send({query: queryBody});  // doesn't work with any Content-Type
     // xhr.send(queryBody); // doesn't work with any Content-Type
     
-    performRequest(TOKEN, queryBody);
+    let promise = performRequest(TOKEN, queryBody);
+    // promise.onload = function(a){
+    //     console.log('TODO - check request performance', a);
+    // }
     // performRequest(TOKEN, queryBody,'json'); // doesn't work with Fetch API
     // performRequest(TOKEN, queryBody, 'graphql');
 }

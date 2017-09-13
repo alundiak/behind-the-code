@@ -9,15 +9,19 @@
     [Deprecation] Styling master document from stylesheets defined in HTML Imports is deprecated, and is planned to be removed in M65, around March 2018. Please refer to https://goo.gl/EGXzpw for possible migration paths. 
     -->
     <!-- That is why, link to style should be in main file -->
+    <!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    
+    -->
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="node_modules/pace-progress/themes/blue/pace-theme-minimal.css">
     <link rel="stylesheet" href="/css/styles.css">
 
     <script type="text/javascript">
         window.useUrl = true;
     </script>
+
 </head>
 
 <body>
@@ -40,19 +44,25 @@
     <ul class="list-group"></ul>
 
     <!-- <link rel="import" href="libs_remote.html"> -->
-
+<!--
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" 
         integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
         integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+-->
+    <script type="application/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="application/javascript" src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script type="application/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="application/javascript" src="node_modules/moment/min/moment.min.js"></script>
+    <script type="application/javascript" src="node_modules/github-api/dist/GitHub.bundle.min.js"></script>
     <script type="application/javascript" src="node_modules/pace-progress/pace.js"></script>
 
     <script type="module" src="./js/index.js"></script>
+    <script src="/js/perf.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,6 @@ import * as bestOfJsApi from './use-best-of-js-org.js';
 import * as gitHubApi3 from './use-github-v3.js';
 import * as gitHubTools from './use-github-tools.js';
 import * as gitHubApi4 from './use-github-v4.js';
-import perf from './perf.js';
 
 // import bootstrap from './node_modules/bootstrap/dist/js/bootstrap.js';
 // console.log(bootstrap);
@@ -74,7 +73,5 @@ import perf from './perf.js';
                 break;
         }
     }
-
-    perf();
 
 }());
