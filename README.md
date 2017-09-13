@@ -41,6 +41,10 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - Twitter Bootstrap v4.0.0-beta is not stable enough. Sep-05-2017 they dropped being bower component. And now we have 2 node modules: bootstrap which contains js css and scss and bootstrap-css which contains css files but also scss file pointing to `../node_modules/bootstrap/scss` folder. Odd. What if custom user will change folder?
 - https://github.com/twbs/bootstrap/issues/23557
 - https://github.com/twbs/bootstrap/pull/23614 - @wrakky/bootstrap suggestion
+- HTML5 `<progress>`, `<meter>` => https://css-tricks.com/css3-progress-bars/
+- https://www.freshdesignweb.com/jquery-css3-loading-progress-bar/
+- https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading
+- http://blog.trasatti.it/2012/12/measuring-the-speed-of-resource-loading-with-javascript-and-html5.html
 
 ## Resources
 

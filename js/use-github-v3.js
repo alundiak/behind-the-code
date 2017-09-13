@@ -10,7 +10,7 @@ export const apiUrl = 'https://api.github.com';
  */
 export function getInfo(TOKEN, myData) {
     myData.forEach(function(element) {
-        let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name /*+ '&access_token=' + TOKEN*/; // doesn't work
+        let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name; // '&access_token=' doesn't work
         let strJSON = 'data/_' + element.name + '.json';
         let options = {
             headers: {

@@ -13,6 +13,8 @@
     <!-- Bootstrap as Bower component has been dropped Sep-05-2017 -->
     <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/pace-progress/themes/blue/pace-theme-minimal.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <!-- <link rel="stylesheet" href="node_modules/bootstrap-css/lib/list-group.css"> -->
     
     <script type="text/javascript">
@@ -32,11 +34,15 @@
     <!-- => Uncaught Error: Cannot find module 'axios' -->
     <!-- <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script> -->
     <script type="application/javascript" src="node_modules/github-api/dist/GitHub.bundle.min.js"></script>
+    <script type="application/javascript" src="node_modules/pace-progress/pace.js"></script>
 
     <script type="module" src="./js/index.js"></script>
 </head>
 
 <body>
+    <!-- <progress value="30" max="100"></progress> -->
+    <!-- <p><meter low="69" high="80" max="100" value="84"></meter></p> -->
+
     <div class="container">
         <h1 class="display-3">Behind The Code (local)</h1>
         <p class="lead">List of famous frontend tools in modern web development (2017).</p>
@@ -44,7 +50,8 @@
 
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" 
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Try another approach</button>
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Approach</button>
+        <span>githubApiv4</span>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" data-value="githubApiv3" href="#">GitHub API v3 (REST)</a>
             <a class="dropdown-item" data-value="githubApiv3_wrapper" href="#">GitHub API v3 (REST) via "github-tools/github-api wrapper"</a>
@@ -52,7 +59,11 @@
         </div>
     </div>
 
-    <ul class="list-group"></ul>
+    <ul class="list-group">
+    <!-- <div class="loader"></div> -->
+    </ul>
+
+    <div class="perf-data"></div>
     
     <!-- <link rel="import" href="libs_local.html"> -->
 
