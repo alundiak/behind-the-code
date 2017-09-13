@@ -9,16 +9,15 @@ export const apiUrl = 'https://api.github.com';
  * @return {Promise?}
  */
 export function getInfo(TOKEN, myData) {
-    getBasicRepoInfo(myData);
-    // todo using other API url
-}
-
-function getBasicRepoInfo(myData) {
     myData.forEach(function(element) {
-        let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name;
+        let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name /*+ '&access_token=' + TOKEN*/; // doesn't work
         let strJSON = 'data/_' + element.name + '.json';
-
-        fetch(window.useUrl ? strUrl : strJSON)
+        let options = {
+            headers: {
+                'Authorization': `token ${TOKEN}`
+            }
+        }
+        fetch(window.useUrl ? strUrl : strJSON, options)
             .then(response => response.json())
             .then(data => renderListv3(data));
     });

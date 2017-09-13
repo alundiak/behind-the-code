@@ -3,7 +3,8 @@
     "globals": {
         "fetch": true,
         "moment": true,
-        "$": true
+        "$": true,
+        "GitHub": true
     },
     "rules": {
         "indent": 0,

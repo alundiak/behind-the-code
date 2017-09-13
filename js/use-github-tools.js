@@ -1,7 +1,6 @@
 import {renderListv3} from './use-github-v3.js'
 // import GitHub from '../bower_components/github-api/lib/GitHub.js'; // doesn't work in Chrome Canary
 // var GitHub = require('github-api'); // from node_modules (using NodeJS env or RequireJS)
-var GitHub = window.GitHub;
 
 export function getInfo(TOKEN, myData) {
     let gh = getGitHubInstance(TOKEN);
@@ -19,8 +18,8 @@ export function testApiv3(TOKEN) {
     var gh = getGitHubInstance(TOKEN);
     // createGist(gh);
     // getUserStarredRepos(gh);
-    getUserRepos(gh, 'alundiak', 'behind-the-code');
     // getUserNotifications(gh);
+    getUserRepos(gh, 'alundiak', 'behind-the-code');
 }
 
 function getGitHubInstance(TOKEN) {
