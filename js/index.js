@@ -16,22 +16,23 @@ import * as gitHubApi4 from './use-github-v4.js';
 (function() {
     'use strict';
 
-    dataPromises.getMyData.then(repoData => {
-        // bestOfJsApi.getInfo(data);
+    var cachedToken, cashedRepoData;
 
-        // var t = dataPromises.getMyTokenFunc();
-        // console.log(t); // but here still Promise...
+    dataPromises.getMyData.then(repoData => {
+        cashedRepoData = repoData;
+
+        // bestOfJsApi.getInfo(repoData);
 
         dataPromises.getMyToken.then(token => {
-            if (!token){
+            if (!token) {
                 return;
             }
-            console.log(token);
+
+            cachedToken = token;
+
             // gitHubApi3.testApi(token);
             // gitHubApi3.getInfo(token, repoData);
-            // => "API rate limit exceeded for 89.64.1.254. 
-            // (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
-            
+
             // gitHubTools.testApiv3(token);
             // gitHubTools.getInfo(token, repoData);
 
@@ -42,5 +43,35 @@ import * as gitHubApi4 from './use-github-v4.js';
         });
 
     });
+
+    $('.dropdown-menu').delegate('a', 'click', function(e) {
+        let value = $(e.target).data('value');
+
+        $('.dropdown span').text(value);
+        switchApproach(value);
+    });
+
+    function switchApproach(value) {
+        if (!cachedToken || !cashedRepoData) {
+            return;
+        }
+
+        $('.list-group').html('');
+
+        switch (value) {
+            case 'githubApiv3':
+                gitHubApi3.getInfo(cachedToken, cashedRepoData);
+                break;
+
+            case 'githubApiv3_wrapper':
+                gitHubTools.getInfo(cachedToken, cashedRepoData);
+                break;
+
+            case 'githubApiv4':
+            case 'default':
+                gitHubApi4.getInfo(cachedToken, cashedRepoData);
+                break;
+        }
+    }
 
 }());

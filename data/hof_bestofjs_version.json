@@ -1,9 +1,9 @@
 {
-    "date": "2017-09-01T21:02:26.186Z",
+    "date": "2017-09-12T21:02:41.034Z",
     "heroes": [{
         "username": "tj",
         "avatar": "https://avatars2.githubusercontent.com/u/25254?v=4",
-        "followers": 30549,
+        "followers": 30723,
         "blog": "https://apex.sh",
         "name": "TJ Holowaychuk",
         "projects": ["express", "mocha", "stylus", "frontend-boilerplate", "supertest", "superagent", "pug", "co", "shouldjs"],
@@ -13,7 +13,7 @@
     }, {
         "username": "addyosmani",
         "avatar": "https://avatars2.githubusercontent.com/u/110953?v=4",
-        "followers": 26381,
+        "followers": 26479,
         "blog": "https://www.addyosmani.com",
         "name": "Addy Osmani",
         "projects": ["basketjs", "critical"],
@@ -22,7 +22,7 @@
     }, {
         "username": "paulirish",
         "avatar": "https://avatars0.githubusercontent.com/u/39191?v=4",
-        "followers": 24234,
+        "followers": 24303,
         "blog": "http://paulirish.com",
         "name": "Paul Irish",
         "projects": ["html5-boilerplate", "web-fundamentals"],
@@ -32,7 +32,7 @@
     }, {
         "username": "yyx990803",
         "avatar": "https://avatars1.githubusercontent.com/u/499550?v=4",
-        "followers": 21179,
+        "followers": 21539,
         "blog": "http://evanyou.me",
         "name": "Evan You",
         "projects": ["vuejs"],
@@ -42,7 +42,7 @@
     }, {
         "username": "gaearon",
         "avatar": "https://avatars0.githubusercontent.com/u/810438?v=4",
-        "followers": 19807,
+        "followers": 20023,
         "blog": "http://twitter.com/dan_abramov",
         "name": "Dan Abramov",
         "projects": ["redux", "react", "react-hot-loader"],
@@ -51,26 +51,26 @@
     }, {
         "username": "sindresorhus",
         "avatar": "https://avatars1.githubusercontent.com/u/170270?v=4",
-        "followers": 19103,
+        "followers": 19287,
         "blog": "https://sindresorhus.com",
         "name": "Sindre Sorhus",
         "projects": ["awesome", "ava", "got"],
         "npm": "sindresorhus",
-        "modules": 1133
+        "modules": 1135
     }, {
         "username": "mbostock",
         "avatar": "https://avatars2.githubusercontent.com/u/230541?v=4",
-        "followers": 15987,
+        "followers": 16045,
         "blog": "https://bost.ocks.org/mike/",
         "name": "Mike Bostock",
         "projects": ["d3"],
         "bio": "",
         "npm": "mbostock",
-        "modules": 111
+        "modules": 112
     }, {
         "username": "douglascrockford",
         "avatar": "https://avatars1.githubusercontent.com/u/262641?v=4",
-        "followers": 15452,
+        "followers": 15497,
         "blog": "http://www.CROCKFORD.com/",
         "name": "Douglas Crockford",
         "projects": [],
@@ -80,7 +80,7 @@
     }, {
         "username": "mdo",
         "avatar": "https://avatars3.githubusercontent.com/u/98681?v=4",
-        "followers": 14781,
+        "followers": 14869,
         "blog": "http://mdo.fm",
         "name": "Mark Otto",
         "projects": ["bootstrap"],
@@ -90,7 +90,7 @@
     }, {
         "username": "jeresig",
         "avatar": "https://avatars0.githubusercontent.com/u/1615?v=4",
-        "followers": 13961,
+        "followers": 13976,
         "blog": "http://ejohn.org/",
         "name": "John Resig",
         "projects": ["jquery"],
@@ -99,7 +99,7 @@
     }, {
         "username": "jlord",
         "avatar": "https://avatars3.githubusercontent.com/u/1305617?v=4",
-        "followers": 12810,
+        "followers": 12889,
         "blog": "https://jlord.github.io",
         "name": "Jessica Lord",
         "projects": ["electron"],
@@ -109,16 +109,16 @@
     }, {
         "username": "substack",
         "avatar": "https://avatars0.githubusercontent.com/u/12631?v=4",
-        "followers": 11432,
+        "followers": 11453,
         "blog": "https://substack.neocities.org/",
         "name": "James Halliday",
         "projects": ["browserify", "minimist", "tape"],
         "npm": "substack",
-        "modules": 791
+        "modules": 872
     }, {
         "username": "jashkenas",
         "avatar": "https://avatars3.githubusercontent.com/u/4732?v=4",
-        "followers": 10811,
+        "followers": 10832,
         "blog": "http://ashkenas.com",
         "name": "Jeremy Ashkenas",
         "projects": ["backbone", "coffeescript"],
@@ -127,7 +127,7 @@
     }, {
         "username": "getify",
         "avatar": "https://avatars1.githubusercontent.com/u/150330?v=4",
-        "followers": 10044,
+        "followers": 10179,
         "blog": "",
         "name": "Kyle Simpson",
         "projects": ["you-dont-know-js"],
@@ -136,7 +136,7 @@
     }, {
         "username": "LeaVerou",
         "avatar": "https://avatars1.githubusercontent.com/u/175836?v=4",
-        "followers": 9661,
+        "followers": 9701,
         "blog": "http://lea.verou.me",
         "name": "Lea Verou",
         "projects": ["bliss"],
@@ -145,7 +145,7 @@
     }, {
         "username": "johnpapa",
         "avatar": "https://avatars2.githubusercontent.com/u/1202528?v=4",
-        "followers": 8841,
+        "followers": 8888,
         "blog": "http://johnpapa.net",
         "name": "John Papa",
         "projects": ["angular-1"],
@@ -155,17 +155,17 @@
     }, {
         "username": "wycats",
         "avatar": "https://avatars0.githubusercontent.com/u/4?v=4",
-        "followers": 8439,
+        "followers": 8453,
         "blog": "http://yehudakatz.com",
         "name": "Yehuda Katz",
         "projects": ["ember", "handlebarsjs"],
         "bio": "",
         "npm": "wycats",
-        "modules": 49
+        "modules": 51
     }, {
         "username": "hakimel",
         "avatar": "https://avatars0.githubusercontent.com/u/629429?v=4",
-        "followers": 7769,
+        "followers": 7795,
         "blog": "http://hakim.se",
         "name": "Hakim El Hattab",
         "projects": ["reveal"],
@@ -174,17 +174,17 @@
     }, {
         "username": "isaacs",
         "avatar": "https://avatars2.githubusercontent.com/u/9287?v=4",
-        "followers": 7334,
+        "followers": 7361,
         "blog": "http://blog.izs.me",
         "name": "isaacs",
         "projects": ["nodejs"],
         "bio": "",
         "npm": "isaacs",
-        "modules": 327
+        "modules": 328
     }, {
         "username": "ry",
         "avatar": "https://avatars1.githubusercontent.com/u/80?v=4",
-        "followers": 6483,
+        "followers": 6538,
         "blog": "http://tinyclouds.org/",
         "name": "ry",
         "projects": ["nodejs"],
@@ -194,17 +194,17 @@
     }, {
         "username": "feross",
         "avatar": "https://avatars2.githubusercontent.com/u/121766?v=4",
-        "followers": 6288,
+        "followers": 6316,
         "blog": "https://feross.org",
         "name": "Feross Aboukhadijeh",
         "projects": ["standard", "webtorrent"],
         "bio": "",
         "npm": "feross",
-        "modules": 162
+        "modules": 197
     }, {
         "username": "nzakas",
         "avatar": "https://avatars3.githubusercontent.com/u/38546?v=4",
-        "followers": 5968,
+        "followers": 6003,
         "blog": "http://www.nczonline.net/",
         "name": "Nicholas C. Zakas",
         "projects": ["eslint"],
@@ -214,7 +214,7 @@
     }, {
         "username": "chriscoyier",
         "avatar": "https://avatars0.githubusercontent.com/u/69156?v=4",
-        "followers": 5954,
+        "followers": 5969,
         "blog": "http://css-tricks.com",
         "name": "Chris Coyier",
         "projects": ["html5-boilerplate"],
@@ -224,7 +224,7 @@
     }, {
         "username": "necolas",
         "avatar": "https://avatars2.githubusercontent.com/u/239676?v=4",
-        "followers": 5726,
+        "followers": 5763,
         "blog": "http://nicolasgallagher.com",
         "name": "Nicolas Gallagher",
         "projects": ["suit-css", "html5-boilerplate"],
@@ -234,7 +234,7 @@
     }, {
         "username": "igrigorik",
         "avatar": "https://avatars0.githubusercontent.com/u/10652?v=4",
-        "followers": 5446,
+        "followers": 5468,
         "blog": "https://www.igvita.com",
         "name": "Ilya Grigorik",
         "projects": [],
@@ -244,7 +244,7 @@
     }, {
         "username": "rauchg",
         "avatar": "https://avatars0.githubusercontent.com/u/13041?v=4",
-        "followers": 5367,
+        "followers": 5398,
         "blog": "http://twitter.com/rauchg",
         "name": "Guillermo Rauch",
         "projects": ["socketio", "hyper", "nextjs", "styled-jsx"],
@@ -254,17 +254,17 @@
     }, {
         "username": "maxogden",
         "avatar": "https://avatars0.githubusercontent.com/u/39759?v=4",
-        "followers": 5329,
+        "followers": 5353,
         "blog": "http://maxogden.com",
         "name": "=^._.^=",
         "projects": [],
         "bio": "Author of \"Art of Node\" and \"JavaScript For Cats\"",
         "npm": "maxogden",
-        "modules": 369
+        "modules": 404
     }, {
         "username": "wesbos",
         "avatar": "https://avatars2.githubusercontent.com/u/176013?v=4",
-        "followers": 4839,
+        "followers": 4929,
         "blog": "www.wesbos.com",
         "name": "Wes Bos",
         "projects": [],
@@ -274,7 +274,7 @@
     }, {
         "username": "mathiasbynens",
         "avatar": "https://avatars1.githubusercontent.com/u/81942?v=4",
-        "followers": 4712,
+        "followers": 4746,
         "blog": "https://mathiasbynens.be/",
         "name": "Mathias Bynens",
         "projects": ["html5-boilerplate"],
@@ -284,7 +284,7 @@
     }, {
         "username": "toddmotto",
         "avatar": "https://avatars0.githubusercontent.com/u/1655968?v=4",
-        "followers": 4612,
+        "followers": 4660,
         "blog": "https://ultimateangular.com",
         "name": "Todd Motto",
         "projects": ["angular-1"],
@@ -294,7 +294,7 @@
     }, {
         "username": "crnacura",
         "avatar": "https://avatars1.githubusercontent.com/u/1044196?v=4",
-        "followers": 4498,
+        "followers": 4515,
         "blog": "http://www.codrops.com",
         "name": "Mary Lou",
         "projects": [],
@@ -304,7 +304,7 @@
     }, {
         "username": "remy",
         "avatar": "https://avatars0.githubusercontent.com/u/13700?v=4",
-        "followers": 4406,
+        "followers": 4417,
         "blog": "http://remysharp.com",
         "name": "Remy Sharp",
         "projects": ["nodemon"],
@@ -314,7 +314,7 @@
     }, {
         "username": "petehunt",
         "avatar": "https://avatars0.githubusercontent.com/u/239742?v=4",
-        "followers": 4364,
+        "followers": 4378,
         "blog": "",
         "name": "Pete Hunt",
         "projects": ["react"],
@@ -323,7 +323,7 @@
     }, {
         "username": "daneden",
         "avatar": "https://avatars3.githubusercontent.com/u/439365?v=4",
-        "followers": 4176,
+        "followers": 4202,
         "blog": "https://daneden.me",
         "name": "Daniel Eden",
         "projects": ["animatecss"],
@@ -333,7 +333,7 @@
     }, {
         "username": "creationix",
         "avatar": "https://avatars3.githubusercontent.com/u/89353?v=4",
-        "followers": 4032,
+        "followers": 4042,
         "blog": "http://creationix.com/",
         "name": "Tim Caswell",
         "projects": [],
@@ -342,7 +342,7 @@
     }, {
         "username": "csswizardry",
         "avatar": "https://avatars2.githubusercontent.com/u/751944?v=4",
-        "followers": 3898,
+        "followers": 3913,
         "blog": "https://csswizardry.com",
         "name": "Harry Roberts",
         "projects": [],
@@ -351,7 +351,7 @@
     }, {
         "username": "ericelliott",
         "avatar": "https://avatars1.githubusercontent.com/u/364727?v=4",
-        "followers": 3568,
+        "followers": 3585,
         "blog": "https://ericelliottjs.com",
         "name": "Eric Elliott",
         "projects": ["essential-javascript-links", "tape", "stamp-it"],
@@ -360,26 +360,36 @@
     }, {
         "username": "bevacqua",
         "avatar": "https://avatars3.githubusercontent.com/u/934293?v=4",
-        "followers": 3313,
+        "followers": 3323,
         "blog": "https://ponyfoo.com",
         "name": "Nicolás Bevacqua",
         "projects": ["dragula", "contra", "fuzzysearch", "taunus", "practical-es6"],
         "bio": "",
         "npm": "bevacqua",
-        "modules": 169
+        "modules": 170
+    }, {
+        "username": "mikeal",
+        "avatar": "https://avatars2.githubusercontent.com/u/579?v=4",
+        "followers": 3168,
+        "blog": "http://mikealrogers.com",
+        "name": "Mikeal Rogers",
+        "projects": ["nodejs", "request"],
+        "bio": "",
+        "npm": "mikeal",
+        "modules": 117
     }, {
         "username": "mafintosh",
         "avatar": "https://avatars1.githubusercontent.com/u/376661?v=4",
-        "followers": 3154,
+        "followers": 3167,
         "blog": "https://github.com/mafintosh",
         "name": "Mathias Buus",
         "projects": [],
         "npm": "mafintosh",
-        "modules": 578
+        "modules": 579
     }, {
         "username": "btford",
         "avatar": "https://avatars1.githubusercontent.com/u/474988?v=4",
-        "followers": 3121,
+        "followers": 3122,
         "blog": "briantford.com",
         "name": "Brian Ford",
         "projects": ["angular-1"],
@@ -389,7 +399,7 @@
     }, {
         "username": "jakearchibald",
         "avatar": "https://avatars1.githubusercontent.com/u/93594?v=4",
-        "followers": 3050,
+        "followers": 3074,
         "blog": "",
         "name": "Jake Archibald",
         "projects": ["web-fundamentals"],
@@ -399,7 +409,7 @@
     }, {
         "username": "mhevery",
         "avatar": "https://avatars0.githubusercontent.com/u/111951?v=4",
-        "followers": 3048,
+        "followers": 3054,
         "blog": "http://misko.hevery.com",
         "name": "Miško Hevery",
         "projects": ["angular-1"],
@@ -409,36 +419,26 @@
     }, {
         "username": "thejameskyle",
         "avatar": "https://avatars0.githubusercontent.com/u/952783?v=4",
-        "followers": 2998,
+        "followers": 3011,
         "blog": "http://thejameskyle.com/",
         "name": "James Kyle",
         "projects": ["babel", "spectacle", "lerna", "yarn"],
         "bio": "",
         "npm": "thejameskyle",
-        "modules": 488
-    }, {
-        "username": "mikeal",
-        "avatar": "https://avatars2.githubusercontent.com/u/579?v=4",
-        "followers": 2933,
-        "blog": "http://mikealrogers.com",
-        "name": "Mikeal Rogers",
-        "projects": ["nodejs", "request"],
-        "bio": "",
-        "npm": "mikeal",
-        "modules": 117
+        "modules": 489
     }, {
         "username": "kentcdodds",
         "avatar": "https://avatars0.githubusercontent.com/u/1500684?v=4",
-        "followers": 2896,
+        "followers": 2958,
         "blog": "https://kentcdodds.com",
         "name": "Kent C. Dodds",
         "projects": ["angular-1"],
         "npm": "kentcdodds",
-        "modules": 98
+        "modules": 100
     }, {
         "username": "acdlite",
         "avatar": "https://avatars0.githubusercontent.com/u/3624098?v=4",
-        "followers": 2855,
+        "followers": 2892,
         "blog": "",
         "name": "Andrew Clark",
         "projects": ["recompose", "react"],
@@ -448,7 +448,7 @@
     }, {
         "username": "cowboy",
         "avatar": "https://avatars0.githubusercontent.com/u/54051?v=4",
-        "followers": 2841,
+        "followers": 2848,
         "blog": "http://benalman.com/",
         "name": "Ben Alman",
         "projects": ["grunt"],
@@ -456,9 +456,18 @@
         "npm": "cowboy",
         "modules": 66
     }, {
+        "username": "ryanflorence",
+        "avatar": "https://avatars0.githubusercontent.com/u/100200?v=4",
+        "followers": 2776,
+        "blog": "http://twitter.com/ryanflorence",
+        "name": "Ryan Florence",
+        "projects": ["react-router"],
+        "npm": "ryanflorence",
+        "modules": 81
+    }, {
         "username": "domenic",
         "avatar": "https://avatars0.githubusercontent.com/u/617481?v=4",
-        "followers": 2741,
+        "followers": 2749,
         "blog": "https://domenic.me/",
         "name": "Domenic Denicola",
         "projects": ["jsdom"],
@@ -468,25 +477,25 @@
     }, {
         "username": "jdalton",
         "avatar": "https://avatars2.githubusercontent.com/u/4303?v=4",
-        "followers": 2727,
+        "followers": 2745,
         "blog": "http://twitter.com/jdalton",
         "name": "John-David Dalton",
         "projects": ["lodash"],
         "npm": "jdalton",
         "modules": 476
     }, {
-        "username": "ryanflorence",
-        "avatar": "https://avatars0.githubusercontent.com/u/100200?v=4",
-        "followers": 2714,
-        "blog": "http://twitter.com/ryanflorence",
-        "name": "Ryan Florence",
-        "projects": ["react-router"],
-        "npm": "ryanflorence",
-        "modules": 78
+        "username": "staltz",
+        "avatar": "https://avatars3.githubusercontent.com/u/90512?v=4",
+        "followers": 2659,
+        "blog": "http://staltz.com",
+        "name": "André Staltz",
+        "projects": ["cyclejs"],
+        "npm": "staltz",
+        "modules": 67
     }, {
         "username": "darkwing",
         "avatar": "https://avatars0.githubusercontent.com/u/46655?v=4",
-        "followers": 2639,
+        "followers": 2649,
         "blog": "https://davidwalsh.name",
         "name": "David Walsh",
         "projects": [],
@@ -494,18 +503,9 @@
         "npm": "-",
         "modules": 0
     }, {
-        "username": "staltz",
-        "avatar": "https://avatars3.githubusercontent.com/u/90512?v=4",
-        "followers": 2620,
-        "blog": "http://staltz.com",
-        "name": "André Staltz",
-        "projects": ["cyclejs"],
-        "npm": "staltz",
-        "modules": 67
-    }, {
         "username": "felixge",
         "avatar": "https://avatars1.githubusercontent.com/u/15000?v=4",
-        "followers": 2601,
+        "followers": 2609,
         "blog": "http://felixge.de/",
         "name": "Felix Geisendörfer",
         "projects": ["nodejs"],
@@ -515,7 +515,7 @@
     }, {
         "username": "kittens",
         "avatar": "https://avatars0.githubusercontent.com/u/853712?v=4",
-        "followers": 2588,
+        "followers": 2609,
         "blog": "https://twitter.com/sebmck",
         "name": "Sebastian McKenzie",
         "projects": ["babel", "yarn", "prepack"],
@@ -525,7 +525,7 @@
     }, {
         "username": "sokra",
         "avatar": "https://avatars0.githubusercontent.com/u/1365881?v=4",
-        "followers": 2466,
+        "followers": 2485,
         "blog": "",
         "name": "Tobias Koppers",
         "projects": ["webpack"],
@@ -533,9 +533,19 @@
         "npm": "sokra",
         "modules": 107
     }, {
+        "username": "mpj",
+        "avatar": "https://avatars2.githubusercontent.com/u/17815?v=4",
+        "followers": 2428,
+        "blog": "http://mpj.me",
+        "name": "Mattias Petter Johansson",
+        "projects": [],
+        "bio": "Maybe the funniest and most interesting Youtube channel about JavaScript!",
+        "npm": "mpj",
+        "modules": 13
+    }, {
         "username": "BrendanEich",
         "avatar": "https://avatars0.githubusercontent.com/u/313317?v=4",
-        "followers": 2412,
+        "followers": 2416,
         "blog": "https://www.brendaneich.com/",
         "name": "Brendan Eich",
         "projects": [],
@@ -545,7 +555,7 @@
     }, {
         "username": "marijnh",
         "avatar": "https://avatars3.githubusercontent.com/u/144427?v=4",
-        "followers": 2392,
+        "followers": 2409,
         "blog": "http://marijnhaverbeke.nl",
         "name": "Marijn Haverbeke",
         "projects": ["prosemirror"],
@@ -553,19 +563,9 @@
         "npm": "not found?",
         "modules": 0
     }, {
-        "username": "mpj",
-        "avatar": "https://avatars2.githubusercontent.com/u/17815?v=4",
-        "followers": 2384,
-        "blog": "http://mpj.me",
-        "name": "Mattias Petter Johansson",
-        "projects": [],
-        "bio": "Maybe the funniest and most interesting Youtube channel about JavaScript!",
-        "npm": "mpj",
-        "modules": 13
-    }, {
         "username": "kangax",
         "avatar": "https://avatars0.githubusercontent.com/u/383?v=4",
-        "followers": 2376,
+        "followers": 2383,
         "blog": "http://perfectionkills.com",
         "name": "Juriy Zaytsev",
         "projects": ["fabricjs"],
@@ -574,7 +574,7 @@
     }, {
         "username": "madrobby",
         "avatar": "https://avatars3.githubusercontent.com/u/3390?v=4",
-        "followers": 2369,
+        "followers": 2371,
         "blog": "http://mir.aculo.us/",
         "name": "Thomas Fuchs",
         "projects": ["zepto", "microjs"],
@@ -584,7 +584,7 @@
     }, {
         "username": "kenwheeler",
         "avatar": "https://avatars2.githubusercontent.com/u/286616?v=4",
-        "followers": 2297,
+        "followers": 2325,
         "blog": "http://kenwheeler.github.io",
         "name": "Ken Wheeler",
         "projects": ["spectacle", "cash", "slick", "mcfly"],
@@ -592,9 +592,19 @@
         "npm": "kenwheeler",
         "modules": 0
     }, {
+        "username": "QuincyLarson",
+        "avatar": "https://avatars1.githubusercontent.com/u/985197?v=4",
+        "followers": 2320,
+        "blog": "https://www.FreeCodeCamp.org",
+        "name": "Quincy Larson",
+        "projects": [],
+        "bio": "Teacher at Free Code Camp",
+        "npm": "quincylarson?",
+        "modules": 0
+    }, {
         "username": "TooTallNate",
         "avatar": "https://avatars3.githubusercontent.com/u/71256?v=4",
-        "followers": 2292,
+        "followers": 2305,
         "blog": "http://n8.io",
         "name": "Nathan Rajlich",
         "projects": ["debug"],
@@ -602,19 +612,9 @@
         "npm": "tootallnate",
         "modules": 364
     }, {
-        "username": "QuincyLarson",
-        "avatar": "https://avatars1.githubusercontent.com/u/985197?v=4",
-        "followers": 2290,
-        "blog": "https://www.FreeCodeCamp.com",
-        "name": "Quincy Larson",
-        "projects": [],
-        "bio": "Teacher at Free Code Camp",
-        "npm": "quincylarson?",
-        "modules": 0
-    }, {
         "username": "chenglou",
         "avatar": "https://avatars2.githubusercontent.com/u/1909539?v=4",
-        "followers": 2183,
+        "followers": 2205,
         "blog": "twitter.com/_chenglou",
         "name": "Cheng Lou",
         "projects": ["react", "react-motion"],
@@ -624,17 +624,17 @@
     }, {
         "username": "brentvatne",
         "avatar": "https://avatars2.githubusercontent.com/u/90494?v=4",
-        "followers": 2153,
+        "followers": 2171,
         "blog": "",
         "name": "Brent Vatne",
         "projects": ["react-native"],
         "bio": "",
         "npm": "brentvatne",
-        "modules": 99
+        "modules": 103
     }, {
         "username": "leebyron",
         "avatar": "https://avatars3.githubusercontent.com/u/50130?v=4",
-        "followers": 2121,
+        "followers": 2133,
         "blog": "leebyron.com",
         "name": "Lee Byron",
         "projects": ["immutable", "graphql", "testcheckjs"],
@@ -644,7 +644,7 @@
     }, {
         "username": "dominictarr",
         "avatar": "https://avatars3.githubusercontent.com/u/259374?v=4",
-        "followers": 2117,
+        "followers": 2129,
         "blog": "http://protozoa.nz",
         "name": "Dominic Tarr",
         "projects": ["nodejs"],
@@ -654,7 +654,7 @@
     }, {
         "username": "mxstbr",
         "avatar": "https://avatars0.githubusercontent.com/u/7525670?v=4",
-        "followers": 2095,
+        "followers": 2127,
         "blog": "https://mxstbr.blog/newsletter",
         "name": "Max Stoiber",
         "projects": ["react-boilerplate", "styled-components"],
@@ -664,7 +664,7 @@
     }, {
         "username": "sebmarkbage",
         "avatar": "https://avatars2.githubusercontent.com/u/63648?v=4",
-        "followers": 2089,
+        "followers": 2123,
         "blog": "http://blog.calyptus.eu/",
         "name": "Sebastian Markbåge",
         "projects": ["react"],
@@ -674,7 +674,7 @@
     }, {
         "username": "DmitryBaranovskiy",
         "avatar": "https://avatars0.githubusercontent.com/u/22726?v=4",
-        "followers": 2061,
+        "followers": 2064,
         "blog": "http://dmitry.baranovskiy.com/",
         "name": "Dmitry Baranovskiy",
         "projects": ["raphael"],
@@ -684,7 +684,7 @@
     }, {
         "username": "philipwalton",
         "avatar": "https://avatars1.githubusercontent.com/u/326742?v=4",
-        "followers": 2039,
+        "followers": 2056,
         "blog": "https://philipwalton.com",
         "name": "Philip Walton",
         "projects": ["solved-by-flexbox"],
@@ -694,7 +694,7 @@
     }, {
         "username": "ariya",
         "avatar": "https://avatars1.githubusercontent.com/u/7288?v=4",
-        "followers": 2033,
+        "followers": 2048,
         "blog": "https://ariya.io",
         "name": "Ariya Hidayat",
         "projects": ["phantomjs"],
@@ -702,19 +702,19 @@
         "npm": "ariya",
         "modules": 13
     }, {
-        "username": "rmurphey",
-        "avatar": "https://avatars2.githubusercontent.com/u/58987?v=4",
-        "followers": 2015,
-        "blog": "https://rmurphey.com",
-        "name": "Rebecca Murphey",
-        "projects": ["js-assessment"],
-        "bio": "Expertise in best practices for organizing, testing, refactoring, and maintaining JavaScript application code",
-        "npm": "rmurphey",
-        "modules": 2
+        "username": "sophiebits",
+        "avatar": "https://avatars2.githubusercontent.com/u/6820?v=4",
+        "followers": 2033,
+        "blog": "https://sophiebits.com/",
+        "name": "Sophie Alpert",
+        "projects": ["react"],
+        "bio": "",
+        "npm": "spicyj",
+        "modules": 0
     }, {
         "username": "mjackson",
         "avatar": "https://avatars0.githubusercontent.com/u/92839?v=4",
-        "followers": 1985,
+        "followers": 2024,
         "blog": "https://twitter.com/mjackson",
         "name": "MICHAEL JACKSON",
         "projects": ["expect", "react-router"],
@@ -722,19 +722,19 @@
         "npm": "mjackson",
         "modules": 51
     }, {
-        "username": "ded",
-        "avatar": "https://avatars3.githubusercontent.com/u/372683?v=4",
-        "followers": 1973,
-        "blog": "http://dustindiaz.com",
-        "name": "Dustin Diaz",
-        "projects": ["scriptjs"],
-        "bio": "",
-        "npm": "ded",
-        "modules": 50
+        "username": "rmurphey",
+        "avatar": "https://avatars2.githubusercontent.com/u/58987?v=4",
+        "followers": 2021,
+        "blog": "https://rmurphey.com",
+        "name": "Rebecca Murphey",
+        "projects": ["js-assessment"],
+        "bio": "Expertise in best practices for organizing, testing, refactoring, and maintaining JavaScript application code",
+        "npm": "rmurphey",
+        "modules": 2
     }, {
         "username": "egoist",
         "avatar": "https://avatars2.githubusercontent.com/u/8784712?v=4",
-        "followers": 1968,
+        "followers": 2012,
         "blog": "https://egoist.moe",
         "name": "EGOIST",
         "projects": ["hack", "vbuild", "sao", "docute"],
@@ -742,48 +742,28 @@
         "npm": "rem",
         "modules": 317
     }, {
-        "username": "SlexAxton",
-        "avatar": "https://avatars2.githubusercontent.com/u/96554?v=4",
-        "followers": 1929,
-        "blog": "https://alexsexton.com",
-        "name": "Alex Sexton",
-        "projects": ["modernizr"],
+        "username": "ded",
+        "avatar": "https://avatars3.githubusercontent.com/u/372683?v=4",
+        "followers": 1975,
+        "blog": "http://dustindiaz.com",
+        "name": "Dustin Diaz",
+        "projects": ["scriptjs"],
         "bio": "",
-        "npm": "slexaxton",
-        "modules": 38
+        "npm": "ded",
+        "modules": 50
     }, {
         "username": "JedWatson",
         "avatar": "https://avatars3.githubusercontent.com/u/872310?v=4",
-        "followers": 1923,
+        "followers": 1936,
         "blog": "http://www.thinkmill.com.au",
         "name": "Jed Watson",
         "projects": ["keystone", "elemental-ui", "touchstone"],
         "npm": "jedwatson",
-        "modules": 134
-    }, {
-        "username": "contra",
-        "avatar": "https://avatars0.githubusercontent.com/u/425716?v=4",
-        "followers": 1920,
-        "blog": "http://contra.io",
-        "name": "contra",
-        "projects": ["gulp"],
-        "bio": "",
-        "npm": "contra",
-        "modules": 204
-    }, {
-        "username": "vjeux",
-        "avatar": "https://avatars0.githubusercontent.com/u/197597?v=4",
-        "followers": 1913,
-        "blog": "http://blog.vjeux.com/",
-        "name": "Christopher Chedeau",
-        "projects": ["react", "react-native"],
-        "bio": "",
-        "npm": "vjeux",
-        "modules": 25
+        "modules": 135
     }, {
         "username": "zpao",
         "avatar": "https://avatars1.githubusercontent.com/u/8445?v=4",
-        "followers": 1910,
+        "followers": 1935,
         "blog": "http://zpao.com",
         "name": "Paul O’Shannessy",
         "projects": ["react"],
@@ -791,9 +771,49 @@
         "npm": "zpao",
         "modules": 38
     }, {
+        "username": "SlexAxton",
+        "avatar": "https://avatars2.githubusercontent.com/u/96554?v=4",
+        "followers": 1928,
+        "blog": "https://alexsexton.com",
+        "name": "Alex Sexton",
+        "projects": ["modernizr"],
+        "bio": "",
+        "npm": "slexaxton",
+        "modules": 38
+    }, {
+        "username": "vjeux",
+        "avatar": "https://avatars0.githubusercontent.com/u/197597?v=4",
+        "followers": 1926,
+        "blog": "http://blog.vjeux.com/",
+        "name": "Christopher Chedeau",
+        "projects": ["react", "react-native"],
+        "bio": "",
+        "npm": "vjeux",
+        "modules": 26
+    }, {
+        "username": "contra",
+        "avatar": "https://avatars0.githubusercontent.com/u/425716?v=4",
+        "followers": 1926,
+        "blog": "http://contra.io",
+        "name": "contra",
+        "projects": ["gulp"],
+        "bio": "",
+        "npm": "contra",
+        "modules": 204
+    }, {
+        "username": "mrmrs",
+        "avatar": "https://avatars1.githubusercontent.com/u/1748143?v=4",
+        "followers": 1902,
+        "blog": "http://mrmrs.cc",
+        "name": "Adam Morse",
+        "projects": ["tachyons"],
+        "bio": "",
+        "npm": "mrmrs",
+        "modules": 228
+    }, {
         "username": "paullewis",
         "avatar": "https://avatars2.githubusercontent.com/u/617438?v=4",
-        "followers": 1892,
+        "followers": 1900,
         "blog": "http://www.aerotwist.com",
         "name": "Paul Lewis",
         "projects": ["web-fundamentals"],
@@ -801,19 +821,9 @@
         "npm": "-",
         "modules": 0
     }, {
-        "username": "mrmrs",
-        "avatar": "https://avatars1.githubusercontent.com/u/1748143?v=4",
-        "followers": 1889,
-        "blog": "http://mrmrs.cc",
-        "name": "Adam Morse",
-        "projects": ["tachyons"],
-        "bio": "",
-        "npm": "mrmrs",
-        "modules": 226
-    }, {
         "username": "ashleygwilliams",
         "avatar": "https://avatars0.githubusercontent.com/u/1163554?v=4",
-        "followers": 1865,
+        "followers": 1890,
         "blog": "http://ashleygwilliams.github.io/",
         "name": "ashley williams",
         "projects": [],
@@ -823,7 +833,7 @@
     }, {
         "username": "rvagg",
         "avatar": "https://avatars2.githubusercontent.com/u/495647?v=4",
-        "followers": 1849,
+        "followers": 1869,
         "blog": "http://r.va.gg",
         "name": "Rod Vagg",
         "projects": ["nodejs"],
@@ -831,28 +841,9 @@
         "npm": "rvagg",
         "modules": 203
     }, {
-        "username": "caolan",
-        "avatar": "https://avatars0.githubusercontent.com/u/5274?v=4",
-        "followers": 1825,
-        "blog": "http://caolan.org",
-        "name": "Caolan McMahon",
-        "projects": ["async", "highland"],
-        "npm": "caolan",
-        "modules": 45
-    }, {
-        "username": "robdodson",
-        "avatar": "https://avatars0.githubusercontent.com/u/1066253?v=4",
-        "followers": 1819,
-        "blog": "http://robdodson.me",
-        "name": "Rob Dodson",
-        "projects": ["polymer"],
-        "bio": "",
-        "npm": "robdodson",
-        "modules": 29
-    }, {
         "username": "una",
         "avatar": "https://avatars1.githubusercontent.com/u/1693164?v=4",
-        "followers": 1816,
+        "followers": 1834,
         "blog": "http://una.im",
         "name": "Una Kravets",
         "projects": ["cssgram"],
@@ -860,9 +851,28 @@
         "npm": "una",
         "modules": 7
     }, {
+        "username": "robdodson",
+        "avatar": "https://avatars0.githubusercontent.com/u/1066253?v=4",
+        "followers": 1831,
+        "blog": "http://robdodson.me",
+        "name": "Rob Dodson",
+        "projects": ["polymer"],
+        "bio": "",
+        "npm": "robdodson",
+        "modules": 29
+    }, {
+        "username": "caolan",
+        "avatar": "https://avatars0.githubusercontent.com/u/5274?v=4",
+        "followers": 1831,
+        "blog": "http://caolan.org",
+        "name": "Caolan McMahon",
+        "projects": ["async", "highland"],
+        "npm": "caolan",
+        "modules": 45
+    }, {
         "username": "indexzero",
         "avatar": "https://avatars2.githubusercontent.com/u/4624?v=4",
-        "followers": 1727,
+        "followers": 1734,
         "blog": "http://sudomakethought.com",
         "name": "Charlie Robbins",
         "projects": ["winston", "vows"],
@@ -872,7 +882,7 @@
     }, {
         "username": "jlongster",
         "avatar": "https://avatars2.githubusercontent.com/u/17031?v=4",
-        "followers": 1703,
+        "followers": 1718,
         "blog": "http://jlongster.com",
         "name": "James Long",
         "projects": ["nunjucks", "react"],
@@ -882,7 +892,7 @@
     }, {
         "username": "mourner",
         "avatar": "https://avatars1.githubusercontent.com/u/25395?v=4",
-        "followers": 1671,
+        "followers": 1684,
         "blog": "http://agafonkin.com/en",
         "name": "Vladimir Agafonkin",
         "projects": ["leaflet"],
@@ -892,7 +902,7 @@
     }, {
         "username": "HugoGiraudel",
         "avatar": "https://avatars3.githubusercontent.com/u/1889710?v=4",
-        "followers": 1659,
+        "followers": 1666,
         "blog": "http://hugogiraudel.com",
         "name": "Hugo Giraudel",
         "projects": ["milligram"],
@@ -902,7 +912,7 @@
     }, {
         "username": "DrBoolean",
         "avatar": "https://avatars3.githubusercontent.com/u/28562?v=4",
-        "followers": 1640,
+        "followers": 1656,
         "blog": "",
         "name": "Brian Lonsdorf",
         "projects": ["guide-to-fp"],
@@ -912,7 +922,7 @@
     }, {
         "username": "IonicaBizau",
         "avatar": "https://avatars3.githubusercontent.com/u/2864371?v=4",
-        "followers": 1606,
+        "followers": 1622,
         "blog": "https://ionicabizau.net",
         "name": "Ionică Bizău (Johnny B.)",
         "projects": ["scrape-it"],
@@ -922,7 +932,7 @@
     }, {
         "username": "paulmillr",
         "avatar": "https://avatars2.githubusercontent.com/u/574696?v=4",
-        "followers": 1602,
+        "followers": 1607,
         "blog": "paulmillr.com",
         "name": "Paul Miller",
         "projects": ["brunch"],
@@ -932,7 +942,7 @@
     }, {
         "username": "dougwilson",
         "avatar": "https://avatars3.githubusercontent.com/u/67512?v=4",
-        "followers": 1565,
+        "followers": 1579,
         "blog": "",
         "name": "Douglas Wilson",
         "projects": ["express"],
@@ -942,7 +952,7 @@
     }, {
         "username": "tomdale",
         "avatar": "https://avatars2.githubusercontent.com/u/90888?v=4",
-        "followers": 1557,
+        "followers": 1563,
         "blog": "http://tomdale.net",
         "name": "Tom Dale",
         "projects": ["ember"],
@@ -952,7 +962,7 @@
     }, {
         "username": "EisenbergEffect",
         "avatar": "https://avatars0.githubusercontent.com/u/131485?v=4",
-        "followers": 1556,
+        "followers": 1563,
         "blog": "http://www.robeisenberg.com",
         "name": "Rob Eisenberg",
         "projects": ["aurelia"],
@@ -962,7 +972,7 @@
     }, {
         "username": "passy",
         "avatar": "https://avatars1.githubusercontent.com/u/9906?v=4",
-        "followers": 1505,
+        "followers": 1516,
         "blog": "https://passy.me",
         "name": "Pascal Hartig",
         "projects": ["web-starter-kit"],
@@ -972,7 +982,7 @@
     }, {
         "username": "hemanth",
         "avatar": "https://avatars0.githubusercontent.com/u/18315?v=4",
-        "followers": 1491,
+        "followers": 1502,
         "blog": "http://h3manth.com",
         "name": "hemanth.hm",
         "projects": [],
@@ -991,7 +1001,7 @@
     }, {
         "username": "nolanlawson",
         "avatar": "https://avatars0.githubusercontent.com/u/283842?v=4",
-        "followers": 1377,
+        "followers": 1382,
         "blog": "https://twitter.com/nolanlawson",
         "name": "Nolan Lawson",
         "projects": ["pouchdb", "pseudo-worker", "marky"],
@@ -1001,7 +1011,7 @@
     }, {
         "username": "janl",
         "avatar": "https://avatars1.githubusercontent.com/u/11321?v=4",
-        "followers": 1365,
+        "followers": 1368,
         "blog": "http://neighbourhood.ie",
         "name": "Jan Lehnardt",
         "projects": ["mustachejs"],
@@ -1011,7 +1021,7 @@
     }, {
         "username": "maryrosecook",
         "avatar": "https://avatars3.githubusercontent.com/u/2716?v=4",
-        "followers": 1321,
+        "followers": 1326,
         "blog": "https://maryrosecook.com",
         "name": "Mary Rose Cook",
         "projects": [],
@@ -1021,17 +1031,17 @@
     }, {
         "username": "jonathanong",
         "avatar": "https://avatars0.githubusercontent.com/u/643505?v=4",
-        "followers": 1299,
+        "followers": 1307,
         "blog": "twitter.com/jongleberry",
         "name": "jongleberry",
         "projects": ["koa"],
         "bio": "",
         "npm": "jonathanong",
-        "modules": 114
+        "modules": 115
     }, {
         "username": "jhusain",
         "avatar": "https://avatars2.githubusercontent.com/u/466863?v=4",
-        "followers": 1267,
+        "followers": 1273,
         "blog": "",
         "name": "Jafar Husain",
         "projects": ["rxjs"],
@@ -1040,7 +1050,7 @@
     }, {
         "username": "TheLarkInn",
         "avatar": "https://avatars1.githubusercontent.com/u/3408176?v=4",
-        "followers": 1237,
+        "followers": 1260,
         "blog": "http://twitter.com/TheLarkInn",
         "name": "Sean Larkin",
         "projects": ["webpack"],
@@ -1050,7 +1060,7 @@
     }, {
         "username": "derickbailey",
         "avatar": "https://avatars3.githubusercontent.com/u/75190?v=4",
-        "followers": 1224,
+        "followers": 1227,
         "blog": "http://derickbailey.com",
         "name": "Derick Bailey",
         "projects": [],
@@ -1059,7 +1069,7 @@
     }, {
         "username": "Rich-Harris",
         "avatar": "https://avatars3.githubusercontent.com/u/1162160?v=4",
-        "followers": 1183,
+        "followers": 1198,
         "blog": "http://rich-harris.co.uk",
         "name": "Rich Harris",
         "projects": ["ractive", "svelte", "rollup"],
@@ -1069,7 +1079,7 @@
     }, {
         "username": "HenrikJoreteg",
         "avatar": "https://avatars1.githubusercontent.com/u/67925?v=4",
-        "followers": 1163,
+        "followers": 1166,
         "blog": "http://joreteg.com",
         "name": "Henrik Joreteg",
         "projects": ["ampersand"],
@@ -1079,7 +1089,7 @@
     }, {
         "username": "benjamn",
         "avatar": "https://avatars0.githubusercontent.com/u/5750?v=4",
-        "followers": 1121,
+        "followers": 1128,
         "blog": "http://twitter.com/benjamn",
         "name": "Ben Newman",
         "projects": ["meteor"],
@@ -1089,7 +1099,7 @@
     }, {
         "username": "markdalgleish",
         "avatar": "https://avatars2.githubusercontent.com/u/696693?v=4",
-        "followers": 1065,
+        "followers": 1071,
         "blog": "markdalgleish.com",
         "name": "Mark Dalgleish",
         "projects": ["css-modules"],
@@ -1099,7 +1109,7 @@
     }, {
         "username": "rauschma",
         "avatar": "https://avatars3.githubusercontent.com/u/526114?v=4",
-        "followers": 1059,
+        "followers": 1066,
         "blog": "http://rauschma.de/",
         "name": "Axel Rauschmayer",
         "projects": [],
@@ -1109,7 +1119,7 @@
     }, {
         "username": "angus-c",
         "avatar": "https://avatars0.githubusercontent.com/u/604030?v=4",
-        "followers": 1003,
+        "followers": 1007,
         "blog": "anguscroll.com/hemingway",
         "name": "angus croll",
         "projects": ["just"],
@@ -1119,16 +1129,16 @@
     }, {
         "username": "hughsk",
         "avatar": "https://avatars0.githubusercontent.com/u/569817?v=4",
-        "followers": 993,
+        "followers": 996,
         "blog": "http://twitter.com/hughskennedy",
         "name": "Hugh Kennedy",
         "projects": [],
         "npm": "hughsk",
-        "modules": 646
+        "modules": 692
     }, {
         "username": "jaydson",
         "avatar": "https://avatars3.githubusercontent.com/u/72206?v=4",
-        "followers": 965,
+        "followers": 967,
         "blog": "https://jaydson.com",
         "name": "Jaydson Gomes",
         "projects": ["clipboardjs"],
@@ -1138,7 +1148,7 @@
     }, {
         "username": "ForbesLindesay",
         "avatar": "https://avatars0.githubusercontent.com/u/1260646?v=4",
-        "followers": 928,
+        "followers": 933,
         "blog": "http://www.forbeslindesay.co.uk",
         "name": "Forbes Lindesay",
         "projects": ["pug"],
@@ -1148,7 +1158,7 @@
     }, {
         "username": "matthewmueller",
         "avatar": "https://avatars0.githubusercontent.com/u/170299?v=4",
-        "followers": 927,
+        "followers": 931,
         "blog": "https://standupjack.com",
         "name": "Matthew Mueller",
         "projects": ["cheerio", "socrates"],
@@ -1158,17 +1168,17 @@
     }, {
         "username": "jonschlinkert",
         "avatar": "https://avatars0.githubusercontent.com/u/383994?v=4",
-        "followers": 904,
+        "followers": 914,
         "blog": "http://twitter.com/jonschlinkert",
         "name": "Jon Schlinkert",
         "projects": ["assemble", "remarkable"],
         "bio": "",
         "npm": "jonschlinkert",
-        "modules": 1378
+        "modules": 1381
     }, {
         "username": "balupton",
         "avatar": "https://avatars1.githubusercontent.com/u/61148?v=4",
-        "followers": 902,
+        "followers": 904,
         "blog": "https://balupton.com",
         "name": "Benjamin Lupton",
         "projects": ["docpad"],
@@ -1177,7 +1187,7 @@
     }, {
         "username": "darcyclarke",
         "avatar": "https://avatars2.githubusercontent.com/u/459713?v=4",
-        "followers": 695,
+        "followers": 697,
         "blog": "http://darcyclarke.me/",
         "name": "Darcy Clarke",
         "projects": [],
@@ -1186,7 +1196,7 @@
     }, {
         "username": "sachag",
         "avatar": "https://avatars3.githubusercontent.com/u/358832?v=4",
-        "followers": 668,
+        "followers": 672,
         "blog": "http://sachagreif.com",
         "name": "Sacha Greif",
         "projects": ["meteor", "vulcan"],
@@ -1196,7 +1206,7 @@
     }, {
         "username": "mattpodwysocki",
         "avatar": "https://avatars2.githubusercontent.com/u/49051?v=4",
-        "followers": 641,
+        "followers": 642,
         "blog": "",
         "name": "Matthew Podwysocki",
         "projects": ["rxjs"],
@@ -1216,7 +1226,7 @@
     }, {
         "username": "KyleAMathews",
         "avatar": "https://avatars3.githubusercontent.com/u/71047?v=4",
-        "followers": 552,
+        "followers": 562,
         "blog": "https://www.bricolage.io",
         "name": "Kyle Mathews",
         "projects": ["gatsby", "typographyjs"],
@@ -1226,22 +1236,13 @@
     }, {
         "username": "tjwebb",
         "avatar": "https://avatars1.githubusercontent.com/u/1009114?v=4",
-        "followers": 328,
+        "followers": 330,
         "blog": "https://www.langa.io",
         "name": "Travis Webb",
         "projects": ["trails"],
         "bio": "",
         "npm": "tjwebb",
         "modules": 65
-    }, {
-        "username": "spicyj",
-        "avatar": "https://avatars0.githubusercontent.com/u/21187924?v=4",
-        "followers": 0,
-        "blog": "https://github.com/sophiebits",
-        "name": "Maybe you wanted @sophiebits?",
-        "projects": ["react"],
-        "bio": "",
-        "npm": "spicyj",
-        "modules": 49
     }]
 }
+

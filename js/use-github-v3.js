@@ -1,6 +1,9 @@
 export const apiUrl = 'https://api.github.com';
 
 /**
+ * "API rate limit exceeded for 89.64.1.254. 
+ * (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+            
  * @param  TOKEN {String}
  * @param  myData {Array}
  * @return {Promise?}

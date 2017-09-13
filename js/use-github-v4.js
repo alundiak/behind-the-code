@@ -1,5 +1,3 @@
-/* eslint-disable indent, no-tabs, no-mixed-spaces-and-tabs, no-trailing-spaces */
-
 export const apiUrl = 'https://api.github.com/graphql';
 
 /**
@@ -19,7 +17,7 @@ export function getInfo(TOKEN, myData) {
 
     getRepositories(TOKEN, myData)
         .then(data => {
-            console.log(data);
+            // console.log(data);
             if (Array.isArray(data)) {
                 //
                 // data is ARRAY
@@ -240,11 +238,11 @@ function performRequest(TOKEN, queryBody, contentType) {
     }
     return fetch(apiUrl + '?access_token=' + TOKEN, graphqlOptions)
         .then(response => {
-            console.log(response);
+            // console.log(response);
             let contentType = response.headers.get('content-type')
             let accept = response.headers.get('accept')
 
-            console.log(contentType, accept);
+            // console.log(contentType, accept);
             // if (contentType.includes('application/json')) {
             //     return response.json()
             // }
@@ -257,7 +255,7 @@ function performRequest(TOKEN, queryBody, contentType) {
         })
         // .then(data => data.data)
         .then(data => {
-            console.log(data);
+            // console.log(data);
             return data.data;
         });
 }
