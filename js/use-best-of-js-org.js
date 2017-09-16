@@ -11,7 +11,7 @@ export function getInfo(myData) {
 
     var getProjects = function() {
         let projectsUrl = apiUrl + '/projects.json';
-        let projectsJSON = '/data/projects_bestofjs_version.json';
+        let projectsJSON = '/data/bestofjs_projects.json';
         let url = window.useUrl ? projectsUrl : projectsJSON;
 
         return fetch(url)
@@ -24,7 +24,7 @@ export function getInfo(myData) {
 
     var getHeroes = function() {
         let hofUrl = apiUrl + '/hof.json';
-        let hofJSON = '/data/hof_bestofjs_version.json';
+        let hofJSON = '/data/bestofjs_hof.json';
         let url = window.useUrl ? hofUrl : hofJSON;
 
         return fetch(url)

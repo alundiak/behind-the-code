@@ -8,22 +8,25 @@ export const apiUrl = 'https://api.github.com';
  * @param  myData {Array}
  * @return {Promise?}
  */
-export function getInfo(TOKEN, myData) {
+export function getInfo(TOKEN, myData, renderList) {
     myData.forEach(function(element) {
         // let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name + `&access_token=${TOKEN}`; // '&access_token=' doesn't work
         let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name;
         let strJSON = 'data/_' + element.name + '.json';
         let options = {
             headers: {
-                // For request to github api v3 go 2 requests: OPTIONS => GET ??? Again fetch vs. XHR issue?
-                'Content-Type': 'application/json',
-                // 'Content-Type': 'text/plain',
+                // 'Content-Type': 'application/json', // OPTIONS => GET
+                // 'Content-Type': 'text/plain', // doesn't matter. Anyway OPTIONS => GET
                 'Authorization': `token ${TOKEN}`
             }
         }
         fetch(window.useUrl ? strUrl : strJSON, options)
             .then(response => response.json())
-            .then(data => renderListRowv3(data));
+            .then(data => {
+                if (renderList){
+                    renderListRowv3(data)
+                }
+            });
     });
 }
 
@@ -54,7 +57,7 @@ export function renderListRowv3(data) {
     $('.list-group').append(li);
 }
 
-export function testApi(TOKEN) {
+export function apiTest1(TOKEN) {
     // 
     // https://developer.github.com/v3/
     //

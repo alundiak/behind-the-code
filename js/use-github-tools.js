@@ -2,24 +2,16 @@ import {renderListRowv3} from './use-github-v3.js'
     // import GitHub from '../bower_components/github-api/lib/GitHub.js'; // doesn't work in Chrome Canary
     // var GitHub = require('github-api'); // from node_modules (using NodeJS env or RequireJS)
 
-export function getInfo(TOKEN, myData) {
+export function getInfo(TOKEN, myData, renderList) {
     let gh = getGitHubInstance(TOKEN);
+    let clbck = function(err, data) {
+        if (renderList){
+            renderListRowv3(data);
+        }
+    }
     myData.forEach(function(element) {
-        let requestableObject = getUserRepos(gh, element.owner, element.name);
-        // Looks like using one more Promise level cause delay, and list records rednered in diff. seq.
-        // requestableObject.then(function(response) {
-        //     console.log(response);
-        //     renderListRowv3(response.data);
-        // });
+        let requestableObject = getUserRepos(gh, element.owner, element.name, clbck);
     });
-}
-
-export function testApiv3(TOKEN) {
-    var gh = getGitHubInstance(TOKEN);
-    // createGist(gh);
-    // getUserStarredRepos(gh);
-    // getUserNotifications(gh);
-    getUserRepos(gh, 'alundiak', 'behind-the-code');
 }
 
 function getGitHubInstance(TOKEN) {
@@ -31,16 +23,25 @@ function getGitHubInstance(TOKEN) {
         // username: 'alundiak',
         // password: 'TBD',
         // also acceptable:
-        token: TOKEN
+        token: TOKEN // will cause sending header: `Authorization: token ....TOKEN_VALUE`
+    });
+    // Note
+    // No matter if unauthenticated or basic auth or using TOEKN, GitHub Tools always sends 2 requests: OPTIONS + POST
+}
+
+export function apiTest1(TOKEN) {
+    var gh = getGitHubInstance(TOKEN);
+    // createGist(gh);
+    // getUserStarredRepos(gh);
+    // getUserNotifications(gh);
+    getUserRepos(gh, 'alundiak', 'behind-the-code', function(err, data) {
+        renderListRowv3(data);
     });
 }
 
-function getUserRepos(gh, user, repo) {
+function getUserRepos(gh, user, repo, callback) {
     var ghUserRepo = gh.getRepo(user, repo);
-    // can be passes callback function aka renderListRowv3*
-    return ghUserRepo.getDetails(function(err, data) {
-        renderListRowv3(data);
-    });
+    return ghUserRepo.getDetails(callback);
 }
 
 function createGist(gh) {

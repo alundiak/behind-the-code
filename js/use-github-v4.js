@@ -5,8 +5,8 @@ export const apiUrl = 'https://api.github.com/graphql';
  * @param  myData {Array}
  * @return {Promise?}
  */
-export function getInfo(TOKEN, myData) {
-    if (!TOKEN){
+export function getInfo(TOKEN, myData, renderList) {
+    if (!TOKEN) {
         return;
     }
     // First token was generated on GitHub settings page, Sep-02-2017, for mostly read-only access. 
@@ -17,7 +17,12 @@ export function getInfo(TOKEN, myData) {
 
     getRepositories(TOKEN, myData)
         .then(data => {
-            // console.log(data);
+            if (renderList === false) {
+                return;
+            }
+
+            data = conertToArrayAndSortByStars(data);
+
             if (Array.isArray(data)) {
                 //
                 // data is ARRAY
@@ -37,21 +42,49 @@ export function getInfo(TOKEN, myData) {
         });
 }
 
+function conertToArrayAndSortByStars(data) {
+    var arr = [];
+    for (let key in data) {
+        arr.push(data[key]);
+    }
+    arr.sort(function(a, b) {
+        if (a.stargazers.totalCount < b.stargazers.totalCount) {
+            return 1;
+        }
+        if (a.stargazers.totalCount > b.stargazers.totalCount) {
+            return -1;
+        }
+        return 0;
+    })
+
+    return arr;
+}
+
 function renderListRowv4(data) {
-    let str = `<a href="${data.url}" target="_blank">${data.name}</a> <span>owned by ${data.owner.login} (${data.owner.__typename}) 
-        and has </span>
-        <span class="badge badge-primary badge-pill">${data.stargazers.totalCount}</span> stars,  
-        <span class="badge badge-primary badge-pill">${data.watchers.totalCount}</span> watchers, 
-        <span class="badge badge-primary badge-pill">${data.forks.totalCount}</span> forks. 
+    let str = `<span>
+        <a href="${data.url}" target="_blank">${data.name}</a> owned by ${data.owner.login} (${data.owner.__typename}). 
         Created ${moment(data.createdAt).format('YYYY/MM/DD')}, 
         Pushed ${moment(data.pushedAt).format('YYYY/MM/DD')}, 
-        Updated: ${moment(data.updatedAt).format('YYYY/MM/DD')}`;
+        Updated: ${moment(data.updatedAt).format('YYYY/MM/DD')}
+        </span>
+
+        <span>
+        Watchers: <span class="badge badge-secondary badge-pill">${data.watchers.totalCount}</span>
+        </span>
+
+        <span>
+        Forks: <span class="badge badge-secondary badge-pill">${data.forks.totalCount}</span> 
+        </span>
+        
+        <span>
+        Stars: <span class="badge badge-primary badge-pill">${data.stargazers.totalCount}</span>
+        </span>`;
 
     let li = $('<li class="list-group-item d-flex justify-content-between align-items-center">').html(str);
     $('.list-group').append(li);
 }
 
-export function testApi1(TOKEN) {
+export function apiTest1(TOKEN) {
     let queryObject = {
         query: `{
           repositoryOwner(login: "alundiak") {
@@ -113,12 +146,12 @@ export function testApi1(TOKEN) {
         });
 }
 
-export function testApi2(TOKEN) {
+export function apiTest2(TOKEN) {
     // getRepositoryInfoByOwnerAndName(TOKEN, 'facebook','react');
     getRepositoryInfoByOwnerAndName(TOKEN, 'vuejs', 'vue');
 }
 
-export function testApi3(TOKEN) {
+export function apiTest3(TOKEN) {
     let queryBody = `
         {
             repository(owner: "facebook", name: "react") {
@@ -130,30 +163,16 @@ export function testApi3(TOKEN) {
     let queryObject = {
         query: queryBody
     };
-    
-    var xhr = new window.XMLHttpRequest();
-    xhr.responseType = 'json';
-    xhr.open('POST', apiUrl + '?access_token=' + TOKEN);
-    // If we provide Content-Type then we have OPTIONS (204) + POST (200) requests. If no content type, just POST (200)
-    // xhr.setRequestHeader('Content-Type', 'application/json');
-    // xhr.setRequestHeader('Content-Type', 'application/graphql');
-    // 
-    // xhr.setRequestHeader('Accept', 'application/json'); // not yet sure why this needed
-    xhr.onload = function() {
-        console.log(xhr.response.data);
-    }
 
-    xhr.send(JSON.stringify(queryObject)); // works well with all Content-Types
-    // xhr.send(JSON.stringify(queryBody)); // doesn't work with any Content-Type
-    // xhr.send({query: queryBody});  // doesn't work with any Content-Type
-    // xhr.send(queryBody); // doesn't work with any Content-Type
-    
-    let promise = performRequest(TOKEN, queryBody);
+    // performAjaxRequest(TOKEN, queryBody);
+    // performRequestOnlyOne(TOKEN, queryBody);
+
+    // let promise = performRequest(TOKEN, queryBody);
     // promise.onload = function(a){
     //     console.log('TODO - check request performance', a);
     // }
-    // performRequest(TOKEN, queryBody,'json'); // doesn't work with Fetch API
-    // performRequest(TOKEN, queryBody, 'graphql');
+    // performRequest(TOKEN, queryBody,'json'); // 
+    performRequest(TOKEN, queryBody, 'graphql'); // doesn't work with GitHub, still require JSON.stringify()
 }
 
 function getRepositoryInfoByOwnerAndName(TOKEN, owner, name) {
@@ -179,9 +198,9 @@ function getRepositoryInfoByOwnerAndName(TOKEN, owner, name) {
  *
  * @example - basic example using fragment and repository() aggregation - see idl/query2.idl
  * 
- * @param  {[type]} TOKEN  [description]
- * @param  {[type]} myData [description]
- * @return {[type]}        [description]
+ * @param  {[String]} TOKEN  [description]
+ * @param  {[Array]} myData [description]
+ * @return {[Promise]}        [description]
  */
 function getRepositories(TOKEN, myData) {
     let fragmentString = `
@@ -229,32 +248,37 @@ function getRepositories(TOKEN, myData) {
 
     let queryBody = fragmentString + queryString;
 
-    // return performRequest(TOKEN, queryBody);
+    // return performRequest(TOKEN, queryBody); // 401 Error: "This endpoint requires you to be authenticated."
     return performRequest(TOKEN, queryBody, 'json');
+    // return performRequestOnlyOne(TOKEN, queryBody);
 }
 
+/**
+ * With applying options.headers, it goes plain/text, and as result OPTIONS => POST 2 requests.
+ * 
+ * @param  {[type]} TOKEN       [description]
+ * @param  {[type]} queryBody   [description]
+ * @param  {[type]} contentType [description]
+ * @return {[type]}             [description]
+ */
 function performRequest(TOKEN, queryBody, contentType) {
     let graphqlOptions = prepareGraphqlOptions(queryBody, contentType, TOKEN);
     if (!graphqlOptions || !TOKEN) {
         return;
     }
-    // return fetch(apiUrl + '?access_token=' + TOKEN, graphqlOptions) // works also, and if no options => POST request only
-    return fetch(apiUrl, graphqlOptions) // with applying options.headers, it goes plain/text, and as result OPTIONS +> POST 2 requests.
+    return fetch(apiUrl, graphqlOptions)
         .then(response => {
-            // console.log(response);
-            let contentType = response.headers.get('content-type')
-            let accept = response.headers.get('accept')
-
-            // console.log(contentType, accept);
+            // let contentType = response.headers.get('content-type')
+            // let accept = response.headers.get('accept')
             // if (contentType.includes('application/json')) {
             //     return response.json()
             // }
-            if (response.ok){
-                return response.json();    
+            if (response.ok) {
+                return response.json();
             } else {
                 return 'ERROR';
             }
-            
+
         })
         // .then(data => data.data)
         .then(data => {
@@ -263,7 +287,71 @@ function performRequest(TOKEN, queryBody, contentType) {
         });
 }
 
-function prepareGraphqlOptions(queryBody, type, TOKEN) {
+/**
+ * If we want to have only one POST request, we need to fetch URL with param `access_token`
+ * If during fetch, no options.headers then yes - POST request only one.
+ * 
+ * @param  {[type]} TOKEN       [description]
+ * @param  {[type]} queryBody   [description]
+ * @param  {[type]} contentType [description]
+ * @return {[type]}             [description]
+ */
+function performRequestOnlyOne(TOKEN, queryBody, contentType) {
+    let graphqlOptions = prepareGraphqlOptions(queryBody, contentType, TOKEN);
+    if (!graphqlOptions || !TOKEN) {
+        return;
+    }
+    return fetch(apiUrl + '?access_token=' + TOKEN, graphqlOptions)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return 'ERROR';
+            }
+
+        })
+        .then(data => {
+            return data.data;
+        });
+}
+
+/**
+ * [performAjaxRequest description]
+ * @param  {[type]} TOKEN     [description]
+ * @param  {[type]} queryBody [description]
+ * @return {[type]}           [description]
+ */
+function performAjaxRequest(TOKEN, queryBody) {
+    var xhr = new window.XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open('POST', apiUrl + '?access_token=' + TOKEN);
+    // If we provide Content-Type then we have OPTIONS (204) + POST (200) requests. If no content type, just POST (200)
+    // xhr.setRequestHeader('Content-Type', 'application/json');
+    // xhr.setRequestHeader('Content-Type', 'application/graphql');
+    // 
+    // xhr.setRequestHeader('Accept', 'application/json'); // not yet sure why this needed
+    xhr.onload = function() {
+        console.log(xhr.response.data);
+    }
+
+    let queryObject = {
+        query: queryBody
+    }
+
+    xhr.send(JSON.stringify(queryObject)); // works well with all Content-Types
+    // xhr.send(JSON.stringify(queryBody)); // doesn't work with any Content-Type
+    // xhr.send({query: queryBody});  // doesn't work with any Content-Type
+    // xhr.send(queryBody); // doesn't work with any Content-Type
+}
+
+/**
+ * [prepareGraphqlOptions description]
+ * @param  {[type]} queryBody   [description]
+ * @param  {[type]} contentType [description]
+ * @param  {[type]} TOKEN       [description]
+ * @return {[type]}             [description]
+ */
+function prepareGraphqlOptions(queryBody, contentType, TOKEN) {
     if (!queryBody) {
         return;
     }
@@ -276,23 +364,26 @@ function prepareGraphqlOptions(queryBody, type, TOKEN) {
         method: 'post'
     };
 
-    if (type === 'json') {
+    if (contentType === 'json') {
         options.headers = {
             // 'Accept': 'application/json', // looks no effect
             'Authorization': `token ${TOKEN}`,
             'Content-Type': 'application/json'
         };
         options.body = JSON.stringify(queryObject);
-    } else if (type === 'graphql') {
+    } else if (contentType === 'graphql') {
         options.headers = {
             // 'Accept': 'application/json', // looks no effect
             'Authorization': `token ${TOKEN}`,
             'Content-Type': 'application/graphql' // not sure if it works. As far as I tested - nothing changed.
         };
         options.body = JSON.stringify(queryObject); // Based on xhr example, should be stringified object with "query"
-        // options.body = JSON.stringify(queryBody);
-        // options.body = queryBody // will cause parse error
+        // options.body = JSON.stringify(queryBody); // will cause parse error "Problems parsing JSON"
+        // options.body = queryBody // will cause parse error "Problems parsing JSON"
     } else {
+        // options.headers = {
+        //     'Authorization': `token ${TOKEN}`
+        // };
         options.body = JSON.stringify(queryObject);
     }
 

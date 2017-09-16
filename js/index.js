@@ -17,6 +17,7 @@ import * as gitHubApi4 from './use-github-v4.js';
     'use strict';
 
     var cachedToken, cashedRepoData;
+    var renderList = true;
 
     dataPromises.getMyData.then(repoData => {
         cashedRepoData = repoData;
@@ -30,15 +31,15 @@ import * as gitHubApi4 from './use-github-v4.js';
 
             cachedToken = token;
 
-            // gitHubApi3.testApi(token);
+            // gitHubApi3.apiTest1(token);
             // gitHubApi3.getInfo(token, repoData);
 
-            // gitHubTools.testApiv3(token);
+            // gitHubTools.apiTest1(token);
             // gitHubTools.getInfo(token, repoData);
 
-            // gitHubApi4.testApi1(token);
-            // gitHubApi4.testApi2(token);
-            // gitHubApi4.testApi3(token);
+            // gitHubApi4.apiTest1(token);
+            // gitHubApi4.apiTest2(token);
+            // gitHubApi4.apiTest3(token);
             gitHubApi4.getInfo(token, repoData);
         });
 
@@ -60,18 +61,22 @@ import * as gitHubApi4 from './use-github-v4.js';
 
         switch (value) {
             case 'githubApiv3':
-                gitHubApi3.getInfo(cachedToken, cashedRepoData);
+                gitHubApi3.getInfo(cachedToken, cashedRepoData, renderList);
                 break;
 
             case 'githubApiv3_wrapper':
-                gitHubTools.getInfo(cachedToken, cashedRepoData);
+                gitHubTools.getInfo(cachedToken, cashedRepoData, renderList);
                 break;
 
             case 'githubApiv4':
             case 'default':
-                gitHubApi4.getInfo(cachedToken, cashedRepoData);
+                gitHubApi4.getInfo(cachedToken, cashedRepoData, renderList);
                 break;
         }
     }
+
+    $('#disableRendering').on('change', function(e) {
+        renderList = !this.checked;
+    });
 
 }());
