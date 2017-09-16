@@ -1,4 +1,5 @@
 [{
+
     "owner": "jquery",
     "name": "jquery"
 }, {
@@ -38,12 +39,24 @@
     "owner": "jasmine",
     "name": "jasmine"
 }, {
-    "owner": "jspm",
-    "name": "jspm-cli"
-}, {
     "owner": "gulpjs",
     "name": "gulp"
 }, {
     "owner": "gruntjs",
     "name": "grunt"
+}, {
+    "owner": "meteor",
+    "name": "meteor"
+}, {
+    "owner": "VulcanJS",
+    "name": "Vulcan"
+}, {
+    "owner": "webpack",
+    "name": "webpack"
+}, {
+    "owner": "rollup",
+    "name": "rollup"
+}, {
+    "owner": "developit",
+    "name": "preact"
 }]

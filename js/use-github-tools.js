@@ -1,6 +1,6 @@
-import {renderListv3} from './use-github-v3.js'
-// import GitHub from '../bower_components/github-api/lib/GitHub.js'; // doesn't work in Chrome Canary
-// var GitHub = require('github-api'); // from node_modules (using NodeJS env or RequireJS)
+import {renderListRowv3} from './use-github-v3.js'
+    // import GitHub from '../bower_components/github-api/lib/GitHub.js'; // doesn't work in Chrome Canary
+    // var GitHub = require('github-api'); // from node_modules (using NodeJS env or RequireJS)
 
 export function getInfo(TOKEN, myData) {
     let gh = getGitHubInstance(TOKEN);
@@ -9,7 +9,7 @@ export function getInfo(TOKEN, myData) {
         // Looks like using one more Promise level cause delay, and list records rednered in diff. seq.
         // requestableObject.then(function(response) {
         //     console.log(response);
-        //     renderListv3(response.data);
+        //     renderListRowv3(response.data);
         // });
     });
 }
@@ -37,9 +37,9 @@ function getGitHubInstance(TOKEN) {
 
 function getUserRepos(gh, user, repo) {
     var ghUserRepo = gh.getRepo(user, repo);
-    // can be passes callback function aka renderListv3*
-    return ghUserRepo.getDetails(function(err, data){
-        renderListv3(data);
+    // can be passes callback function aka renderListRowv3*
+    return ghUserRepo.getDetails(function(err, data) {
+        renderListRowv3(data);
     });
 }
 

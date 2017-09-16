@@ -5,7 +5,7 @@
 // 
 // export default function() {
 
-simplePerf();
+// simplePerf();
 // testPerf1();
 
 // loadResTimData();    
@@ -114,7 +114,7 @@ function measurePerf() {
 // again 2012 year, why performance was discussed at that only time?
 //
 window.addEventListener("load", function() { // TODO
-    console.log('load event');
+    // console.log('load event');
     setTimeout(function() {
         var timing = window.performance.timing;
         var userTime = timing.loadEventEnd - timing.navigationStart;
@@ -124,6 +124,6 @@ window.addEventListener("load", function() { // TODO
         var fetchTime = timing.responseEnd - timing.fetchStart;
 
         // use timing data
-        console.log(timing, userTime, dns, connection, requestTime, fetchTime);
+        // console.log(timing, userTime, dns, connection, requestTime, fetchTime);
     }, 0);
 }, false);

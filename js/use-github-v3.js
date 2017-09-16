@@ -10,23 +10,24 @@ export const apiUrl = 'https://api.github.com';
  */
 export function getInfo(TOKEN, myData) {
     myData.forEach(function(element) {
-        let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name; // '&access_token=' doesn't work
+        // let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name + `&access_token=${TOKEN}`; // '&access_token=' doesn't work
+        let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name;
         let strJSON = 'data/_' + element.name + '.json';
         let options = {
             headers: {
-                // For request to github api v3 go 2 requests: OPTIOSN => GET ??? Again fetch vs. XHR issue?
-                // 'Content-Type': 'application/json',
+                // For request to github api v3 go 2 requests: OPTIONS => GET ??? Again fetch vs. XHR issue?
+                'Content-Type': 'application/json',
                 // 'Content-Type': 'text/plain',
                 'Authorization': `token ${TOKEN}`
             }
         }
         fetch(window.useUrl ? strUrl : strJSON, options)
             .then(response => response.json())
-            .then(data => renderListv3(data));
+            .then(data => renderListRowv3(data));
     });
 }
 
-export function renderListv3(data) {
+export function renderListRowv3(data) {
     var m = {
         fullName: data.full_name,
         name: data.name,

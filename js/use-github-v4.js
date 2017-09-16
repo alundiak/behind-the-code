@@ -23,7 +23,7 @@ export function getInfo(TOKEN, myData) {
                 // data is ARRAY
                 // 
                 data.forEach(function(repo) {
-                    renderList(repo);
+                    renderListRowv4(repo);
                 });
             } else {
                 //
@@ -31,13 +31,13 @@ export function getInfo(TOKEN, myData) {
                 // 
                 // for...in for enumerable objects. Return indexes.
                 for (let key in data) {
-                    renderList(data[key])
+                    renderListRowv4(data[key])
                 }
             }
         });
 }
 
-function renderList(data) {
+function renderListRowv4(data) {
     let str = `<a href="${data.url}" target="_blank">${data.name}</a> <span>owned by ${data.owner.login} (${data.owner.__typename}) 
         and has </span>
         <span class="badge badge-primary badge-pill">${data.stargazers.totalCount}</span> stars,  
@@ -222,22 +222,24 @@ function getRepositories(TOKEN, myData) {
     });
 
     let queryString = `
-        query {
+        {
             ${strings.join('\n')}
         }
     `;
 
     let queryBody = fragmentString + queryString;
 
-    return performRequest(TOKEN, queryBody);
+    // return performRequest(TOKEN, queryBody);
+    return performRequest(TOKEN, queryBody, 'json');
 }
 
 function performRequest(TOKEN, queryBody, contentType) {
-    let graphqlOptions = prepareGraphqlOptions(queryBody, contentType);
+    let graphqlOptions = prepareGraphqlOptions(queryBody, contentType, TOKEN);
     if (!graphqlOptions || !TOKEN) {
         return;
     }
-    return fetch(apiUrl + '?access_token=' + TOKEN, graphqlOptions)
+    // return fetch(apiUrl + '?access_token=' + TOKEN, graphqlOptions) // works also, and if no options => POST request only
+    return fetch(apiUrl, graphqlOptions) // with applying options.headers, it goes plain/text, and as result OPTIONS +> POST 2 requests.
         .then(response => {
             // console.log(response);
             let contentType = response.headers.get('content-type')
@@ -261,7 +263,7 @@ function performRequest(TOKEN, queryBody, contentType) {
         });
 }
 
-function prepareGraphqlOptions(queryBody, type) {
+function prepareGraphqlOptions(queryBody, type, TOKEN) {
     if (!queryBody) {
         return;
     }
@@ -277,16 +279,18 @@ function prepareGraphqlOptions(queryBody, type) {
     if (type === 'json') {
         options.headers = {
             // 'Accept': 'application/json', // looks no effect
+            'Authorization': `token ${TOKEN}`,
             'Content-Type': 'application/json'
         };
         options.body = JSON.stringify(queryObject);
     } else if (type === 'graphql') {
         options.headers = {
             // 'Accept': 'application/json', // looks no effect
-            'Content-Type': 'application/graphql'
+            'Authorization': `token ${TOKEN}`,
+            'Content-Type': 'application/graphql' // not sure if it works. As far as I tested - nothing changed.
         };
-        // options.body = JSON.stringify(queryBody);
         options.body = JSON.stringify(queryObject); // Based on xhr example, should be stringified object with "query"
+        // options.body = JSON.stringify(queryBody);
         // options.body = queryBody // will cause parse error
     } else {
         options.body = JSON.stringify(queryObject);
