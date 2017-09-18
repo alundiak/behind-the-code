@@ -34,9 +34,10 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 
 ## Notes / Conclusions / Lessons Learned
 - HTML imports works, but JS files are loaded later, than simple HTML inside inside of main index.html file. Sometimes MomentJS is not yet available.
-- When `options.headers` provided for Fetch API it does send OPTIONS and then POST request. Simple XmlHttprequest goes only one POST.
+- Preflighted Requests. When `options.headers` provided for Fetch API it does send OPTIONS and then POST request. Simple XmlHttprequest goes only one POST.
 - GraphQL is the winner for sure. Using simple Fetch calls to GitHub API v3 is ok, but to much request. And using github-api with Requestable is the slowest.
 - Twitter Bootstrap `v4.0.0-beta` is not stable enough - there are at least UI issues with list-group. Sep-05-2017 they dropped bower support. npm module `bootstrap` is ok (contains js, css and scss). But there is also unverified `bootstrap-css` which contains css files but also scss file pointing to `../node_modules/bootstrap/scss` folder. Odd. 
+- HTML `<template>` still not supported by IE and partially supported by Edge. Chrome+, Firefox+.
 
 
 ## TODO
@@ -51,6 +52,7 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - https://githubengineering.com/the-github-graphql-api/ (since Sep-2016)
 - https://www.digitalocean.com/community/questions/what-is-the-difference-between-an-api-token-and-a-personal-token
 - http://graphql.org/learn/serving-over-http/
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
 - https://github.com/graphql/express-graphql/issues/14 - Express GraphQL and CORS discussion
 - https://github.com/github-tools/github/issues/392#issuecomment-328295155 - Discussion about errors with importing github-api
 - https://github.com/twbs/bootstrap/issues/23557
@@ -64,6 +66,8 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - http://visjs.org/index.html#download_install
 - http://visjs.org/timeline_examples.html
 - http://visjs.org/examples/timeline/other/verticalScroll.html
+- https://www.html5rocks.com/en/tutorials/webcomponents/template/
+- http://blog.teamtreehouse.com/creating-reusable-markup-with-the-html-template-element
 
 
 ## Credits / Thanks to

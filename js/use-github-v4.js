@@ -27,9 +27,12 @@ export function getInfo(TOKEN, myData, renderList) {
                 //
                 // data is ARRAY
                 // 
-                data.forEach(function(repo) {
-                    renderListRowv4(repo);
-                });
+
+                // data.forEach(function(repo) {
+                //     renderListRowv4(repo);
+                // });
+
+                renderListWithTemplate(data);
             } else {
                 //
                 // data is OBJECT
@@ -60,6 +63,7 @@ function conertToArrayAndSortByStars(data) {
     return arr;
 }
 
+// TODO rework in more template-way
 function renderListRowv4(data) {
     let str = `<span>
         <a href="${data.url}" target="_blank">${data.name}</a> owned by ${data.owner.login} (${data.owner.__typename}). 
@@ -82,6 +86,42 @@ function renderListRowv4(data) {
 
     let li = $('<li class="list-group-item d-flex justify-content-between align-items-center">').html(str);
     $('.list-group').append(li);
+}
+
+function renderListWithTemplate(data) {
+    var listGroupTemplate = document.getElementById('listGroupTemplate');
+    if (!listGroupTemplate) {
+        return;
+    }
+
+    for (var i = 0; i < data.length; i++) {
+        var repoRecord = data[i];
+
+        let str = `<span>
+        <a href="${repoRecord.url}" target="_blank">${repoRecord.name}</a> owned by ${repoRecord.owner.login} (${repoRecord.owner.__typename}). 
+        Created ${moment(repoRecord.createdAt).format('YYYY/MM/DD')}, 
+        Pushed ${moment(repoRecord.pushedAt).format('YYYY/MM/DD')}, 
+        Updated: ${moment(repoRecord.updatedAt).format('YYYY/MM/DD')}
+        </span>
+
+        <span>
+        Watchers: <span class="badge badge-secondary badge-pill">${repoRecord.watchers.totalCount}</span>
+        </span>
+
+        <span>
+        Forks: <span class="badge badge-secondary badge-pill">${repoRecord.forks.totalCount}</span> 
+        </span>
+        
+        <span>
+        Stars: <span class="badge badge-primary badge-pill">${repoRecord.stargazers.totalCount}</span>
+        </span>`;
+
+        var tmpl = listGroupTemplate.content.cloneNode(true);
+        tmpl.querySelector('li').innerHTML = str;
+
+        $('.list-group').append(tmpl);
+    }
+
 }
 
 export function apiTest1(TOKEN) {
@@ -250,7 +290,7 @@ function getRepositories(TOKEN, myData) {
 
     // return performRequest(TOKEN, queryBody); // 401 Error: "This endpoint requires you to be authenticated."
     return performRequest(TOKEN, queryBody, 'json');
-    // return performRequestOnlyOne(TOKEN, queryBody);
+    // return performRequestOnlyOne(TOKEN, queryBody); // Sends only one POST request
 }
 
 /**
