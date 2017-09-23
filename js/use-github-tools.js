@@ -11,6 +11,7 @@ export function getInfo(TOKEN, myData, renderList) {
     }
     myData.forEach(function(element) {
         let requestableObject = getUserRepos(gh, element.owner, element.name, clbck);
+        // and yes, requestableObject is instanceof Promise.
     });
 }
 

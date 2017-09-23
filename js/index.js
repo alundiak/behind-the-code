@@ -13,37 +13,29 @@ import * as gitHubApi4 from './use-github-v4.js';
 // import bootstrap from './node_modules/bootstrap/dist/js/bootstrap.js';
 // console.log(bootstrap);
 
-(function() {
+(async function() {
     'use strict';
 
-    var cachedToken, cashedRepoData;
     var renderList = true;
+    const repoData = await dataPromises.getMyData; // in fact it's just Promise
 
-    dataPromises.getMyData.then(repoData => {
-        cashedRepoData = repoData;
+    // bestOfJsApi.getInfo(repoData);
 
-        // bestOfJsApi.getInfo(repoData);
+    const token = await dataPromises.getMyToken; // also Promise
+    if (!token) {
+        return;
+    }
 
-        dataPromises.getMyToken.then(token => {
-            if (!token) {
-                return;
-            }
+    // gitHubApi3.apiTest1(token);
+    // gitHubApi3.getInfo(token, repoData, renderList);
 
-            cachedToken = token;
+    // gitHubTools.apiTest1(token);
+    // gitHubTools.getInfo(token, repoData, renderList);
 
-            // gitHubApi3.apiTest1(token);
-            // gitHubApi3.getInfo(token, repoData);
-
-            // gitHubTools.apiTest1(token);
-            // gitHubTools.getInfo(token, repoData);
-
-            // gitHubApi4.apiTest1(token);
-            // gitHubApi4.apiTest2(token);
-            // gitHubApi4.apiTest3(token);
-            gitHubApi4.getInfo(token, repoData);
-        });
-
-    });
+    // gitHubApi4.apiTest1(token);
+    // gitHubApi4.apiTest2(token);
+    // gitHubApi4.apiTest3(token);
+    gitHubApi4.getInfo(token, repoData, renderList);
 
     $('.dropdown-menu').delegate('a', 'click', function(e) {
         let value = $(e.target).data('value');
@@ -53,7 +45,7 @@ import * as gitHubApi4 from './use-github-v4.js';
     });
 
     function switchApproach(value) {
-        if (!cachedToken || !cashedRepoData) {
+        if (!token || !repoData) {
             return;
         }
 
@@ -61,16 +53,16 @@ import * as gitHubApi4 from './use-github-v4.js';
 
         switch (value) {
             case 'githubApiv3':
-                gitHubApi3.getInfo(cachedToken, cashedRepoData, renderList);
+                gitHubApi3.getInfo(token, repoData, renderList);
                 break;
 
             case 'githubApiv3_wrapper':
-                gitHubTools.getInfo(cachedToken, cashedRepoData, renderList);
+                gitHubTools.getInfo(token, repoData, renderList);
                 break;
 
             case 'githubApiv4':
             case 'default':
-                gitHubApi4.getInfo(cachedToken, cashedRepoData, renderList);
+                gitHubApi4.getInfo(token, repoData, renderList);
                 break;
         }
     }

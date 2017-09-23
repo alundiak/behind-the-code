@@ -3,46 +3,28 @@ export const apiUrl = 'https://api.github.com/graphql';
 /**
  * @param  TOKEN {String}
  * @param  myData {Array}
+ * @param  renderList {Boolean}
  * @return {Promise?}
  */
-export function getInfo(TOKEN, myData, renderList) {
-    if (!TOKEN) {
-        return;
-    }
+export async function getInfo(TOKEN, myData, renderList) {
     // First token was generated on GitHub settings page, Sep-02-2017, for mostly read-only access. 
     // I added it to js file content, and committed to repo.
     // Then I received email, about warning, that it's not ok.
     // So I regenerated token, and this time, put it into local, but hidden/ignored file 'token.json'
     // And when I need to use GitHub API v4, I use GET to fetch the token. Not yet sure if it's also incorrect from GitHub pov.
+    if (!TOKEN) {
+        return;
+    }
 
-    getRepositories(TOKEN, myData)
-        .then(data => {
-            if (renderList === false) {
-                return;
-            }
+    let queryBody = createRepositoriesQueryBody(myData);
+    const repos = await performRequest(TOKEN, queryBody, 'json'); // here it's function call, with returning Promise
+    // const repos = performRequest(TOKEN, queryBody); // 401 Error: "This endpoint requires you to be authenticated."
+    // const repos = performRequestOnlyOne(TOKEN, queryBody); // Sends only one POST request
 
-            data = conertToArrayAndSortByStars(data);
-
-            if (Array.isArray(data)) {
-                //
-                // data is ARRAY
-                // 
-
-                // data.forEach(function(repo) {
-                //     renderListRowv4(repo);
-                // });
-
-                renderListWithTemplate(data);
-            } else {
-                //
-                // data is OBJECT
-                // 
-                // for...in for enumerable objects. Return indexes.
-                for (let key in data) {
-                    renderListRowv4(data[key])
-                }
-            }
-        });
+    let data = conertToArrayAndSortByStars(repos);
+    if (renderList) {
+        renderListWithTemplate(data);
+    }
 }
 
 function conertToArrayAndSortByStars(data) {
@@ -61,31 +43,6 @@ function conertToArrayAndSortByStars(data) {
     })
 
     return arr;
-}
-
-// TODO rework in more template-way
-function renderListRowv4(data) {
-    let str = `<span>
-        <a href="${data.url}" target="_blank">${data.name}</a> owned by ${data.owner.login} (${data.owner.__typename}). 
-        Created ${moment(data.createdAt).format('YYYY/MM/DD')}, 
-        Pushed ${moment(data.pushedAt).format('YYYY/MM/DD')}, 
-        Updated: ${moment(data.updatedAt).format('YYYY/MM/DD')}
-        </span>
-
-        <span>
-        Watchers: <span class="badge badge-secondary badge-pill">${data.watchers.totalCount}</span>
-        </span>
-
-        <span>
-        Forks: <span class="badge badge-secondary badge-pill">${data.forks.totalCount}</span> 
-        </span>
-        
-        <span>
-        Stars: <span class="badge badge-primary badge-pill">${data.stargazers.totalCount}</span>
-        </span>`;
-
-    let li = $('<li class="list-group-item d-flex justify-content-between align-items-center">').html(str);
-    $('.list-group').append(li);
 }
 
 function renderListWithTemplate(data) {
@@ -121,128 +78,17 @@ function renderListWithTemplate(data) {
 
         $('.list-group').append(tmpl);
     }
-
-}
-
-export function apiTest1(TOKEN) {
-    let queryObject = {
-        query: `{
-          repositoryOwner(login: "alundiak") {
-            repositories(first: 30) {
-              edges {
-                org: node {
-                  name
-                }
-              }
-            }
-          }
-        }`
-    };
-
-    // after stringifying
-    // {
-    //     "query": "{\n\t\t  repositoryOwner(login: \"alundiak\") {\n\t\t    repositories(first: 30) {\n\t\t      edges {\n\t\t       
-    //      org: node {\n\t\t          name\n\t\t        }\n\t\t      }\n\t\t    }\n\t\t  }\n\t\t}"
-    // }
-
-    let graphqlString = `
-    {
-        repositoryOwner(login: "alundiak") {
-            repositories(first: 30) {
-                edges {
-                    org: node {
-                        name
-                    }
-                }
-            }
-        }
-    }
-    `;
-
-    // for curl: " \
-    // { \
-    // \"query\": \"query { viewer { login }}\" \
-    // } \
-    // ";
-
-    let options = {
-        method: 'post',
-        _headers: {
-            // 'Content-Type': 'application/json'
-            'Content-Type': 'application/graphql'
-        },
-        body: JSON.stringify(queryObject)
-
-        // body: graphqlString
-        // body: escape(graphqlString)
-        // body: encodeURI(graphqlString)
-        // body: JSON.stringify(graphqlString)
-    }
-
-    fetch(apiUrl + '?access_token=' + TOKEN, options)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        });
-}
-
-export function apiTest2(TOKEN) {
-    // getRepositoryInfoByOwnerAndName(TOKEN, 'facebook','react');
-    getRepositoryInfoByOwnerAndName(TOKEN, 'vuejs', 'vue');
-}
-
-export function apiTest3(TOKEN) {
-    let queryBody = `
-        {
-            repository(owner: "facebook", name: "react") {
-                name
-            }
-        }
-    `;
-
-    let queryObject = {
-        query: queryBody
-    };
-
-    // performAjaxRequest(TOKEN, queryBody);
-    // performRequestOnlyOne(TOKEN, queryBody);
-
-    // let promise = performRequest(TOKEN, queryBody);
-    // promise.onload = function(a){
-    //     console.log('TODO - check request performance', a);
-    // }
-    // performRequest(TOKEN, queryBody,'json'); // 
-    performRequest(TOKEN, queryBody, 'graphql'); // doesn't work with GitHub, still require JSON.stringify()
-}
-
-function getRepositoryInfoByOwnerAndName(TOKEN, owner, name) {
-    let queryBody1 = `{
-       repository(owner: "${owner}", name: "${name}") {
-           name
-           nameWithOwner
-           description
-           createdAt
-           updatedAt
-           isFork
-       }
-   }`;
-
-    return performRequest(TOKEN, queryBody1).then(data => {
-        // console.log(data.repository);
-        return data.repository;
-    })
 }
 
 /**
- * [getRepositories description]
+ * [createRepositoriesQueryBody description]
  *
  * @example - basic example using fragment and repository() aggregation - see idl/query2.idl
  * 
- * @param  {[String]} TOKEN  [description]
  * @param  {[Array]} myData [description]
- * @return {[Promise]}        [description]
+ * @return {[String]}       [description]
  */
-function getRepositories(TOKEN, myData) {
+function createRepositoriesQueryBody(myData) {
     let fragmentString = `
         fragment repositoryFragment on Repository {
             name
@@ -288,9 +134,7 @@ function getRepositories(TOKEN, myData) {
 
     let queryBody = fragmentString + queryString;
 
-    // return performRequest(TOKEN, queryBody); // 401 Error: "This endpoint requires you to be authenticated."
-    return performRequest(TOKEN, queryBody, 'json');
-    // return performRequestOnlyOne(TOKEN, queryBody); // Sends only one POST request
+    return queryBody;
 }
 
 /**
@@ -445,5 +289,118 @@ function prepareGraphqlOptions(queryBody, contentType, TOKEN) {
     */
 }
 
+//
+// Test Helpers functions
+//
+
+export function apiTest1(TOKEN) {
+    let queryObject = {
+        query: `{
+          repositoryOwner(login: "alundiak") {
+            repositories(first: 30) {
+              edges {
+                org: node {
+                  name
+                }
+              }
+            }
+          }
+        }`
+    };
+
+    // after stringifying
+    // {
+    //     "query": "{\n\t\t  repositoryOwner(login: \"alundiak\") {\n\t\t    repositories(first: 30) {\n\t\t      edges {\n\t\t       
+    //      org: node {\n\t\t          name\n\t\t        }\n\t\t      }\n\t\t    }\n\t\t  }\n\t\t}"
+    // }
+
+    let graphqlString = `
+    {
+        repositoryOwner(login: "alundiak") {
+            repositories(first: 30) {
+                edges {
+                    org: node {
+                        name
+                    }
+                }
+            }
+        }
+    }
+    `;
+
+    // for curl: " \
+    // { \
+    // \"query\": \"query { viewer { login }}\" \
+    // } \
+    // ";
+
+    let options = {
+        method: 'post',
+        _headers: {
+            // 'Content-Type': 'application/json'
+            'Content-Type': 'application/graphql'
+        },
+        body: JSON.stringify(queryObject)
+
+        // body: graphqlString
+        // body: escape(graphqlString)
+        // body: encodeURI(graphqlString)
+        // body: JSON.stringify(graphqlString)
+    }
+
+    fetch(apiUrl + '?access_token=' + TOKEN, options)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        });
+}
+
+function getRepositoryInfoByOwnerAndName(TOKEN, owner, name) {
+    let queryBody = `{
+       repository(owner: "${owner}", name: "${name}") {
+           name
+           nameWithOwner
+           description
+           createdAt
+           updatedAt
+           isFork
+       }
+   }`;
+
+    return performRequest(TOKEN, queryBody, 'json').then(data => {
+        return data.repository;
+    })
+}
+
+export async function apiTest2(TOKEN) {
+    // getRepositoryInfoByOwnerAndName(TOKEN, 'facebook','react');
+    let response = await getRepositoryInfoByOwnerAndName(TOKEN, 'vuejs', 'vue');
+    console.log(response);
+}
+
+export async function apiTest3(TOKEN) {
+    let queryBody = `
+        {
+            repository(owner: "facebook", name: "react") {
+                name
+            }
+        }
+    `;
+
+    let queryObject = {
+        query: queryBody
+    };
+
+    // performAjaxRequest(TOKEN, queryBody);
+    // performRequestOnlyOne(TOKEN, queryBody);
+
+    // let promise = performRequest(TOKEN, queryBody);
+    // promise.onload = function(a){
+    //     console.log('TODO - check request performance', a);
+    // }
+    // performRequest(TOKEN, queryBody,'json'); // 
+    let response = await performRequest(TOKEN, queryBody, 'graphql'); // doesn't work with GitHub, still require JSON.stringify()
+    console.log(response);
+}
 // no semicolon at the end!  if default
 // Note that it is not possible to use var, let or const with export default.
