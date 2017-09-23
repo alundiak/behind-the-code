@@ -25,9 +25,15 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container with-heading">
         <h1 class="display-3">Behind The Code</h1>
         <p class="lead">List of famous frontend tools in modern web development (2017).</p>
+        <div class="info">
+            <span class="badge badge-info">This page requires GitHub OAuth token, to perform POST requests on behalf of end user</span>
+            <div>
+                <button id="authorizeApp" type="button" class="btn btn-primary">Authorize via GitHub</button>
+            </div>
+        </div>
     </div>
 
     <div class="dropdown">
@@ -68,7 +74,7 @@
     <script type="application/javascript" src="node_modules/moment/min/moment.min.js"></script>
     <script type="application/javascript" src="node_modules/github-api/dist/GitHub.bundle.min.js"></script>
     <script type="application/javascript" src="node_modules/pace-progress/pace.js"></script>
-
+    
     <script type="module" src="./js/index.js"></script>
     <script src="/js/perf.js"></script>
 </body>

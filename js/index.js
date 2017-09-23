@@ -16,15 +16,24 @@ import * as gitHubApi4 from './use-github-v4.js';
 (async function() {
     'use strict';
 
-    var renderList = true;
-    const repoData = await dataPromises.getMyData; // in fact it's just Promise
+    let renderList = true;
 
-    // bestOfJsApi.getInfo(repoData);
+    $('#disableRendering').on('change', function(e) {
+        renderList = !this.checked;
+    });
+    
+    $('#authorizeApp').on('click', function(e) { // should be before code line, where token is taken.
+        window.location.href = '/auth/github';
+    });
+    
+    const repoData = await dataPromises.getMyData(); // in fact it's just Promise
+    const token = await dataPromises.getUserAccessToken(); // string value, stored in user's browser storage
 
-    const token = await dataPromises.getMyToken; // also Promise
-    if (!token) {
+    if (!token || !repoData) {
         return;
     }
+
+    // bestOfJsApi.getInfo(repoData);
 
     // gitHubApi3.apiTest1(token);
     // gitHubApi3.getInfo(token, repoData, renderList);
@@ -66,9 +75,5 @@ import * as gitHubApi4 from './use-github-v4.js';
                 break;
         }
     }
-
-    $('#disableRendering').on('change', function(e) {
-        renderList = !this.checked;
-    });
 
 }());

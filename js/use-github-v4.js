@@ -251,7 +251,10 @@ function prepareGraphqlOptions(queryBody, contentType, TOKEN) {
     if (contentType === 'json') {
         options.headers = {
             // 'Accept': 'application/json', // looks no effect
-            'Authorization': `token ${TOKEN}`,
+            // 'Authorization': `${TOKEN}`, // doesn't work
+            // 'Authorization': `AnyString ${TOKEN}`, // doesn't work
+            // 'Authorization': `Bearer ${TOKEN}`, // also works
+            'Authorization': `token ${TOKEN}`, // works
             'Content-Type': 'application/json'
         };
         options.body = JSON.stringify(queryObject);

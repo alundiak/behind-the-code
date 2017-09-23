@@ -25,12 +25,13 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 
 
 ## Browser Support
-- ES Modules (export/import): Chrome 61+ (Canary), -Chrome 60, +Chrome 61, -Firefox 55.
+- ES Modules (export/import): Chrome 61+ (Canary), -Chrome 60, +Chrome 61, -Firefox 55, Safari+.
 - Fetch API: Chrome+, Firefox+, Safari+, Opera+, Edge+, IE11-
 - HTML Imports: Chrome+, Opera+, Firefox-, IE11-, Edge-
 - Template Literals: Chrome+, Firefox+, Safari+, Opera+, IE11-, Edge+
 - Async functions: Chrome+, Firefox+, Safari+, Opera+, IE11-, Edge+
 - Performance API, Navigation Timing API - looks like supported by all major browsers.
+- URLSearchParams API since Chrome 49+, Opera 36+, FireFox 44+.
 
 ## Notes / Conclusions / Lessons Learned
 - HTML imports works, but JS files are loaded later, than simple HTML inside inside of main index.html file. Sometimes MomentJS is not yet available.
@@ -44,31 +45,73 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - How to read `*.idl` files 
 - and if possible how to use contentType `application/graphql`
 - Work more with schema and types.
+- Auth0 vs OAuth?
 
 
 ## Resources
+
+### Base Technologies
 - https://css-tricks.com/using-fetch/
 - https://blog.patricktriest.com/what-is-async-await-why-should-you-care/
+- https://www.html5rocks.com/en/tutorials/webcomponents/template/
+- http://blog.teamtreehouse.com/creating-reusable-markup-with-the-html-template-element
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+- https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+
+### GitHub API, GraphQL
+- https://www.digitalocean.com/community/questions/what-is-the-difference-between-an-api-token-and-a-personal-token
 - https://github.com/RisingStack/risingstack-bootcamp
 - https://githubengineering.com/the-github-graphql-api/ (since Sep-2016)
-- https://www.digitalocean.com/community/questions/what-is-the-difference-between-an-api-token-and-a-personal-token
 - http://graphql.org/learn/serving-over-http/
-- https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
 - https://github.com/graphql/express-graphql/issues/14 - Express GraphQL and CORS discussion
-- https://github.com/github-tools/github/issues/392#issuecomment-328295155 - Discussion about errors with importing github-api
+
+### Twitter Bootstrap
 - https://github.com/twbs/bootstrap/issues/23557
 - https://github.com/twbs/bootstrap/pull/23614 - @wrakky/bootstrap suggestion
+
+### Resource Loading, Pre-loading, progress bar
 - https://css-tricks.com/css3-progress-bars/ - HTML5 `<progress>`, `<meter>`
 - https://www.freshdesignweb.com/jquery-css3-loading-progress-bar/
 - https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading
 - http://blog.trasatti.it/2012/12/measuring-the-speed-of-resource-loading-with-javascript-and-html5.html
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content + http://caniuse.com/#search=preload
+
+### Timeline feature
 - https://platform.github.community/t/get-releases-including-tags/3088/2 - here is nice vertical timeline related to comments date.
 - http://visjs.org/index.html#download_install
 - http://visjs.org/timeline_examples.html
 - http://visjs.org/examples/timeline/other/verticalScroll.html
-- https://www.html5rocks.com/en/tutorials/webcomponents/template/
-- http://blog.teamtreehouse.com/creating-reusable-markup-with-the-html-template-element
+
+### OAuth and GitHub OAuth Apps
+- https://gist.github.com/technoweenie/419219 - GitHub OAuth Busy Developer's Guide (based on GitHi API v2)
+- https://github.com/atmos/warden-github - some kind of extension on Ruby.
+- https://github.com/atmos/sinatra_auth_github - some kind of extension on Ruby.
+- https://github.com/scottgonzalez/connect-oauth-github - looks like 2013, old and not maintained.
+- https://stormpath.com/blog/what-the-heck-is-oauth
+- https://insomnia.rest/blog/oauth2-github-api/
+- https://api.slack.com/docs/oauth-safety
+- https://firebase.google.com/docs/auth/web/github-auth
+
+### Auth0
+- https://auth0.com/docs/connections/social/github
+- https://manage.auth0.com
+- https://github.com/auth0/auth0.js
+
+### Auth0 vs OAuth
+- https://auth0.com/docs/protocols/oauth2
+- https://auth0.com/blog/everything-you-wanted-to-know-about-oauth-2-but-were-too-afraid-to-ask/ - nice video. Used passport-github
+- https://stackshare.io/stackups/auth0-vs-oauth-io
+- https://developer.telerik.com/featured/oauth-has-ruined-everything/
+- https://www.npmjs.com/package/client-oauth2
+
+### GitHub API wrappers
+- https://github.com/github-tools/github/ (v3-based)
+- https://github.com/github-tools/github/issues/392#issuecomment-328295155 - Discussion about errors with importing github-api
+- https://github.com/mikedeboer/node-github - node library to access the GitHub API (v3-based)
+- https://www.npmjs.com/package/client-oauth2 (https://github.com/mulesoft/js-client-oauth2) - Generic library for OAuth client connections.
+- https://github.com/jaredhanson/passport-github - looks like 3rd approach to connect GitHub
+- https://www.npmjs.com/package/passport-github2 - fork
+- http://passportjs.org/ by @jaredhanson
 
 
 ## Credits / Thanks to

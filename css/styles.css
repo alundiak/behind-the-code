@@ -20,3 +20,13 @@
 progress {
    /*-webkit-appearance: none;*/ /*The it looks a green progress bar*/
 }
+
+.with-heading {
+    position: relative;
+}
+
+.with-heading .info {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
