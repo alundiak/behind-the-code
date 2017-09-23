@@ -25,11 +25,11 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 
 
 ## Browser Support
-- Modularization (export/import): Chrome 61+ (Canary), -Chrome 60, +Chrome 61, -Firefox 55.
+- ES Modules (export/import): Chrome 61+ (Canary), -Chrome 60, +Chrome 61, -Firefox 55.
 - Fetch API: Chrome+, Firefox+, Safari+, Opera+, Edge+, IE11-
 - HTML Imports: Chrome+, Opera+, Firefox-, IE11-, Edge-
-- Template Literals: Chrome+, Firefox+, Safari+, Opera+, -IE11, Edge+
-- Async functions: Chrome+, Firefox+, Safari+, Opera+, -IE11, Edge+
+- Template Literals: Chrome+, Firefox+, Safari+, Opera+, IE11-, Edge+
+- Async functions: Chrome+, Firefox+, Safari+, Opera+, IE11-, Edge+
 - Performance API, Navigation Timing API - looks like supported by all major browsers.
 
 ## Notes / Conclusions / Lessons Learned
@@ -48,6 +48,7 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 
 ## Resources
 - https://css-tricks.com/using-fetch/
+- https://blog.patricktriest.com/what-is-async-await-why-should-you-care/
 - https://github.com/RisingStack/risingstack-bootcamp
 - https://githubengineering.com/the-github-graphql-api/ (since Sep-2016)
 - https://www.digitalocean.com/community/questions/what-is-the-difference-between-an-api-token-and-a-personal-token

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Example</title>
+    <script type="text/javascript">
+        const TOKEN = ''; // write ur own TOKEN here, and open console to see results.
+	    const myArrayOfRepositories = [{
+	        "owner": "jquery",
+	        "name": "jquery"
+	    }, {
+	        "owner": "jashkenas",
+	        "name": "backbone"
+	    }, {
+	        "owner": "angular",
+	        "name": "angular.js"
+	    }];
+    </script>
+    <!-- <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script> -->
+    <!-- <script type="module" src="./js/gist_v3.js"></script> -->
+    <!-- <script type="module" src="./js/gist_v3-tools.js"></script> -->
+    <script type="module" src="./js/gist_v4.js"></script>
+</head>
+
+<body>
+    <script type="module">
+    	// import getInfo from './js/gist_v3.js';
+    	// import getInfo from './js/gist_v3-tools.js';
+    	import getInfo from './js/gist_v4.js';
+    	getInfo(TOKEN, myArrayOfRepositories);
+    </script>
+</body>
+
+</html>
