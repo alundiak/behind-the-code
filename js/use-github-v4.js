@@ -1,3 +1,5 @@
+import * as timelineVis from './timeline-vis.js';
+
 export const apiUrl = 'https://api.github.com/graphql';
 
 /**
@@ -24,6 +26,10 @@ export async function getInfo(TOKEN, myData, renderList) {
     let data = conertToArrayAndSortByStars(repos);
     if (renderList) {
         renderListWithTemplate(data);
+    } else {
+        var container = document.getElementById('visualization');
+        timelineVis.renderTimeLineViz(container, data);
+        // timelineVis.attachExamples(data);
     }
 }
 
@@ -106,6 +112,7 @@ function createRepositoriesQueryBody(myData) {
             owner {
                 login
                 __typename
+                avatarUrl
             }
             stargazers {
                 totalCount

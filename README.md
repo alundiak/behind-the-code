@@ -4,7 +4,7 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 
 
 ## Goal #1 - List of GitHub repositories
-- Create (static) web page with content, like I've done for UI2HR.pptx for GL.
+- Create (static) web page to represent main information about trending frontned tools.
 - Represent next entities: repo owner, first commit date ("since" date), last commit date ("update/pushed" date).
 
 
@@ -41,9 +41,11 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - HTML `<template>` still not supported by IE and partially supported by Edge. Chrome+, Firefox+.
 
 
-## TODO
+## `*.idl` (`*.graphql`) file extensions.
 - How to read `*.idl` files 
 - and if possible how to use contentType `application/graphql`
+- https://github.com/Shopify/graphql-js-client-compiler
+- https://github.com/apollographql/graphql-syntax
 - Work more with schema and types.
 - Auth0 vs OAuth?
 
@@ -119,3 +121,4 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - Authors of [github-api](https://github.com/github-tools/github) repo.
 - Github API v4 (GraphQL)
 - https://platform.github.community
+- https://github.com/mraible/history-of-web-frameworks-timeline

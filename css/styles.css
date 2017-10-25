@@ -30,3 +30,8 @@ progress {
     top: 0;
     right: 0;
 }
+
+.avatar {
+    width: 25px;
+    /*height: 25px;*/
+}

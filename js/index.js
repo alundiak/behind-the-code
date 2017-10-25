@@ -44,7 +44,8 @@ import * as gitHubApi4 from './use-github-v4.js';
     // gitHubApi4.apiTest1(token);
     // gitHubApi4.apiTest2(token);
     // gitHubApi4.apiTest3(token);
-    gitHubApi4.getInfo(token, repoData, renderList);
+    // gitHubApi4.getInfo(token, repoData, renderList);
+    gitHubApi4.getInfo(token, repoData, false);
 
     $('.dropdown-menu').delegate('a', 'click', function(e) {
         let value = $(e.target).data('value');
@@ -58,6 +59,7 @@ import * as gitHubApi4 from './use-github-v4.js';
             return;
         }
 
+        $('#visualization').html('');
         $('.list-group').html('');
 
         switch (value) {
