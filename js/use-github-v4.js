@@ -24,13 +24,12 @@ export async function getInfo(TOKEN, myData, renderList) {
     // const repos = performRequestOnlyOne(TOKEN, queryBody); // Sends only one POST request
 
     let data = conertToArrayAndSortByStars(repos);
-    if (renderList) {
-        renderListWithTemplate(data);
-    } else {
-        var container = document.getElementById('visualization');
-        timelineVis.renderTimeLineViz(container, data);
-        // timelineVis.attachExamples(data);
-    }
+    // if (renderList) {
+    //     renderListWithTemplate(data);
+    // }
+    var container = document.getElementById('visualization');
+    timelineVis.renderTimeLineViz(container, data);
+    // timelineVis.attachExamples(data);
 }
 
 function conertToArrayAndSortByStars(data) {

@@ -1,22 +1,75 @@
 [{
-
+    "owner": "git",
+    "name": "git"
+}, {
     "owner": "jquery",
     "name": "jquery"
+}, {
+    "owner": "jquery",
+    "name": "jquery-ui"
+}, {
+    "owner": "jquery",
+    "name": "jquery-mobile"
 }, {
     "owner": "jashkenas",
     "name": "backbone"
 }, {
+    "owner": "jashkenas",
+    "name": "coffeescript"
+}, {
+    "owner": "jashkenas",
+    "name": "underscore"
+}, {
+    "owner": "marionettejs",
+    "name": "backbone.marionette"
+}, {
     "owner": "angular",
     "name": "angular.js"
 }, {
+    "owner": "angular",
+    "name": "angular"
+}, {
+    "owner": "angular",
+    "name": "protractor"
+}, {
+    "owner": "lodash",
+    "name": "lodash"
+}, {
+    "owner": "facebook",
+    "name": "jest"
+}, {
+    "owner": "facebook",
+    "name": "graphql"
+}, {
+    "owner": "yarnpkg",
+    "name": "yarn"
+}, {
     "owner": "facebook",
     "name": "react"
+}, {
+    "owner": "facebook",
+    "name": "react-native"
+}, {
+    "owner": "facebook",
+    "name": "flow"
+}, {
+    "owner": "NativeScript",
+    "name": "NativeScript"
+}, {
+    "owner": "phonegap",
+    "name": "phonegap-start"
 }, {
     "owner": "astoilkov",
     "name": "jsblocks"
 }, {
     "owner": "vuejs",
     "name": "vue"
+}, {
+    "owner": "nuxt",
+    "name": "nuxt.js"
+}, {
+    "owner": "zeit",
+    "name": "next.js"
 }, {
     "owner": "mongodb",
     "name": "mongo"
@@ -59,4 +112,214 @@
 }, {
     "owner": "developit",
     "name": "preact"
+}, {
+    "owner": "d3",
+    "name": "d3"
+}, {
+    "owner": "c3js",
+    "name": "c3"
+}, {
+    "owner": "highcharts",
+    "name": "highcharts"
+}, {
+    "owner": "emeeks",
+    "name": "semiotic"
+}, {
+    "owner": "totaljs",
+    "name": "framework"
+}, {
+    "owner": "expressjs",
+    "name": "express"
+}, {
+    "owner": "Polymer",
+    "name": "polymer"
+}, {
+    "owner": "reactjs",
+    "name": "redux"
+}, {
+    "owner": "Hashnode",
+    "name": "mern-cli"
+}, {
+    "owner": "linnovate",
+    "name": "mean"
+}, {
+    "owner": "nodejs",
+    "name": "node"
+}, {
+    "owner": "npm",
+    "name": "npm"
+}, {
+    "owner": "MithrilJS",
+    "name": "mithril.js"
+}, {
+    "owner": "sveltejs",
+    "name": "svelte"
+}, {
+    "owner": "Microsoft",
+    "name": "TypeScript"
+}, {
+    "owner": "clojure",
+    "name": "clojurescript"
+}, {
+    "owner": "babel",
+    "name": "babel"
+}, {
+    "owner": "ariya",
+    "name": "phantomjs"
+}, {
+    "owner": "mochajs",
+    "name": "mocha"
+}, {
+    "owner": "chaijs",
+    "name": "chai"
+}, {
+    "owner": "less",
+    "name": "less.js"
+}, {
+    "owner": "sass",
+    "name": "sass"
+}, {
+    "owner": "pugjs",
+    "name": "pug"
+}, {
+    "owner": "stylus",
+    "name": "stylus"
+}, {
+    "owner": "moment",
+    "name": "moment"
+}, {
+    "owner": "semantic-org",
+    "name": "semantic-ui"
+}, {
+    "owner": "requirejs",
+    "name": "requirejs"
+}, {
+    "owner": "Compass",
+    "name": "compass"
+}, {
+    "owner": "styled-components",
+    "name": "styled-components"
+}, {
+    "owner": "h5bp",
+    "name": "html5-boilerplate"
+}, {
+    "owner": "google",
+    "name": "traceur-compiler"
+}, {
+    "owner": "Modernizr",
+    "name": "Modernizr"
+}, {
+    "owner": "necolas",
+    "name": "normalize.css"
+}, {
+    "owner": "mustache",
+    "name": "mustache"
+}, {
+    "owner": "wycats",
+    "name": "handlebars.js"
+}, {
+    "owner": "douglascrockford",
+    "name": "JSLint"
+}, {
+    "owner": "jshint",
+    "name": "jshint"
+}, {
+    "owner": "zaach",
+    "name": "jsonlint"
+}, {
+    "owner": "eslint",
+    "name": "eslint"
+}, {
+    "owner": "CSSLint",
+    "name": "csslint"
+}, {
+    "owner": "ChrisWren",
+    "name": "mdlint"
+}, {
+    "owner": "htmllint",
+    "name": "htmllint"
+}, {
+    "owner": "lesshint",
+    "name": "lesshint"
+}, {
+    "owner": "palantir",
+    "name": "tslint"
+}, {
+    "owner": "yeoman",
+    "name": "yeoman"
+}, {
+    "owner": "browserify",
+    "name": "browserify"
+}, {
+    "owner": "systemjs",
+    "name": "systemjs"
+}, {
+    "owner": "bower",
+    "name": "bower"
+}, {
+    "owner": "lerna",
+    "name": "lerna"
+}, {
+    "owner": "almende",
+    "name": "vis"
+}, {
+    "owner": "jscs-dev",
+    "name": "node-jscs"
+}, {
+    "owner": "broccolijs",
+    "name": "broccoli"
+}, {
+    "owner": "dojo",
+    "name": "dojo"
+}, {
+    "owner": "cssinjs",
+    "name": "jss"
+}, {
+    "owner": "yui",
+    "name": "yui3"
+}, {
+    "owner": "milligram",
+    "name": "milligram"
+}, {
+    "owner": "ericdrowell",
+    "name": "KineticJS"
+}, {
+    "owner": "kangax",
+    "name": "fabric.js"
+}, {
+    "owner": "js-joda",
+    "name": "js-joda"
+}, {
+    "owner": "BorisMoore",
+    "name": "jsrender"
+}, {
+    "owner": "BorisMoore",
+    "name": "jsviews"
+}, {
+    "owner": "substack",
+    "name": "tape"
+}, {
+    "owner": "carbonjs",
+    "name": "carbon-framework"
+}, {
+    "owner": "airbnb",
+    "name": "enzyme"
+}, {
+    "owner": "ruby",
+    "name": "ruby"
+}, {
+    "owner": "apache",
+    "name": "couchdb"
+}, {
+    "owner": "pouchdb",
+    "name": "pouchdb"
+}, {
+    "owner": "Reactive-Extensions",
+    "name": "RxJS"
+}, {
+    "owner": "Dogfalo",
+    "name": "materialize"
+}, {
+    "owner": "mishoo",
+    "name": "UglifyJS"
 }]

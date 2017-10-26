@@ -25,6 +25,7 @@ export function getInfo(TOKEN, myData, renderList) {
             .then(data => {
                 if (renderList){
                     renderListRowv3(data)
+                    $('.loader').hide();
                 }
             });
     });

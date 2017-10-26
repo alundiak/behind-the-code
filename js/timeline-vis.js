@@ -77,6 +77,15 @@ export function attachExamples() {
         start: '2013-04-21'
     }]);
     var options = {};
+    var options = {
+        // sampling: true,
+        // drawPoints: {enabled:false, size:3},
+        // interpolation: false,
+        height: '100px',
+        // maxHeight: 100,
+        start: 2000,
+        end: 2018
+    };
     var timeline = new vis.Timeline(container, items, options);
 }
 
@@ -91,7 +100,7 @@ export function renderTimeLineViz(container, reposDataArray) {
     var prepareContentHTML = function(d) {
         // https://octicons.github.com/
         // Maybe use GitHub star svg and stargazer number to show somehow
-        let tmpl = `<a href="${d.url}" target="_blank"><img class="avatar" src="${d.owner.avatarUrl}" title="${d.name} | ${d.description}"></a>`;
+        let tmpl = `<a href="${d.url}" target="_blank"><img class="avatar" src="${d.owner.avatarUrl}" title="${d.name}\n${d.description}\nCreated: ${moment(d.createdAt).format('YYYY/MM/DD')}"></a>`;
         return tmpl;
     }
 
@@ -119,4 +128,7 @@ export function renderTimeLineViz(container, reposDataArray) {
 
     var options = {};
     var timeline = new vis.Timeline(container, items, options);
+
+    // But still page loaded later !!! TODO
+    $('.loader').hide();
 }

@@ -77,6 +77,8 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading
 - http://blog.trasatti.it/2012/12/measuring-the-speed-of-resource-loading-with-javascript-and-html5.html
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content + http://caniuse.com/#search=preload
+- https://davidwalsh.name/measuring-performance
+- https://www.sitepoint.com/introduction-resource-timing-api/
 
 ### Timeline feature
 - https://platform.github.community/t/get-releases-including-tags/3088/2 - here is nice vertical timeline related to comments date.

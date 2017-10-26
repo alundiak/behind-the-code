@@ -65,7 +65,7 @@ function loadResTimData() {
 // https://w3c.github.io/perf-timing-primer/
 //
 function loadResources() {
-    // console.log('loadResources');
+    console.log('loadResources');
     var image1 = new Image();
     image1.onload = resourceTiming;
     image1.src = 'https://www.w3.org/Icons/w3c_main.png';
@@ -114,7 +114,7 @@ function measurePerf() {
 // again 2012 year, why performance was discussed at that only time?
 //
 window.addEventListener("load", function() { // TODO
-    // console.log('load event');
+    console.log("All resources finished loading!");
     setTimeout(function() {
         var timing = window.performance.timing;
         var userTime = timing.loadEventEnd - timing.navigationStart;
@@ -124,6 +124,28 @@ window.addEventListener("load", function() { // TODO
         var fetchTime = timing.responseEnd - timing.fetchStart;
 
         // use timing data
-        // console.log(timing, userTime, dns, connection, requestTime, fetchTime);
+        console.log(timing, userTime, dns, connection, requestTime, fetchTime);
     }, 0);
+
+    // setTimeout(function() {
+    //     var t = performance.timing;
+    //     console.log(t.loadEventEnd - t.responseEnd);
+    // }, 0);
+
 }, false);
+
+
+
+// function buffer_full(event) {
+//     console.log("WARNING: Resource Timing Buffer is FULL!");
+//     performance.setResourceTimingBufferSize(200);
+// }
+
+// function init() {
+//     // Set a callback if the resource buffer becomes filled
+//     performance.onresourcetimingbufferfull = buffer_full;
+// }
+
+// document.onreadystatechange = function () {
+// 
+// }

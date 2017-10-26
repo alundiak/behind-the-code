@@ -61,6 +61,7 @@ import * as gitHubApi4 from './use-github-v4.js';
 
         $('#visualization').html('');
         $('.list-group').html('');
+        $('.loader').show();
 
         switch (value) {
             case 'githubApiv3':

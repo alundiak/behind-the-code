@@ -1,11 +1,36 @@
 .loader {
-	display: inline-block;
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid #3498db;
+    display: inline-block;
+    /*border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;*/
+    
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 50px;
+    height: 50px;
     animation: spin 2s linear infinite;
+}
+
+._loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  margin: -75px 0 0 -75px;
+  /*border: 16px solid #f3f3f3;*/
+  border-radius: 50%;
+  /*border-top: 16px solid #3498db;*/
+  /*width: 120px;
+  height: 120px;*/
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.loader.colorful {
+    border-top: 5px solid blue;
+    border-right: 5px solid green;
+    border-bottom: 5px solid red;
+    border-left: 5px solid pink;
 }
 
 @keyframes spin {
@@ -18,7 +43,8 @@
 }
 
 progress {
-   /*-webkit-appearance: none;*/ /*The it looks a green progress bar*/
+    /*-webkit-appearance: none;*/
+    /*The it looks a green progress bar*/
 }
 
 .with-heading {
@@ -31,7 +57,15 @@ progress {
     right: 0;
 }
 
+#visualization {
+  margin: 0 50px;
+}
+
 .avatar {
     width: 25px;
     /*height: 25px;*/
+}
+
+.vis-panel {
+    box-sizing: content-box;
 }
