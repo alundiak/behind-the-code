@@ -322,4 +322,16 @@
 }, {
     "owner": "mishoo",
     "name": "UglifyJS"
+}, {
+    "owner": "unexpectedjs",
+    "name": "unexpected"
+}, {
+    "owner": "restify",
+    "name": "node-restify"
+}, {
+    "owner": "bookshelf",
+    "name": "bookshelf"
+}, {
+    "owner": "tgriesser",
+    "name": "knex"
 }]

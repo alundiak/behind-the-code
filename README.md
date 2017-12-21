@@ -124,3 +124,7 @@ My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 - Github API v4 (GraphQL)
 - https://platform.github.community
 - https://github.com/mraible/history-of-web-frameworks-timeline
+
+## TODO
+- Implement scroll by scrollbar, instead of scroll wheel.
+- Add search of repos or list of repos below timeline, with ability to slick and locate it on timeline.
