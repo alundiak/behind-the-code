@@ -41,6 +41,9 @@
     "owner": "facebook",
     "name": "graphql"
 }, {
+    "owner": "facebook",
+    "name": "create-react-app"
+}, {
     "owner": "yarnpkg",
     "name": "yarn"
 }, {
@@ -334,4 +337,31 @@
 }, {
     "owner": "tgriesser",
     "name": "knex"
+}, {
+    "owner": "lebab",
+    "name": "lebab"
+}, {
+    "owner": "axios",
+    "name": "axios"
+}, {
+    "owner": "koajs",
+    "name": "koa"
+}, {
+    "owner": "hapijs",
+    "name": "hapi"
+}, {
+    "owner": "sintaxi",
+    "name": "harp"
+}, {
+    "owner": "jekyll",
+    "name": "jekyll"
+}, {
+    "owner": "totaljs",
+    "name": "framework"
+}, {
+    "owner": "nestjs",
+    "name": "nest"
+}, {
+    "owner": "telerik",
+    "name": "kendo-ui-core"
 }]
