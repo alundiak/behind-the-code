@@ -35,9 +35,15 @@ export async function getInfo(TOKEN, myData, renderList) {
 function conertToArrayAndSortByStars(data) {
     var arr = [];
     for (let key in data) {
+        if (!data[key]) 
+            continue // so that not to push "null" to array
+
         arr.push(data[key]);
     }
     arr.sort(function(a, b) {
+        if (!a || !b) {
+            return 0;
+        }
         if (a.stargazers.totalCount < b.stargazers.totalCount) {
             return 1;
         }
@@ -166,13 +172,15 @@ function performRequest(TOKEN, queryBody, contentType) {
             if (response.ok) {
                 return response.json();
             } else {
-                return 'ERROR';
+                console.log('ERROR', response);
             }
 
         })
         // .then(data => data.data)
         .then(data => {
-            // console.log(data);
+            if (data.errors && data.errors.length > 0){
+                console.log(data.errors[0].message, data.errors); // to attract attention
+            }
             return data.data;
         });
 }
@@ -196,7 +204,7 @@ function performRequestOnlyOne(TOKEN, queryBody, contentType) {
             if (response.ok) {
                 return response.json();
             } else {
-                return 'ERROR';
+                console.log('ERROR', response);
             }
 
         })
