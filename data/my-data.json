@@ -137,7 +137,7 @@
     "owner": "Polymer",
     "name": "polymer"
 }, {
-    "owner": "reactjs",
+    "owner": "reduxjs",
     "name": "redux"
 }, {
     "owner": "Hashnode",
@@ -370,4 +370,10 @@
 }, {
     "owner": "guess-js",
     "name": "guess"
+}, {
+    "owner": "flutter",
+    "name": "flutter"
+}, {
+    "owner": "material-components",
+    "name": "material-components-web"
 }]
