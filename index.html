@@ -28,26 +28,34 @@
 
 <body __onload="init()">
     <div class="container with-heading">
-        <h1 class="display-3">Behind The Code</h1>
-        <p class="lead">List of famous frontend tools in modern web development (2018).</p>
-        <div class="info">
-            <span class="badge badge-secondary">This page requires GitHub OAuth token, to perform POST requests on behalf of end user</span>
-            <div>
-                <button id="authorizeApp" type="button" class="btn btn-primary">Authorize via GitHub</button>
+        <div class="left-aligned-container">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Approach</button>
+                <span>githubApiv4</span>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" data-value="githubApiv3" href="#">GitHub API v3 (REST)</a>
+                    <a class="dropdown-item" data-value="githubApiv3_wrapper" href="#">GitHub API v3 (REST) via "github-tools/github-api wrapper"</a>
+                    <a class="dropdown-item" data-value="githubApiv4" href="#">GitHub API v4 (GraphQL)</a>
+                </div>
             </div>
+            <span> | </span>
+            <input type="checkbox" name="disableRendering" id="disableRendering">
+            <label for="disableRendering">Disable Rendering</label>
+            <span> | </span>
+            <div class="info">
+                <button id="authorizeApp" type="button" class="btn btn-primary">Authorize via GitHub</button>
+                <span 
+                class="badge badge-secondary">This page requires GitHub OAuth token, to perform POST requests on behalf of end user</span>
+            </div>
+            <p class="lead">List of famous frontend tools in modern web development (2018). For more details checkout <a href="https://bestof.js.org" target="_blank">bestof.js.org</a></p>
+
+        </div>
+        <h1 class="display-3">Behind The Code</h1>
+        <div class="info">
+
         </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Approach</button>
-        <span>githubApiv4</span>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" data-value="githubApiv3" href="#">GitHub API v3 (REST)</a>
-            <a class="dropdown-item" data-value="githubApiv3_wrapper" href="#">GitHub API v3 (REST) via "github-tools/github-api wrapper"</a>
-            <a class="dropdown-item" data-value="githubApiv4" href="#">GitHub API v4 (GraphQL)</a>
-        </div>
-    </div>
-    <label for="disableRendering">Disable Rendering</label>
-    <input type="checkbox" name="disableRendering" id="disableRendering">
+    
     
    <!--  <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>

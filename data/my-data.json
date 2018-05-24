@@ -356,9 +356,6 @@
     "owner": "jekyll",
     "name": "jekyll"
 }, {
-    "owner": "totaljs",
-    "name": "framework"
-}, {
     "owner": "nestjs",
     "name": "nest"
 }, {
@@ -376,4 +373,22 @@
 }, {
     "owner": "material-components",
     "name": "material-components-web"
+}, {
+    "owner": "riot",
+    "name": "riot"
+}, {
+    "owner": "hyperapp",
+    "name": "hyperapp"
+}, {
+    "owner": "MithrilJS",
+    "name": "mithril.js"
+}, {
+    "owner": "ractivejs",
+    "name": "ractive"
+}, {
+    "owner": "chartjs",
+    "name": "Chart.js"
+}, {
+    "owner": "jgthms",
+    "name": "bulma"
 }]

@@ -1,8 +1,5 @@
 .loader {
     display: inline-block;
-    /*border: 16px solid #f3f3f3;
-    border-top: 16px solid #3498db;*/
-    
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -10,20 +7,16 @@
 }
 
 ._loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 50px;
-  height: 50px;
-  margin: -75px 0 0 -75px;
-  /*border: 16px solid #f3f3f3;*/
-  border-radius: 50%;
-  /*border-top: 16px solid #3498db;*/
-  /*width: 120px;
-  height: 120px;*/
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
 }
 
 .loader.colorful {
@@ -51,19 +44,17 @@ progress {
     position: relative;
 }
 
-.with-heading .info {
-    position: absolute;
-    top: 0;
-    right: 0;
+.left-aligned-container .dropdown,
+.left-aligned-container .info {
+    display: inline-block;
 }
 
 #visualization {
-  margin: 0 50px;
+    margin: 0 50px;
 }
 
 .avatar {
     width: 25px;
-    /*height: 25px;*/
 }
 
 .vis-panel {
