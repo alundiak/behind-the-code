@@ -1,3 +1,19 @@
+.search-wrapper {
+    position: relative;
+    display: inline-block;
+    float: right;
+    direction: ltr;
+}
+
+#search-input {
+    position: relative;
+    vertical-align: top;
+}
+
+.display-3 {
+    display: inline;
+}
+
 .loader {
     display: inline-block;
     border-radius: 50%;

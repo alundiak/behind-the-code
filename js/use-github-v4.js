@@ -28,7 +28,15 @@ export async function getInfo(TOKEN, myData, renderList) {
     //     renderListWithTemplate(data);
     // }
     var container = document.getElementById('visualization');
-    timelineVis.renderTimeLineViz(container, data);
+    timelineVis.renderTimeLineViz(container, data, {
+        clickToUse: true,
+        verticalScroll: true,
+        // horizontalScroll: false,
+        // stack:true,
+        orientation: 'top', 
+        // zoomKey: 'ctrlKey'
+    });
+
     // timelineVis.attachExamples(data);
 }
 

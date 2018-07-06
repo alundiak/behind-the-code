@@ -94,9 +94,10 @@ export function attachExamples() {
  * [renderTimeLineViz description]
  * @param  {[HtmlDivElement} container - root element where timeline will be attached
  * @param  {[Array]} reposDataArray    - converted data from GraphQL in Array format
+ * @param  {[Object]} options    - options object to customize Timeline
  * @return void
  */
-export function renderTimeLineViz(container, reposDataArray) {
+export function renderTimeLineViz(container, reposDataArray, options) {
     var prepareContentHTML = function(d) {
         // https://octicons.github.com/
         // Maybe use GitHub star svg and stargazer number to show somehow
@@ -124,10 +125,9 @@ export function renderTimeLineViz(container, reposDataArray) {
 
     let timelineDataSet = buildTimelineEntityData(reposDataArray);
 
-    var items = new vis.DataSet(timelineDataSet);
+    const items = new vis.DataSet(timelineDataSet);
 
-    var options = {};
-    var timeline = new vis.Timeline(container, items, options);
+    let timeline = new vis.Timeline(container, items, options || {});
 
     // But still page loaded later !!! TODO
     $('.loader').hide();

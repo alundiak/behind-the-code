@@ -203,6 +203,9 @@
     "owner": "styled-components",
     "name": "styled-components"
 }, {
+    "owner": "styled-components",
+    "name": "polished"
+}, {
     "owner": "h5bp",
     "name": "html5-boilerplate"
 }, {
@@ -317,8 +320,8 @@
     "owner": "pouchdb",
     "name": "pouchdb"
 }, {
-    "owner": "Reactive-Extensions",
-    "name": "RxJS"
+    "owner": "ReactiveX",
+    "name": "rxjs"
 }, {
     "owner": "Dogfalo",
     "name": "materialize"
@@ -380,9 +383,6 @@
     "owner": "hyperapp",
     "name": "hyperapp"
 }, {
-    "owner": "MithrilJS",
-    "name": "mithril.js"
-}, {
     "owner": "ractivejs",
     "name": "ractive"
 }, {
@@ -394,4 +394,34 @@
 }, {
     "owner": "ry",
     "name": "deno"
+}, {
+    "owner": "charliegerard",
+    "name": "Epoc.js"
+}, {
+    "owner": "teambit",
+    "name": "bit"
+}, {
+    "owner": "ramda",
+    "name": "ramda"
+}, {
+    "owner": "josdejong",
+    "name": "mathjs"
+}, {
+    "owner": "date-fns",
+    "name": "date-fns"
+}, {
+    "owner": "andrewplummer",
+    "name": "Sugar"
+}, {
+    "owner": "dtao",
+    "name": "lazy.js"
+}, {
+    "owner": "ecrmnn",
+    "name": "collect.js"
+}, {
+    "owner": "chancejs",
+    "name": "chancejs"
+}, {
+    "owner": "mout",
+    "name": "mout"
 }]
