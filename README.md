@@ -2,6 +2,8 @@ Behind The Code
 ===
 My Web Notes [2007-2017] about tools, libraries, frameworks and people...
 
+[![TravisCI Build Status](https://travis-ci.org/alundiak/behind-the-code.svg?branch=master)](https://travis-ci.org/alundiak/behind-the-code)
+[![CircleCI Build Status](https://circleci.com/gh/alundiak/behind-the-code.svg?style=svg)](https://circleci.com/gh/alundiak/behind-the-code)
 
 ## Goal #1 - List of GitHub repositories
 - Create (static) web page to represent main information about trending frontned tools.
