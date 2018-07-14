@@ -424,4 +424,7 @@
 }, {
     "owner": "mout",
     "name": "mout"
+}, {
+    "owner": "parcel-bundler",
+    "name": "parcel"
 }]
