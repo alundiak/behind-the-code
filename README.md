@@ -1,6 +1,6 @@
 Behind The Code
 ===
-My Web Notes [2007-2017] about tools, libraries, frameworks and people...
+Visualized timeline of Web Tools, Libraries, Frameworks and people... I know since I started as Web Developer (2007).
 
 [![TravisCI Build Status](https://travis-ci.org/alundiak/behind-the-code.svg?branch=master)](https://travis-ci.org/alundiak/behind-the-code)
 [![CircleCI Build Status](https://circleci.com/gh/alundiak/behind-the-code.svg?style=svg)](https://circleci.com/gh/alundiak/behind-the-code)
