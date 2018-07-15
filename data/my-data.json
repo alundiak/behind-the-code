@@ -430,4 +430,7 @@
 }, {
     "owner": "marko-js",
     "name": "marko"
+}, {
+    "owner": "lasso-js",
+    "name": "lasso"
 }]
