@@ -427,4 +427,7 @@
 }, {
     "owner": "parcel-bundler",
     "name": "parcel"
+}, {
+    "owner": "marko-js",
+    "name": "marko"
 }]
