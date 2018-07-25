@@ -433,4 +433,22 @@
 }, {
     "owner": "lasso-js",
     "name": "lasso"
+}, {
+    "owner": "uoziod",
+    "name": "suave-ui"
+}, {
+    "owner": "quantumui",
+    "name": "quantumui"
+}, {
+    "owner": "angular-ui",
+    "name": "ui-grid"
+}, {
+    "owner": "angular-ui",
+    "name": "bootstrap"
+}, {
+    "owner": "lumapps",
+    "name": "lumX"
+}, {
+    "owner": "goatslacker",
+    "name": "alt"
 }]
