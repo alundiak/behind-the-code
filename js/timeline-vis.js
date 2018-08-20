@@ -92,7 +92,7 @@ export function attachExamples() {
 
 /**
  * [renderTimeLineViz description]
- * @param  {[HtmlDivElement} container - root element where timeline will be attached
+ * @param  {[HtmlDivElement]} container - root element where timeline will be attached
  * @param  {[Array]} reposDataArray    - converted data from GraphQL in Array format
  * @param  {[Object]} options    - options object to customize Timeline
  * @return void
@@ -111,9 +111,9 @@ export function renderTimeLineViz(container, reposDataArray, options) {
     //     start: '2013/12/30'
     // }
     var buildTimelineEntityData = function(data) {
-        var dataArr = [];
+        let dataArr = [];
         data.forEach(function(repoRecord, index, arr) {
-            var obj = {
+            let obj = {
                 id: index,
                 content: prepareContentHTML(repoRecord),
                 start: moment(repoRecord.createdAt).format('YYYY/MM/DD')

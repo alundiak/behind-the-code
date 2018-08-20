@@ -305,6 +305,9 @@
     "owner": "substack",
     "name": "tape"
 }, {
+    "owner": "tapjs",
+    "name": "node-tap"
+}, {
     "owner": "carbonjs",
     "name": "carbon-framework"
 }, {
@@ -392,7 +395,7 @@
     "owner": "jgthms",
     "name": "bulma"
 }, {
-    "owner": "ry",
+    "owner": "denoland",
     "name": "deno"
 }, {
     "owner": "charliegerard",
@@ -451,4 +454,22 @@
 }, {
     "owner": "goatslacker",
     "name": "alt"
+}, {
+    "owner": "inversify",
+    "name": "InversifyJS"
+}, {
+    "owner": "sasha240100",
+    "name": "between.js"
+}, {
+    "owner": "xojs",
+    "name": "xo"
+}, {
+    "owner": "istanbuljs",
+    "name": "nyc"
+}, {
+    "owner": "avajs",
+    "name": "ava"
+}, {
+    "owner": "codecov",
+    "name": "codecov-node"
 }]
