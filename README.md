@@ -130,3 +130,4 @@ Visualized timeline of Web Tools, Libraries, Frameworks and people... I know sin
 ## TODO
 - Implement scroll by scrollbar, instead of scroll wheel.
 - Add search of repos or list of repos below timeline, with ability to slick and locate it on timeline.
+- Rewrite server in HTTP/2 manner

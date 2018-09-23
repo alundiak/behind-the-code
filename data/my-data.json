@@ -2,6 +2,9 @@
     "owner": "git",
     "name": "git"
 }, {
+    "owner": "twbs",
+    "name": "bootstrap"
+}, {
     "owner": "jquery",
     "name": "jquery"
 }, {
@@ -44,6 +47,9 @@
     "owner": "facebook",
     "name": "create-react-app"
 }, {
+    "owner": "facebook",
+    "name": "immutable-js"
+}, {
     "owner": "yarnpkg",
     "name": "yarn"
 }, {
@@ -67,6 +73,9 @@
 }, {
     "owner": "vuejs",
     "name": "vue"
+},  {
+    "owner": "vuejs",
+    "name": "vuex"
 }, {
     "owner": "nuxt",
     "name": "nuxt.js"
@@ -383,7 +392,7 @@
     "owner": "riot",
     "name": "riot"
 }, {
-    "owner": "hyperapp",
+    "owner": "jorgebucaran",
     "name": "hyperapp"
 }, {
     "owner": "ractivejs",
@@ -472,4 +481,13 @@
 }, {
     "owner": "codecov",
     "name": "codecov-node"
+}, {
+    "owner": "mobxjs",
+    "name": "mobx"
+}, {
+    "owner": "facebook",
+    "name": "codemod"
+}, {
+    "owner": "skovhus",
+    "name": "jest-codemods"
 }]
