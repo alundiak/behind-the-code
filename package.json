@@ -12,12 +12,15 @@
     "type": "git",
     "url": "git+https://github.com/alundiak/behind-the-code.git"
   },
-  "author": "",
+  "author": "Andrii Lundiak",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/alundiak/behind-the-code/issues"
   },
   "homepage": "https://github.com/alundiak/behind-the-code#readme",
+  "engines": {
+    "node": ">=9.10.0"
+  },
   "devDependencies": {
     "eslint": "^5.8.0",
     "eslint-config-standard": "^12.0.0",
