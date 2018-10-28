@@ -4,6 +4,7 @@ Visualized timeline of Web Tools, Libraries, Frameworks and people... I know sin
 
 [![TravisCI Build Status](https://travis-ci.org/alundiak/behind-the-code.svg?branch=master)](https://travis-ci.org/alundiak/behind-the-code)
 [![CircleCI Build Status](https://circleci.com/gh/alundiak/behind-the-code.svg?style=svg)](https://circleci.com/gh/alundiak/behind-the-code)
+[![Coverage Status](https://coveralls.io/repos/github/alundiak/behind-the-code/badge.svg)](https://coveralls.io/github/alundiak/behind-the-code)
 
 ## Goal #1 - List of GitHub repositories
 - Create (static) web page to represent main information about trending frontned tools.
