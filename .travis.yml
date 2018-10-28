@@ -5,3 +5,5 @@ node_js:
   - "8.0" # stable
 script:
   - "npm test"
+notifications:
+    slack: lundiak:CLh0cZU3qIo1mIlMuGwkmEsU
