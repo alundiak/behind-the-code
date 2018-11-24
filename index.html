@@ -28,35 +28,43 @@
 
 <body __onload="init()">
     <div class="container with-heading">
-        <div class="left-aligned-container">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Approach</button>
-                <span>githubApiv4</span>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" data-value="githubApiv3" href="#">GitHub API v3 (REST)</a>
-                    <a class="dropdown-item" data-value="githubApiv3_wrapper" href="#">GitHub API v3 (REST) via "github-tools/github-api wrapper"</a>
-                    <a class="dropdown-item" data-value="githubApiv4" href="#">GitHub API v4 (GraphQL)</a>
-                </div>
-            </div>
-            <span> | </span>
-            <input type="checkbox" name="disableRendering" id="disableRendering">
-            <label for="disableRendering">Disable Rendering</label>
-            <span> | </span>
-            <div class="info">
-                <button id="authorizeApp" type="button" class="btn btn-primary">Authorize via GitHub</button>
-                <span 
-                class="badge badge-secondary">This page requires GitHub OAuth token, to perform POST requests on behalf of end user</span>
-            </div>
-            <p class="lead">List of famous frontend tools in modern web development (2018). For more details checkout <a href="https://bestof.js.org" target="_blank">bestof.js.org</a></p>
-
-        </div>
-        <h1 class="display-3">Behind The Code</h1>
-        <span class="algolia-autocomplete search-wrapper">
-            <input type="search" class="form-control ds-input" id="search-input" placeholder="Search... (TODO)" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto">
+      <p class="lead">List of famous frontend tools in modern web development (2018). 
+        <span> Author: 
+          <a href="https://github.com/alundiak/behind-the-code" target="_blank">@alundiak</a>
         </span>
-        <div class="info">
+      </p>
 
-        </div>
+      <p>
+        For more details checkout <a href="https://bestof.js.org" target="_blank">bestof.js.org</a>
+      </p>
+
+      <div class="left-aligned-container">
+          <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Approach</button>
+              <span>githubApiv4</span>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" data-value="githubApiv3" href="#">GitHub API v3 (REST)</a>
+                  <a class="dropdown-item" data-value="githubApiv3_wrapper" href="#">GitHub API v3 (REST) via "github-tools/github-api wrapper"</a>
+                  <a class="dropdown-item" data-value="githubApiv4" href="#">GitHub API v4 (GraphQL)</a>
+              </div>
+          </div>
+          <span> | </span>
+          <input type="checkbox" name="disableRendering" id="disableRendering">
+          <label for="disableRendering">Disable Rendering</label>
+          <span> | </span>
+          <div class="info">
+              <button id="authorizeApp" type="button" class="btn btn-primary">Authorize via GitHub</button>
+              <span 
+              class="badge badge-secondary">This page requires GitHub OAuth token, to perform POST requests on behalf of end user</span>
+          </div>
+      </div>
+      <h1 class="display-3">Behind The Code</h1>
+      <span class="algolia-autocomplete search-wrapper">
+          <input type="search" class="form-control ds-input" id="search-input" placeholder="Search... (TODO)" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto">
+      </span>
+      <div class="info">
+
+      </div>
     </div>
     
     

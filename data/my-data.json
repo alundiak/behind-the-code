@@ -505,4 +505,13 @@
 }, {
   "owner": "express-vue",
   "name": "express-vue"
+}, {
+  "owner": "strongloop",
+  "name": "loopback"
+}, {
+  "owner": "nestjs",
+  "name": "nest"
+}, {
+  "owner": "mirrorjs",
+  "name": "mirror"
 }]
