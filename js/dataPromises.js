@@ -42,10 +42,10 @@ export async function getUserAccessToken() {
         return storedUserAccessToken;
     }
 
-    // var searchParams = new window.URLSearchParams(location.search.slice(1));
-    var searchParams = new window.URL(window.location.href).searchParams;
-    // var code = searchParams.get('code');
-    var token = searchParams.get('access_token');
+    // const searchParams = new window.URLSearchParams(location.search.slice(1));
+    const searchParams = new window.URL(window.location.href).searchParams;
+    // const code = searchParams.get('code');
+    let token = searchParams.get('access_token');
 
     if (token){
         // planned for Heroku instance usage
@@ -56,24 +56,6 @@ export async function getUserAccessToken() {
     }
 
     return token || '';
-}
-
-/**
- * @deprecated
- * @return {Promise}
- */
-export async function getMyTokenFunc() {
-    var a = await fetch('/properties')
-        .then(response => response.text())
-        // If we use then() and NOT return data, it return/pass undefined for any next .then() calls. 
-        // Also, we can change data by passing from .then() to next .then()
-        // .then(tokenData => {
-        //     // return tokenData + '_my_changed_token';
-        //     return tokenData;
-        // })
-
-    console.log(a); // string value
-    return a;
 }
 
 /*

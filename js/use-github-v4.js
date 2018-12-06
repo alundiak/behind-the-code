@@ -107,7 +107,7 @@ function renderListWithTemplate(data) {
  * @param  {[Array]} myData [description]
  * @return {[String]}       [description]
  */
-function createRepositoriesQueryBody(myData) {
+export function createRepositoriesQueryBody(myData) {
     let fragmentString = `
         fragment repositoryFragment on Repository {
             name

@@ -3,13 +3,16 @@
 // import GitHub from '../bower_components/github-api/lib/GitHub.js'; // doesn't work in Chrome Canary
 // var GitHub = require('github-api'); // from node_modules (using NodeJS env or RequireJS)
 
-// .js ext still needed. !!!
+// ES6 Module import:
 import * as dataPromises from './dataPromises.js';
 import * as bestOfJsApi from './use-best-of-js-org.js';
 import * as gitHubApi3 from './use-github-v3.js';
 import * as gitHubTools from './use-github-tools.js';
 import * as gitHubApi4 from './use-github-v4.js';
+// import * as gitOctokitGraphql from './use-octokit-graphql.js';
+// console.log(gitOctokitGraphql);
 
+// This doesn't work (CommonJS exported module)
 // import bootstrap from './node_modules/bootstrap/dist/js/bootstrap.js';
 // console.log(bootstrap);
 
