@@ -1,3 +1,6 @@
+// UPD 2019-06-12 - Looks like now GraphQL GitHub API has limit on how many fragments can be in one POST request
+// I tried all - fail - 400 error.
+// I tried different smaller sets - works.
 import * as timelineVis from './timeline-vis.js';
 
 export const apiUrl = 'https://api.github.com/graphql';
@@ -9,7 +12,7 @@ export const apiUrl = 'https://api.github.com/graphql';
  * @return {Promise?}
  */
 export async function getInfo(TOKEN, myData, renderList) {
-    // First token was generated on GitHub settings page, Sep-02-2017, for mostly read-only access. 
+    // First token was generated on GitHub settings page, Sep-02-2017, for mostly read-only access.
     // I added it to js file content, and committed to repo.
     // Then I received email, about warning, that it's not ok.
     // So I regenerated token, and this time, put it into local, but hidden/ignored file 'token.json'
@@ -33,7 +36,7 @@ export async function getInfo(TOKEN, myData, renderList) {
         verticalScroll: true,
         // horizontalScroll: false,
         // stack:true,
-        orientation: 'top', 
+        orientation: 'top',
         // zoomKey: 'ctrlKey'
     });
 
@@ -43,12 +46,12 @@ export async function getInfo(TOKEN, myData, renderList) {
 function conertToArrayAndSortByStars(data) {
     var arr = [];
     for (let key in data) {
-        if (!data[key]) 
+        if (!data[key])
             continue // so that not to push "null" to array
 
         arr.push(data[key]);
     }
-    arr.sort(function(a, b) {
+    arr.sort(function (a, b) {
         if (!a || !b) {
             return 0;
         }
@@ -74,9 +77,9 @@ function renderListWithTemplate(data) {
         var repoRecord = data[i];
 
         let str = `<span>
-        <a href="${repoRecord.url}" target="_blank">${repoRecord.name}</a> owned by ${repoRecord.owner.login} (${repoRecord.owner.__typename}). 
-        Created ${moment(repoRecord.createdAt).format('YYYY/MM/DD')}, 
-        Pushed ${moment(repoRecord.pushedAt).format('YYYY/MM/DD')}, 
+        <a href="${repoRecord.url}" target="_blank">${repoRecord.name}</a> owned by ${repoRecord.owner.login} (${repoRecord.owner.__typename}).
+        Created ${moment(repoRecord.createdAt).format('YYYY/MM/DD')},
+        Pushed ${moment(repoRecord.pushedAt).format('YYYY/MM/DD')},
         Updated: ${moment(repoRecord.updatedAt).format('YYYY/MM/DD')}
         </span>
 
@@ -85,9 +88,9 @@ function renderListWithTemplate(data) {
         </span>
 
         <span>
-        Forks: <span class="badge badge-secondary badge-pill">${repoRecord.forks.totalCount}</span> 
+        Forks: <span class="badge badge-secondary badge-pill">${repoRecord.forks.totalCount}</span>
         </span>
-        
+
         <span>
         Stars: <span class="badge badge-primary badge-pill">${repoRecord.stargazers.totalCount}</span>
         </span>`;
@@ -103,7 +106,7 @@ function renderListWithTemplate(data) {
  * [createRepositoriesQueryBody description]
  *
  * @example - basic example using fragment and repository() aggregation - see idl/query2.idl
- * 
+ *
  * @param  {[Array]} myData [description]
  * @return {[String]}       [description]
  */
@@ -141,7 +144,7 @@ export function createRepositoriesQueryBody(myData) {
     // updatedAt - @deprecated
 
     let strings = [];
-    myData.forEach(function(repo, index) {
+    myData.forEach(function (repo, index) {
         let lineTemplate = `repo${++index}: repository(owner: "${repo.owner}", name: "${repo.name}") { ...repositoryFragment }`;
         strings.push(lineTemplate);
     });
@@ -154,12 +157,14 @@ export function createRepositoriesQueryBody(myData) {
 
     let queryBody = fragmentString + queryString;
 
+    console.log(queryBody);
+
     return queryBody;
 }
 
 /**
  * With applying options.headers, it goes plain/text, and as result OPTIONS => POST 2 requests.
- * 
+ *
  * @param  {[type]} TOKEN       [description]
  * @param  {[type]} queryBody   [description]
  * @param  {[type]} contentType [description]
@@ -186,17 +191,17 @@ function performRequest(TOKEN, queryBody, contentType) {
         })
         // .then(data => data.data)
         .then(data => {
-            if (data.errors && data.errors.length > 0){
+            if (data && data.errors && data.errors.length > 0) {
                 console.log(data.errors[0].message, data.errors); // to attract attention
             }
-            return data.data;
+            return data && data.data ? data.data : {};
         });
 }
 
 /**
  * If we want to have only one POST request, we need to fetch URL with param `access_token`
  * If during fetch, no options.headers then yes - POST request only one.
- * 
+ *
  * @param  {[type]} TOKEN       [description]
  * @param  {[type]} queryBody   [description]
  * @param  {[type]} contentType [description]
@@ -234,9 +239,9 @@ function performAjaxRequest(TOKEN, queryBody) {
     // If we provide Content-Type then we have OPTIONS (204) + POST (200) requests. If no content type, just POST (200)
     // xhr.setRequestHeader('Content-Type', 'application/json');
     // xhr.setRequestHeader('Content-Type', 'application/graphql');
-    // 
+    //
     // xhr.setRequestHeader('Accept', 'application/json'); // not yet sure why this needed
-    xhr.onload = function() {
+    xhr.onload = function () {
         console.log(xhr.response.data);
     }
 
@@ -335,7 +340,7 @@ export function apiTest1(TOKEN) {
 
     // after stringifying
     // {
-    //     "query": "{\n\t\t  repositoryOwner(login: \"alundiak\") {\n\t\t    repositories(first: 30) {\n\t\t      edges {\n\t\t       
+    //     "query": "{\n\t\t  repositoryOwner(login: \"alundiak\") {\n\t\t    repositories(first: 30) {\n\t\t      edges {\n\t\t
     //      org: node {\n\t\t          name\n\t\t        }\n\t\t      }\n\t\t    }\n\t\t  }\n\t\t}"
     // }
 
@@ -423,7 +428,7 @@ export async function apiTest3(TOKEN) {
     // promise.onload = function(a){
     //     console.log('TODO - check request performance', a);
     // }
-    // performRequest(TOKEN, queryBody,'json'); // 
+    // performRequest(TOKEN, queryBody,'json'); //
     let response = await performRequest(TOKEN, queryBody, 'graphql'); // doesn't work with GitHub, still require JSON.stringify()
     console.log(response);
 }

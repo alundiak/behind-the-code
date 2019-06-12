@@ -6,12 +6,12 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Chrome Canary: 
-    [Deprecation] Styling master document from stylesheets defined in HTML Imports is deprecated, and is planned to be removed in M65, around March 2018. Please refer to https://goo.gl/EGXzpw for possible migration paths. 
+    <!-- Chrome Canary:
+    [Deprecation] Styling master document from stylesheets defined in HTML Imports is deprecated, and is planned to be removed in M65, around March 2018. Please refer to https://goo.gl/EGXzpw for possible migration paths.
     -->
     <!-- That is why, link to style should be in main file -->
     <!--
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
@@ -28,8 +28,8 @@
 
 <body __onload="init()">
     <div class="container with-heading">
-      <p class="lead">List of famous frontend tools in modern web development (2018). 
-        <span> Author: 
+      <p class="lead">List of famous frontend tools in modern web development (2018).
+        <span> Author:
           <a href="https://github.com/alundiak/behind-the-code" target="_blank">@alundiak</a>
         </span>
       </p>
@@ -54,7 +54,7 @@
           <span> | </span>
           <div class="info">
               <button id="authorizeApp" type="button" class="btn btn-primary">Authorize via GitHub</button>
-              <span 
+              <span
               class="badge badge-secondary">This page requires GitHub OAuth token, to perform POST requests on behalf of end user</span>
           </div>
       </div>
@@ -66,15 +66,15 @@
 
       </div>
     </div>
-    
-    
+
+
    <!--  <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     </div> -->
 
     <div id="visualization"></div>
     <div class="loader colorful"></div>
-    
+
     <ul class="list-group"></ul>
     <template id="listGroupTemplate">
         <li class="list-group-item d-flex justify-content-between align-items-center"></li>
@@ -87,7 +87,7 @@
     <script type="application/javascript" src="node_modules/github-api/dist/GitHub.bundle.min.js"></script>
     <script type="application/javascript" src="node_modules/pace-progress/pace.js"></script>
     <script type="module" src="./js/index.js"></script>
-    <script src="/js/perf.js"></script>
+    <!-- <script src="/js/perf.js"></script> -->
 </body>
 
 </html>
