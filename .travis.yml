@@ -1,8 +1,8 @@
 language: node_js
 
 node_js:
-  - "10.6.0" # current
-  - "8.0" # stable
+  - "12.4.0" # current
+  # - "8.0" # stable
 script:
   - "npm test"
 notifications:
