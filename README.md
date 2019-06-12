@@ -1,6 +1,8 @@
 Behind The Code
 ===
-Visualized timeline of Web Tools, Libraries, Frameworks and people... I know since I started as Web Developer (2007).
+
+- Visualized timeline of Web Tools, Libraries, Frameworks and people... I know since I started as Web Developer (2007).
+- GraphQL + GitHub API case study
 
 [![TravisCI Build Status](https://travis-ci.org/alundiak/behind-the-code.svg?branch=master)](https://travis-ci.org/alundiak/behind-the-code)
 [![CircleCI Build Status](https://circleci.com/gh/alundiak/behind-the-code.svg?style=svg)](https://circleci.com/gh/alundiak/behind-the-code)
@@ -40,12 +42,12 @@ Visualized timeline of Web Tools, Libraries, Frameworks and people... I know sin
 - HTML imports works, but JS files are loaded later, than simple HTML inside inside of main index.html file. Sometimes MomentJS is not yet available.
 - Preflighted Requests. When `options.headers` provided for Fetch API it does send OPTIONS and then POST request. Simple XmlHttprequest goes only one POST.
 - GraphQL is the winner for sure. Using simple Fetch calls to GitHub API v3 is ok, but to much request. And using github-api with Requestable is the slowest.
-- Twitter Bootstrap `v4.0.0-beta` is not stable enough - there are at least UI issues with list-group. Sep-05-2017 they dropped bower support. npm module `bootstrap` is ok (contains js, css and scss). But there is also unverified `bootstrap-css` which contains css files but also scss file pointing to `../node_modules/bootstrap/scss` folder. Odd. 
+- Twitter Bootstrap `v4.0.0-beta` is not stable enough - there are at least UI issues with list-group. Sep-05-2017 they dropped bower support. npm module `bootstrap` is ok (contains js, css and scss). But there is also unverified `bootstrap-css` which contains css files but also scss file pointing to `../node_modules/bootstrap/scss` folder. Odd.
 - HTML `<template>` still not supported by IE and partially supported by Edge. Chrome+, Firefox+.
 
 
 ## `*.idl` (`*.graphql`) file extensions.
-- How to read `*.idl` files 
+- How to read `*.idl` files
 - and if possible how to use contentType `application/graphql`
 - https://github.com/Shopify/graphql-js-client-compiler
 - https://github.com/apollographql/graphql-syntax
