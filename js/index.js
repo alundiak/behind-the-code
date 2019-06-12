@@ -24,11 +24,11 @@ import * as gitHubApi4 from './use-github-v4.js';
     $('#disableRendering').on('change', function(e) {
         renderList = !this.checked;
     });
-    
+
     $('#authorizeApp').on('click', function(e) { // should be before code line, where token is taken.
         window.location.href = '/auth/github';
     });
-    
+
     const repoData = await dataPromises.getMyData(); // in fact it's just Promise
     const token = await dataPromises.getUserAccessToken(); // string value, stored in user's browser storage
 
@@ -48,6 +48,7 @@ import * as gitHubApi4 from './use-github-v4.js';
     // gitHubApi4.apiTest2(token);
     // gitHubApi4.apiTest3(token);
     // gitHubApi4.getInfo(token, repoData, renderList);
+
     gitHubApi4.getInfo(token, repoData, false);
 
     $('.dropdown-menu').delegate('a', 'click', function(e) {

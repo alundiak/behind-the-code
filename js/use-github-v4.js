@@ -21,12 +21,14 @@ export async function getInfo(TOKEN, myData, renderList) {
         return;
     }
 
+    // TODO split myData into chunks 50 or 100 and then create a few queryBody objects and a few repos.
+
     let queryBody = createRepositoriesQueryBody(myData);
     const repos = await performRequest(TOKEN, queryBody, 'json'); // here it's function call, with returning Promise
     // const repos = performRequest(TOKEN, queryBody); // 401 Error: "This endpoint requires you to be authenticated."
     // const repos = performRequestOnlyOne(TOKEN, queryBody); // Sends only one POST request
 
-    let data = conertToArrayAndSortByStars(repos);
+    let data = convertToArrayAndSortByStars(repos);
     // if (renderList) {
     //     renderListWithTemplate(data);
     // }
@@ -43,7 +45,7 @@ export async function getInfo(TOKEN, myData, renderList) {
     // timelineVis.attachExamples(data);
 }
 
-function conertToArrayAndSortByStars(data) {
+function convertToArrayAndSortByStars(data) {
     var arr = [];
     for (let key in data) {
         if (!data[key])
@@ -156,8 +158,6 @@ export function createRepositoriesQueryBody(myData) {
     `;
 
     let queryBody = fragmentString + queryString;
-
-    console.log(queryBody);
 
     return queryBody;
 }
