@@ -9,6 +9,7 @@ import * as bestOfJsApi from './use-best-of-js-org.js';
 import * as gitHubApi3 from './use-github-v3.js';
 import * as gitHubTools from './use-github-tools.js';
 import * as gitHubApi4 from './use-github-v4.js';
+// import * as gitHubApi4Helpers from './use-github-v4.js';
 // import * as gitOctokitGraphql from './use-octokit-graphql.js';
 // console.log(gitOctokitGraphql);
 
@@ -44,12 +45,16 @@ import * as gitHubApi4 from './use-github-v4.js';
     // gitHubTools.apiTest1(token);
     // gitHubTools.getInfo(token, repoData, renderList);
 
-    // gitHubApi4.apiTest1(token);
-    // gitHubApi4.apiTest2(token);
-    // gitHubApi4.apiTest3(token);
-    // gitHubApi4.getInfo(token, repoData, renderList);
+    // gitHubApi4Helpers.apiTest1(token);
+    // gitHubApi4Helpers.apiTest2(token);
+    // gitHubApi4Helpers.apiTest3(token);
+    // gitHubApi4.getInfo(token, repoData, true);
 
     gitHubApi4.getInfo(token, repoData, false);
+
+    const dataLength = repoData.length;
+    $('.data-length .all').text(dataLength);
+    $('.data-length .filtered').text(50);
 
     $('.dropdown-menu').delegate('a', 'click', function(e) {
         let value = $(e.target).data('value');
