@@ -49,6 +49,7 @@ Behind The Code
 ## `*.idl` (`*.graphql`) file extensions.
 - How to read `*.idl` files
 - and if possible how to use contentType `application/graphql`
+    - https://graphql.org/learn/serving-over-http/
 - https://github.com/Shopify/graphql-js-client-compiler
 - https://github.com/apollographql/graphql-syntax
 - Work more with schema and types.

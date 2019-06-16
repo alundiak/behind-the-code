@@ -1,6 +1,7 @@
 import {renderListRowv3} from './use-github-v3.js'
-    // import GitHub from '../bower_components/github-api/lib/GitHub.js'; // doesn't work in Chrome Canary
-    // var GitHub = require('github-api'); // from node_modules (using NodeJS env or RequireJS)
+
+// import GitHub from '../bower_components/github-api/lib/GitHub.js'; // doesn't work in Chrome Canary
+// var GitHub = require('github-api'); // from node_modules (using NodeJS env or RequireJS)
 
 export function getInfo(TOKEN, myData, renderList) {
     let gh = getGitHubInstance(TOKEN);

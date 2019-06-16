@@ -6,9 +6,12 @@ import * as timelineVis from './timeline-vis.js';
 export const apiUrl = 'https://api.github.com/graphql';
 
 /**
+ * @description Main function to get all info about GitHib repositories and render it on page.
+ *
  * @param  {string} TOKEN
  * @param  {array} myData
  * @param  {boolean} renderList
+ *
  * @return {void}
  */
 export async function getInfo(TOKEN, myData, renderList) {
@@ -26,7 +29,6 @@ export async function getInfo(TOKEN, myData, renderList) {
     //
     // let queryBody = createRepositoriesQueryBody(myData);
     // const repos = await performRequest(TOKEN, queryBody, 'json'); // here it's function call, with returning Promise
-    // const repos = performRequest(TOKEN, queryBody); // 401 Error: "This endpoint requires you to be authenticated."
     // const repos = performRequestOnlyOne(TOKEN, queryBody); // Sends only one POST request
 
     //
@@ -44,31 +46,31 @@ export async function getInfo(TOKEN, myData, renderList) {
 
     let data = convertToArrayAndSortByStars(repos);
 
-    // if (renderList) {
-    //     renderListWithTemplate(data);
-    // }
+    if (renderList) {
+        renderListWithTemplate(data);
+    } else {
+        const container = document.getElementById('visualization');
+        timelineVis.renderTimeLineViz(container, data, {
+            clickToUse: true,
+            verticalScroll: true,
+            // horizontalScroll: false,
+            // stack:true,
+            orientation: 'top',
+            // zoomKey: 'ctrlKey'
+        });
 
-    const container = document.getElementById('visualization');
-    timelineVis.renderTimeLineViz(container, data, {
-        clickToUse: true,
-        verticalScroll: true,
-        // horizontalScroll: false,
-        // stack:true,
-        orientation: 'top',
-        // zoomKey: 'ctrlKey'
-    });
-
-    // timelineVis.attachExamples(data);
+        // timelineVis.attachExamples(data);
+    }
 }
 
 function renderListWithTemplate(data) {
-    var listGroupTemplate = document.getElementById('listGroupTemplate');
+    const listGroupTemplate = document.getElementById('listGroupTemplate');
     if (!listGroupTemplate) {
         return;
     }
 
-    for (var i = 0; i < data.length; i++) {
-        var repoRecord = data[i];
+    for (let i = 0; i < data.length; i++) {
+        const repoRecord = data[i];
 
         let str = `<span>
         <a href="${repoRecord.url}" target="_blank">${repoRecord.name}</a> owned by ${repoRecord.owner.login} (${repoRecord.owner.__typename}).
@@ -89,11 +91,13 @@ function renderListWithTemplate(data) {
         Stars: <span class="badge badge-primary badge-pill">${repoRecord.stargazers.totalCount}</span>
         </span>`;
 
-        var tmpl = listGroupTemplate.content.cloneNode(true);
+        const tmpl = listGroupTemplate.content.cloneNode(true);
         tmpl.querySelector('li').innerHTML = str;
 
         $('.list-group').append(tmpl);
     }
+
+    $('.loader').hide();
 }
 
 /**
@@ -249,7 +253,7 @@ function prepareGraphqlOptions(queryBody, contentType, TOKEN) {
             // 'Authorization': `AnyString ${TOKEN}`, // doesn't work
             // 'Authorization': `Bearer ${TOKEN}`, // also works
             'Authorization': `token ${TOKEN}`, // works
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json' // if provided, then OPTIONS + POST. If commented, anyway OPTIONS + POST
         };
         options.body = JSON.stringify(queryObject);
     } else if (contentType === 'graphql') {
@@ -265,6 +269,9 @@ function prepareGraphqlOptions(queryBody, contentType, TOKEN) {
         // options.headers = {
         //     'Authorization': `token ${TOKEN}`
         // };
+        // if no options.headers - then ONLY POST (contentType = text/plain)
+        // But GitHub API requires headers.Authorization at least
+        // => 401 Error: "This endpoint requires you to be authenticated."
         options.body = JSON.stringify(queryObject);
     }
 
