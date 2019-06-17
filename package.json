@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "node test.js",
+    "r": "node ./js/use-octokit-rest-node.js",
+    "g": "node ./js/use-octokit-graphql-node.js",
     "eslint": "./node_modules/.bin/eslint ./js/*.js"
   },
   "repository": {
@@ -19,7 +21,7 @@
   },
   "homepage": "https://github.com/alundiak/behind-the-code#readme",
   "engines": {
-    "node": ">=9.10.0"
+    "node": ">=12.4.0"
   },
   "devDependencies": {
     "acorn": "^6.1.1",

@@ -36,6 +36,9 @@ export function getInfo(myData) {
     }
 
     Promise.all([getProjects(), getHeroes()]).then(values => {
-        console.log(values); // 965 + 127 (Sep-02-2017)
+        console.log(values);
+
+        // 965 + 127 (Sep-02-2017)
+        // 1542 + 150 (Jun-17-2019)
     });
 }

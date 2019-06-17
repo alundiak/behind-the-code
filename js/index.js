@@ -10,6 +10,14 @@ import * as gitHubApi3 from './use-github-v3.js';
 import * as gitHubTools from './use-github-tools.js';
 import * as gitHubApi4 from './use-github-v4.js';
 import * as gitHubApi4Helpers from './use-github-v4_helpers.js';
+
+// doesn't work in browser because of CJS
+// import Octokit from '../node_modules/@octokit/rest/lib/core.js';
+// Also doesn't work
+// import Octokit from '/lib/octokit-rest.js';
+
+import * as gitOctokitRest from './use-octokit-rest.js';
+
 // import * as gitOctokitGraphql from './use-octokit-graphql.js';
 // console.log(gitOctokitGraphql);
 
@@ -17,16 +25,16 @@ import * as gitHubApi4Helpers from './use-github-v4_helpers.js';
 // import bootstrap from './node_modules/bootstrap/dist/js/bootstrap.js';
 // console.log(bootstrap);
 
-(async function() {
+async function main () {
     'use strict';
 
     let renderList = true;
 
-    $('#disableRendering').on('change', function(e) {
+    $('#disableRendering').on('change', function (e) {
         renderList = !this.checked;
     });
 
-    $('#authorizeApp').on('click', function(e) { // should be before code line, where token is taken.
+    $('#authorizeApp').on('click', function (e) { // should be before code line, where token is taken.
         window.location.href = '/auth/github';
     });
 
@@ -37,27 +45,15 @@ import * as gitHubApi4Helpers from './use-github-v4_helpers.js';
         return;
     }
 
-    // bestOfJsApi.getInfo(repoData);
-
-    // gitHubApi3.apiTest1(token);
-    // gitHubApi3.getInfo(token, repoData, renderList);
-
-    // gitHubTools.apiTest1(token);
-    // gitHubTools.getInfo(token, repoData, renderList);
-
-    // gitHubApi4Helpers.apiTestGet(token);
-    // gitHubApi4Helpers.apiTestJson(token);
-    // gitHubApi4Helpers.apiTestVariables(token);
-    // gitHubApi4Helpers.apiTestGraphql(token);
-
-    renderList = false; // override from above
-    gitHubApi4.getInfo(token, repoData, renderList);
+    // Default approach
+    gitHubApi4.getInfo(token, repoData, false);
+    // gitOctokitRest.getInfo(token, repoData, true);
 
     const dataLength = repoData.length;
     $('.info .all').text(dataLength);
     $('.info .filtered').text(50);
 
-    $('.dropdown-menu').delegate('a', 'click', function(e) {
+    $('.dropdown-menu').delegate('a', 'click', function (e) {
         let value = $(e.target).data('value');
 
         $('.dropdown span').text(value);
@@ -82,11 +78,88 @@ import * as gitHubApi4Helpers from './use-github-v4_helpers.js';
                 gitHubTools.getInfo(token, repoData, renderList);
                 break;
 
+            case 'octokit/rest':
+                gitOctokitRest.getInfo(token, repoData, renderList);
+                break;
+
             case 'githubApiv4':
             case 'default':
                 gitHubApi4.getInfo(token, repoData, renderList);
                 break;
         }
     }
+};
 
-}());
+async function experiments() {
+    const repoData = await dataPromises.getMyData();
+    const token = await dataPromises.getUserAccessToken();
+
+    if (!token || !repoData) {
+        return;
+    }
+
+    //
+    // https://bestofjs.org/
+    //
+    // bestOfJsApi.getInfo(repoData);
+
+    //
+    // https://developer.github.com/v3/
+    //
+    // gitHubApi3.apiTest1(token);
+
+    //
+    // https://github.com/github-tools/github
+    //
+    // gitHubTools.apiTest1(token);
+
+    //
+    // https://developer.github.com/v4/
+    //
+    // gitHubApi4Helpers.apiTestGet(token);
+    // gitHubApi4Helpers.apiTestJson(token);
+    // gitHubApi4Helpers.apiTestVariables(token);
+    // gitHubApi4Helpers.apiTestGraphql(token);
+
+    //
+    // https://github.com/octokit/rest.js
+    //
+    const octkitRestTest = async () => {
+        // Object "Octokit" from index.html
+        const octokitInstance = Octokit({
+            auth: token,
+            userAgent: 'Behind The Code v1.2.3'
+        });
+
+        // const { data: pullRequest } = await octokitInstance.pulls.get({
+        //     owner: 'facebook',
+        //     repo: 'react',
+        //     pull_number: 123
+        // });
+        // console.log(pullRequest); // works
+
+        // const myRepos = await octokitInstance.repos.listForUser({
+        //     username: 'alundiak'
+        // });
+        // console.log(myRepos); // works
+
+        // const publicRepos = await octokitInstance.repos.listPublic();
+        // console.log(publicRepos); // works
+
+        const customRepo = await octokitInstance.repos.get({
+            owner: 'facebook',
+            repo: 'react'
+        });
+        console.log(customRepo);
+    };
+
+    // octkitRestTest();
+
+    //
+    // https://github.com/octokit/graphql.js
+    //
+    // TODO
+}
+
+main();
+// experiments();

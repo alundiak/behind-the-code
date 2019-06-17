@@ -16,6 +16,7 @@ export function apiTestGet(TOKEN) {
     }
 
     // TODO add variables
+    // https://graphql.github.io/learn/queries/#variables
     fetch(apiUrl + '?access_token=' + TOKEN + `&query=${queryStr}`, options)
         .then(response => response.json())
         .then(data => {

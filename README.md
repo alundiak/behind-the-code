@@ -114,10 +114,18 @@ Behind The Code
 - https://developer.telerik.com/featured/oauth-has-ruined-everything/
 - https://www.npmjs.com/package/client-oauth2
 
-### GitHub API wrappers
+### GitHub API v3 wrappers
+
+github-tools aka `github-api`
 - https://github.com/github-tools/github/ (v3-based)
 - https://github.com/github-tools/github/issues/392#issuecomment-328295155 - Discussion about errors with importing github-api
+- https://github.com/github-tools/github/issues/564 - DEPRECATION EOY 2019
+
+node-github aka `@octokit/rest`
 - https://github.com/mikedeboer/node-github - node library to access the GitHub API (v3-based)
+- https://github.com/octokit/rest.js
+
+???
 - https://www.npmjs.com/package/client-oauth2 (https://github.com/mulesoft/js-client-oauth2) - Generic library for OAuth client connections.
 - https://github.com/jaredhanson/passport-github - looks like 3rd approach to connect GitHub
 - https://www.npmjs.com/package/passport-github2 - fork
