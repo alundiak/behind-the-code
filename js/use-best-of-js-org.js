@@ -10,9 +10,9 @@ export function getInfo(myData) {
     //
 
     var getProjects = function() {
-        let projectsUrl = apiUrl + '/projects.json';
-        let projectsJSON = '/data/bestofjs_projects.json';
-        let url = window.useUrl ? projectsUrl : projectsJSON;
+        const projectsUrl = apiUrl + '/projects.json';
+        const projectsJSON = '/data/bestofjs_projects.json';
+        const url = window.useUrl ? projectsUrl : projectsJSON;
 
         return fetch(url)
             .then(response => response.json())
@@ -23,9 +23,9 @@ export function getInfo(myData) {
     };
 
     var getHeroes = function() {
-        let hofUrl = apiUrl + '/hof.json';
-        let hofJSON = '/data/bestofjs_hof.json';
-        let url = window.useUrl ? hofUrl : hofJSON;
+        const hofUrl = apiUrl + '/hof.json';
+        const hofJSON = '/data/bestofjs_hof.json';
+        const url = window.useUrl ? hofUrl : hofJSON;
 
         return fetch(url)
             .then(response => response.json())

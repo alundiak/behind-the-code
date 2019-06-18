@@ -1,6 +1,13 @@
 {
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
     "extends": "standard",
     "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
         "fetch": true,
         "moment": true,
         "$": true,
@@ -11,19 +18,26 @@
         "octokitGraphql": true,
         "vis": true
     },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
     "rules": {
         "indent": 0,
-        "no-tabs": 0,
+        "semi": 0,
         "quotes": 0,
         "camelcase": 0,
-        "eqeqeq": 0,
         "no-unused-vars": 0,
         "padded-blocks": 0,
         "handle-callback-err": 0,
-        "semi": 0,
         "space-before-function-paren": 0,
-        "space-before-blocks": 0,
-        "no-trailing-spaces": 0,
-        "no-mixed-spaces-and-tabs": 0
+
+        "prefer-const": 1
     }
 }

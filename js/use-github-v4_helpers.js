@@ -6,9 +6,9 @@ export const apiUrl = 'https://api.github.com/graphql';
 // http://myapi/graphql?query={me{name}}
 // http://myapi/graphql?query={me{name}}&variables={myVar:\"alundiak\"}
 export function apiTestGet(TOKEN) {
-    let queryStr = '{repository(owner:"facebook",name:"react"){nameWithOwner}}';
+    const queryStr = '{repository(owner:"facebook",name:"react"){nameWithOwner}}';
 
-    let options = {
+    const options = {
         method: 'get',
         _headers: {
             'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ export function apiTestGet(TOKEN) {
 
 // OPTIONS + POST
 export function apiTestJson(TOKEN) {
-    let queryObject = {
+    const queryObject = {
         query: `{
           repositoryOwner(login: "alundiak") {
             repositories(first: 30) {
@@ -52,7 +52,7 @@ export function apiTestJson(TOKEN) {
     // } \
     // ";
 
-    let options = {
+    const options = {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ export function apiTestJson(TOKEN) {
 }
 
 export function apiTestVariables(TOKEN) {
-    let queryStr = `
+    const queryStr = `
     query MyRepos($loginVar: String!) {
         repositoryOwner(login: $loginVar) {
           repositories(first: 30) {
@@ -82,16 +82,16 @@ export function apiTestVariables(TOKEN) {
       }
     `;
 
-    let variablesStr = `{
+    const variablesStr = `{
         "loginVar": "alundiak"
     }`;
 
-    let bodyObject = {
+    const bodyObject = {
         query: queryStr,
         variables: variablesStr
     }
 
-    let options = {
+    const options = {
         method: 'post',
         _headers: {
             'Content-Type': 'application/json' // if provided, then OPTIONS + POST
@@ -112,7 +112,7 @@ export function apiTestVariables(TOKEN) {
 
 export function apiTestGraphql(TOKEN) {
     // Work both ways - with or without "query" before "{"
-    let queryStr = `{
+    const queryStr = `{
         repository(owner: "facebook", name: "react") {
             name
             nameWithOwner
@@ -123,11 +123,11 @@ export function apiTestGraphql(TOKEN) {
         }
     }`;
 
-    let bodyObject = {
+    const bodyObject = {
         query: queryStr
     };
 
-    let options = {
+    const options = {
         method: 'post',
         headers: { // even if no "headers", works anyway (but then only one POST)
             // 'Content-Type': 'application/json' // works anyway
@@ -172,7 +172,7 @@ function performAjaxRequest(TOKEN, queryBody) {
         console.log(xhr.response.data);
     }
 
-    let queryObject = {
+    const queryObject = {
         query: queryBody
     }
 

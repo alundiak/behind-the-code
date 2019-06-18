@@ -4,6 +4,7 @@ node_js:
   - "12.4.0" # current
   # - "8.0" # stable
 script:
+  - "npm run eslint"
   - "npm test"
 notifications:
     slack: lundiak:CLh0cZU3qIo1mIlMuGwkmEsU

@@ -4,15 +4,15 @@ import { renderListRowv3 } from './use-github-v3.js'
 // var GitHub = require('github-api'); // from node_modules (using NodeJS env or RequireJS)
 
 export function getInfo(TOKEN, myData, renderList) {
-    let gh = getGitHubInstance(TOKEN);
-    let clbck = function(err, data) {
-        if (renderList){
+    const gh = getGitHubInstance(TOKEN);
+    const clbck = function(err, data) {
+        if (renderList) {
             renderListRowv3(data);
         }
     }
     myData.forEach(function(element) {
-        let requestableObject = getUserRepos(gh, element.owner, element.name, clbck);
-        requestableObject.then(function(){
+        const requestableObject = getUserRepos(gh, element.owner, element.name, clbck);
+        requestableObject.then(function() {
             $('.loader').hide();
         })
         // and yes, requestableObject is instanceof Promise.
@@ -50,7 +50,7 @@ function getUserRepos(gh, user, repo, callback) {
 }
 
 function createGist(gh) {
-    let gist = gh.getGist(); // not a gist yet
+    const gist = gh.getGist(); // not a gist yet
     gist.create({
         public: true,
         description: 'Gist created using github-api',
@@ -63,12 +63,12 @@ function createGist(gh) {
         data
     }) {
         // Promises!
-        let createdGist = data;
+        const createdGist = data;
         return gist.read();
     }).then(function({
         data
     }) {
-        let retrievedGist = data;
+        const retrievedGist = data;
         console.log(retrievedGist);
     });
 }

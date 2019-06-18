@@ -11,9 +11,9 @@ export function getMyData() {
 // but POST requests to GitHub API v4 goes with correct token
 //
 // Used on localhost ONLY
-export function getMyLocalToken(){
+export function getMyLocalToken() {
     return fetch('/properties').then(response => {
-        if (response.ok){
+        if (response.ok) {
             return response.text();
         } else {
             return '';
@@ -29,10 +29,10 @@ export function getMyLocalToken(){
  * @return {[String]} OAuth token, received from GitHub redirection callback, but with my manual interception in NodeJS route
  */
 export async function getUserAccessToken() {
-    let localhost = window.location.hostname === 'localhost';
-    let storedUserAccessToken = window.localStorage.getItem('userAccessToken');
+    const localhost = window.location.hostname === 'localhost';
+    const storedUserAccessToken = window.localStorage.getItem('userAccessToken');
 
-    if (storedUserAccessToken){
+    if (storedUserAccessToken) {
         // if authorized => disable button. Ideally should be some kind of method called gitHubAuth.isAuthorized() or similar.
         // But I will rely on simple fact of user having value in his localStorage
 
@@ -47,7 +47,7 @@ export async function getUserAccessToken() {
     // const code = searchParams.get('code');
     let token = searchParams.get('access_token');
 
-    if (token){
+    if (token) {
         // planned for Heroku instance usage
         window.localStorage.setItem('userAccessToken', token);
     } else if (localhost) {

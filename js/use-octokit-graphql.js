@@ -17,7 +17,7 @@ import {
 export async function getInfo(token, myData, renderList) {
     const repos = await fetchGraphQlData(token, myData);
 
-    let data = convertToArrayAndSortByStars(repos);
+    const data = convertToArrayAndSortByStars(repos);
 
     renderData(data, renderList);
 }

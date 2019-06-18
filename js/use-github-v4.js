@@ -37,7 +37,7 @@ export async function getInfo(TOKEN, myData, renderList) {
 
     const repos = splitDataFetch(myData, graphQlCallback);
 
-    let data = convertToArrayAndSortByStars(repos);
+    const data = convertToArrayAndSortByStars(repos);
 
     renderData(data, renderList);
 }
@@ -52,7 +52,7 @@ export async function splitDataFetch(myData, graphQlCallback) {
     while (position < myData.length) {
         const dataChunk = myData.slice(position, position + 50); // 50 is experimental value, discovered via GraphQL Explorer
         position += dataChunk.length;
-        let queryBody = createRepositoriesQueryBody(dataChunk);
+        const queryBody = createRepositoriesQueryBody(dataChunk);
         const reposChunk = await graphQlCallback(queryBody);
         repos.push(reposChunk);
     }
@@ -91,7 +91,7 @@ export function renderListWithTemplate(data) {
     for (let i = 0; i < data.length; i++) {
         const repoRecord = data[i];
 
-        let str = `<span>
+        const str = `<span>
         <a href="${repoRecord.url}" target="_blank">${repoRecord.name}</a> owned by ${repoRecord.owner.login} (${repoRecord.owner.__typename}).
         Created ${moment(repoRecord.createdAt).format('YYYY/MM/DD')},
         Pushed ${moment(repoRecord.pushedAt).format('YYYY/MM/DD')},
@@ -128,7 +128,7 @@ export function renderListWithTemplate(data) {
  * @return {string}       final string value of GraphQL Query
  */
 export function createRepositoriesQueryBody(myData) {
-    let fragmentString = `
+    const fragmentString = `
         fragment repositoryFragment on Repository {
             name
             nameWithOwner
@@ -160,20 +160,20 @@ export function createRepositoriesQueryBody(myData) {
     `;
     // updatedAt - @deprecated
 
-    let strings = [];
+    const strings = [];
     myData.forEach(function (repo, index) {
         // Note: repository() expects ONLY 2 fields: owner and name
-        let lineTemplate = `repo${++index}: repository(name: "${repo.name}", owner: "${repo.owner}") { ...repositoryFragment }`;
+        const lineTemplate = `repo${++index}: repository(name: "${repo.name}", owner: "${repo.owner}") { ...repositoryFragment }`;
         strings.push(lineTemplate);
     });
 
-    let queryString = `
+    const queryString = `
         {
             ${strings.join('\n')}
         }
     `;
 
-    let queryBody = fragmentString + queryString;
+    const queryBody = fragmentString + queryString;
 
     return queryBody;
 }
@@ -188,7 +188,7 @@ export function createRepositoriesQueryBody(myData) {
  * @return {Promise}             [description]
  */
 function performRequest(TOKEN, queryBody, contentType) {
-    let graphqlOptions = prepareGraphqlOptions(queryBody, contentType, TOKEN);
+    const graphqlOptions = prepareGraphqlOptions(queryBody, contentType, TOKEN);
     if (!graphqlOptions || !TOKEN) {
         return;
     }
@@ -226,7 +226,7 @@ function performRequest(TOKEN, queryBody, contentType) {
  * @return {Promise}             [description]
  */
 function performRequestOnlyOne(TOKEN, queryBody, contentType) {
-    let graphqlOptions = prepareGraphqlOptions(queryBody, contentType, TOKEN);
+    const graphqlOptions = prepareGraphqlOptions(queryBody, contentType, TOKEN);
     if (!graphqlOptions || !TOKEN) {
         return;
     }
@@ -257,11 +257,11 @@ function prepareGraphqlOptions(queryBody, contentType, TOKEN) {
         return;
     }
 
-    let queryObject = {
+    const queryObject = {
         query: queryBody
     };
 
-    let options = {
+    const options = {
         method: 'post'
     };
 
@@ -333,8 +333,8 @@ export function convertToArrayAndSortByStars(finalRepositoriesData) {
     //
     // If finalRepositoriesData is single Array
     //
-    for (let dataElem of finalRepositoriesData) {
-        for (let key in dataElem) {
+    for (const dataElem of finalRepositoriesData) {
+        for (const key in dataElem) {
             if (!dataElem[key]) {
                 continue // so that not to push "null" to array
             }

@@ -52,7 +52,7 @@ async function main () {
     $('.info .filtered').text(50);
 
     $('.dropdown-menu').delegate('a', 'click', function (e) {
-        let value = $(e.target).data('value');
+        const value = $(e.target).data('value');
 
         $('.dropdown span').text(value);
         switchApproach(value);

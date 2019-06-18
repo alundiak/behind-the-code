@@ -42,12 +42,12 @@ function loadResTimData() {
         <td>Request (ms)</td><td>Response (ms)</td></tr></thead>\n<tbody>\n`;
     var t = [];
     for (var i in e) {
-        if (e[i].name == "document") {
+        if (e[i].name === "document") {
             // for the document refer to window.performance.timing instead, we skip it for this example
             continue;
         }
         perf_data = perf_data + "<tr><td>" + e[i].name.replace(/^.*\/|\.$/g, '') + "</td>";
-        if (e[i].requestStart == 0) {
+        if (e[i].requestStart === 0) {
             // resource is cached, some entries are zero, we default to fetchStart instead
             perf_data = perf_data + "<td>" + Math.round(e[i].fetchStart - e[i].startTime) + "</td>";
         } else {
@@ -75,7 +75,7 @@ function resourceTiming() {
     var resourceList = window.performance.getEntriesByType("resource");
     console.log(resourceList);
     for (var i = 0; i < resourceList.length; i++) {
-        if (resourceList[i].initiatorType == "img") {
+        if (resourceList[i].initiatorType === "img") {
             console.log("End to end (img) resource fetch: " + (resourceList[i].responseEnd - resourceList[i].startTime));
         }
     }

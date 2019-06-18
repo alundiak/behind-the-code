@@ -99,7 +99,7 @@ export function renderTimeLineViz(container, reposDataArray, options) {
     var prepareContentHTML = function(d) {
         // https://octicons.github.com/
         // Maybe use GitHub star svg and stargazer number to show somehow
-        let tmpl = `<a href="${d.url}" target="_blank"><img class="avatar" src="${d.owner.avatarUrl}" title="${d.name}\n${d.description}\nCreated: ${moment(d.createdAt).format('YYYY/MM/DD')}"></a>`;
+        const tmpl = `<a href="${d.url}" target="_blank"><img class="avatar" src="${d.owner.avatarUrl}" title="${d.name}\n${d.description}\nCreated: ${moment(d.createdAt).format('YYYY/MM/DD')}"></a>`;
         return tmpl;
     }
 
@@ -109,9 +109,9 @@ export function renderTimeLineViz(container, reposDataArray, options) {
     //     start: '2013/12/30'
     // }
     var buildTimelineEntityData = function(data) {
-        let dataArr = [];
+        const dataArr = [];
         data.forEach(function(repoRecord, index, arr) {
-            let obj = {
+            const obj = {
                 id: index,
                 content: prepareContentHTML(repoRecord),
                 start: moment(repoRecord.createdAt).format('YYYY/MM/DD')
@@ -121,11 +121,11 @@ export function renderTimeLineViz(container, reposDataArray, options) {
         return dataArr;
     }
 
-    let timelineDataSet = buildTimelineEntityData(reposDataArray);
+    const timelineDataSet = buildTimelineEntityData(reposDataArray);
 
     const items = new vis.DataSet(timelineDataSet);
 
-    let timeline = new vis.Timeline(container, items, options || {});
+    const timeline = new vis.Timeline(container, items, options || {});
 
     // But still page loaded later !!! TODO
     $('.loader').hide();
