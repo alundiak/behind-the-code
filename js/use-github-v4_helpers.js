@@ -6,7 +6,7 @@ export const apiUrl = 'https://api.github.com/graphql';
 // http://myapi/graphql?query={me{name}}
 // http://myapi/graphql?query={me{name}}&variables={myVar:\"alundiak\"}
 export function apiTestGet(TOKEN) {
-    let queryStr = `{repository(owner:\"facebook\",name:\"react\"){nameWithOwner}}`;
+    let queryStr = '{repository(owner:"facebook",name:"react"){nameWithOwner}}';
 
     let options = {
         method: 'get',

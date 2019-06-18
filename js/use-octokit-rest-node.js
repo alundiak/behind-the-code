@@ -10,4 +10,3 @@ octokitInstance.repos.listForOrg({
 }).then(({ data }) => {
     console.log(data)
 })
-

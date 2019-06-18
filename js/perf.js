@@ -2,13 +2,13 @@
 // http://blog.trasatti.it/2012/12/measuring-the-speed-of-resource-loading-with-javascript-and-html5.html
 // https://github.com/atrasatti/jsperfexamples
 // :) 2012 year, #omg, I never tried that
-// 
+//
 // export default function() {
 
 // simplePerf();
 // testPerf1();
 
-// loadResTimData();    
+// loadResTimData();
 // var perfData = loadResTimData();
 // $('.perf-data').html(perfData);
 // }
@@ -134,8 +134,6 @@ window.addEventListener("load", function() { // TODO
 
 }, false);
 
-
-
 // function buffer_full(event) {
 //     console.log("WARNING: Resource Timing Buffer is FULL!");
 //     performance.setResourceTimingBufferSize(200);
@@ -147,5 +145,5 @@ window.addEventListener("load", function() { // TODO
 // }
 
 // document.onreadystatechange = function () {
-// 
+//
 // }

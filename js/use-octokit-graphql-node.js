@@ -31,7 +31,6 @@ const token = ''; // copy from browser
     console.log(JSON.stringify(repository, null, 4));
 }());
 
-
 // Do not use template literals in the query strings
 // as they make your code vulnerable to query injection attacks (see #2). Use variables instead:
 // https://github.com/octokit/graphql.js/issues/2

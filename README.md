@@ -125,6 +125,10 @@ node-github aka `@octokit/rest`
 - https://github.com/mikedeboer/node-github - node library to access the GitHub API (v3-based)
 - https://github.com/octokit/rest.js
 
+
+GitHub + GraphQL + React
+- https://medium.com/@katopz/github-graphql-api-react-example-eace824d7b61 [2016, deps outdated]
+
 ???
 - https://www.npmjs.com/package/client-oauth2 (https://github.com/mulesoft/js-client-oauth2) - Generic library for OAuth client connections.
 - https://github.com/jaredhanson/passport-github - looks like 3rd approach to connect GitHub

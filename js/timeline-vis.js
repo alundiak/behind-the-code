@@ -2,7 +2,7 @@
 // Horizontal Scrollable, Collapsible Timeline with HTML content/images support
 // http://visjs.org/timeline_examples.html
 // http://visjs.org/examples/timeline/items/htmlContents.html
-// 
+//
 
 export function attachExamples() {
     var item1 = document.createElement('div');
@@ -76,7 +76,6 @@ export function attachExamples() {
         content: item7,
         start: '2013-04-21'
     }]);
-    var options = {};
     var options = {
         // sampling: true,
         // drawPoints: {enabled:false, size:3},
@@ -88,7 +87,6 @@ export function attachExamples() {
     };
     var timeline = new vis.Timeline(container, items, options);
 }
-
 
 /**
  * [renderTimeLineViz description]

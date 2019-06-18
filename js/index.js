@@ -17,9 +17,7 @@ import * as gitHubApi4Helpers from './use-github-v4_helpers.js';
 // import Octokit from '/lib/octokit-rest.js';
 
 import * as gitOctokitRest from './use-octokit-rest.js';
-
-// import * as gitOctokitGraphql from './use-octokit-graphql.js';
-// console.log(gitOctokitGraphql);
+import * as gitOctokitGraphql from './use-octokit-graphql.js';
 
 // This doesn't work (CommonJS exported module)
 // import bootstrap from './node_modules/bootstrap/dist/js/bootstrap.js';
@@ -46,8 +44,8 @@ async function main () {
     }
 
     // Default approach
-    gitHubApi4.getInfo(token, repoData, false);
-    // gitOctokitRest.getInfo(token, repoData, true);
+    // gitHubApi4.getInfo(token, repoData, false);
+    gitOctokitGraphql.getInfo(token, repoData, false);
 
     const dataLength = repoData.length;
     $('.info .all').text(dataLength);
@@ -70,21 +68,25 @@ async function main () {
         $('.loader').show();
 
         switch (value) {
-            case 'githubApiv3':
+            case 'githubApiV3': // v3
                 gitHubApi3.getInfo(token, repoData, renderList);
                 break;
 
-            case 'githubApiv3_wrapper':
+            case 'githubApiV3_wrapper': // v3
                 gitHubTools.getInfo(token, repoData, renderList);
                 break;
 
-            case 'octokit/rest':
+            case 'octokit/rest': // v3
                 gitOctokitRest.getInfo(token, repoData, renderList);
                 break;
 
-            case 'githubApiv4':
-            case 'default':
+            case 'githubApiV4': // v4
                 gitHubApi4.getInfo(token, repoData, renderList);
+                break;
+
+            case 'octokit/graphql': // v4
+            case 'default':
+                gitOctokitGraphql.getInfo(token, repoData, renderList);
                 break;
         }
     }
@@ -95,7 +97,7 @@ async function experiments() {
     const token = await dataPromises.getUserAccessToken();
 
     if (!token || !repoData) {
-        return;
+        return false;
     }
 
     //
@@ -124,41 +126,12 @@ async function experiments() {
     //
     // https://github.com/octokit/rest.js
     //
-    const octkitRestTest = async () => {
-        // Object "Octokit" from index.html
-        const octokitInstance = Octokit({
-            auth: token,
-            userAgent: 'Behind The Code v1.2.3'
-        });
-
-        // const { data: pullRequest } = await octokitInstance.pulls.get({
-        //     owner: 'facebook',
-        //     repo: 'react',
-        //     pull_number: 123
-        // });
-        // console.log(pullRequest); // works
-
-        // const myRepos = await octokitInstance.repos.listForUser({
-        //     username: 'alundiak'
-        // });
-        // console.log(myRepos); // works
-
-        // const publicRepos = await octokitInstance.repos.listPublic();
-        // console.log(publicRepos); // works
-
-        const customRepo = await octokitInstance.repos.get({
-            owner: 'facebook',
-            repo: 'react'
-        });
-        console.log(customRepo);
-    };
-
-    // octkitRestTest();
+    // gitOctokitRest.apiTest(token);
 
     //
     // https://github.com/octokit/graphql.js
     //
-    // TODO
+    // gitOctokitGraphql.apiTest(token);
 }
 
 main();

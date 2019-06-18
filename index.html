@@ -50,14 +50,14 @@
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Approach</button>
-                <span>githubApiv4</span>
+                <span>@octokit/graphql</span>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" data-value="githubApiv3" href="#">GitHub API v3 (REST)</a>
-                    <a class="dropdown-item" data-value="githubApiv3_wrapper" href="#">GitHub API v3 (REST) via
+                    <a class="dropdown-item" data-value="githubApiV3" href="#">GitHub API v3 (REST)</a>
+                    <a class="dropdown-item" data-value="githubApiV3_wrapper" href="#">GitHub API v3 (REST) via
                         "github-tools/github-api wrapper"</a>
                     <a class="dropdown-item" data-value="octokit/rest" href="#">GitHub API v3 (@octokit/rest)</a>
+                    <a class="dropdown-item" data-value="githubApiV4" href="#">GitHub API v4 (GraphQL)</a>
                     <a class="dropdown-item" data-value="octokit/graphql" href="#">GitHub API v4 (@octokit/graphql)</a>
-                    <a class="dropdown-item" data-value="githubApiv4" href="#">GitHub API v4 (GraphQL)</a>
                 </div>
             </div>
             <span> | </span>
@@ -98,8 +98,13 @@
     <script type="application/javascript" src="node_modules/github-api/dist/GitHub.bundle.min.js"></script>
     <script type="application/javascript" src="node_modules/pace-progress/pace.js"></script>
 
+    <!-- @octokit/rest -->
     <!-- <script type="application/javascript" src="node_modules/@octokit/rest/lib/core.js"></script> -->
     <script src="https://github.com/octokit/rest.js/releases/download/v16.28.1/octokit-rest.min.js"></script>
+
+    <!-- @octokit/graphql -->
+    <!-- <script type="application/javascript" src="node_modules/@octokit/graphql/index.js"></script> -->
+    <script src="https://github.com/octokit/graphql.js/releases/download/v2.1.2/octokit-graphql.min.js"></script>
 
     <script type="module" src="./js/index.js"></script>
     <!-- <script src="/js/perf.js"></script> -->

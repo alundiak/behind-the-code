@@ -24,6 +24,10 @@ export async function getInfo(TOKEN, myData, renderList) {
         return;
     }
 
+    const graphQlCallback = async (queryBody) => {
+        return performRequest(TOKEN, queryBody, 'json');
+    }
+
     //
     // Approach 1 (old) - Single Request
     //
@@ -31,39 +35,54 @@ export async function getInfo(TOKEN, myData, renderList) {
     // const repos = await performRequest(TOKEN, queryBody, 'json'); // here it's function call, with returning Promise
     // const repos = performRequestOnlyOne(TOKEN, queryBody); // Sends only one POST request
 
+    const repos = splitDataFetch(myData, graphQlCallback);
+
+    let data = convertToArrayAndSortByStars(repos);
+
+    renderData(data, renderList);
+}
+
+export async function splitDataFetch(myData, graphQlCallback) {
     //
     // Approach 2 (new) - Split Requests
     //
     let position = 0;
     const repos = [];
+
     while (position < myData.length) {
         const dataChunk = myData.slice(position, position + 50); // 50 is experimental value, discovered via GraphQL Explorer
         position += dataChunk.length;
         let queryBody = createRepositoriesQueryBody(dataChunk);
-        const reposChunk = await performRequest(TOKEN, queryBody, 'json');
+        const reposChunk = await graphQlCallback(queryBody);
         repos.push(reposChunk);
     }
 
-    let data = convertToArrayAndSortByStars(repos);
+    return repos;
+}
 
+export function renderData(data, renderList) {
     if (renderList) {
         renderListWithTemplate(data);
     } else {
-        const container = document.getElementById('visualization');
-        timelineVis.renderTimeLineViz(container, data, {
-            clickToUse: true,
-            verticalScroll: true,
-            // horizontalScroll: false,
-            // stack:true,
-            orientation: 'top',
-            // zoomKey: 'ctrlKey'
-        });
-
-        // timelineVis.attachExamples(data);
+        renderTimeLineViz(data);
     }
 }
 
-function renderListWithTemplate(data) {
+export function renderTimeLineViz(data) {
+    const container = document.getElementById('visualization');
+    timelineVis.renderTimeLineViz(container, data, {
+        clickToUse: true,
+        verticalScroll: true,
+        // horizontalScroll: false,
+        // stack:true,
+        orientation: 'top'
+        // zoomKey: 'ctrlKey'
+    });
+
+    // timelineVis.attachExamples(data);
+}
+
+export function renderListWithTemplate(data) {
     const listGroupTemplate = document.getElementById('listGroupTemplate');
     if (!listGroupTemplate) {
         return;
@@ -293,13 +312,12 @@ function prepareGraphqlOptions(queryBody, contentType, TOKEN) {
     */
 }
 
-
 /**
  * Convert To Single flat Array and sort by stars
  *
  * @param {Array} finalRepositoriesData [Array of Objects of 50-limited fields with info about repositories.]
  */
-function convertToArrayAndSortByStars(finalRepositoriesData) {
+export function convertToArrayAndSortByStars(finalRepositoriesData) {
     const arr = [];
 
     //

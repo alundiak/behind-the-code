@@ -6,7 +6,10 @@
         "$": true,
         "GitHub": true,
         "performance": true,
-        "Image": true
+        "Image": true,
+        "Octokit": true,
+        "octokitGraphql": true,
+        "vis": true
     },
     "rules": {
         "indent": 0,
