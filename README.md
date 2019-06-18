@@ -8,6 +8,8 @@ Behind The Code
 [![CircleCI Build Status](https://circleci.com/gh/alundiak/behind-the-code.svg?style=svg)](https://circleci.com/gh/alundiak/behind-the-code)
 [![Coverage Status](https://coveralls.io/repos/github/alundiak/behind-the-code/badge.svg)](https://coveralls.io/github/alundiak/behind-the-code)
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+
 ## Goal #1 - List of GitHub repositories
 - Create (static) web page to represent main information about trending frontned tools.
 - Represent next entities: repo owner, first commit date ("since" date), last commit date ("update/pushed" date).

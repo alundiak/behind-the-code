@@ -8,7 +8,7 @@
     "test": "node test.js",
     "r": "node ./js/use-octokit-rest-node.js",
     "g": "node ./js/use-octokit-graphql-node.js",
-    "eslint": "./node_modules/.bin/eslint ./js/*.js"
+    "eslint": "eslint --fix ./js/*.js"
   },
   "repository": {
     "type": "git",
