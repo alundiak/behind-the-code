@@ -221,7 +221,7 @@
   },
   {
     "owner": "npm",
-    "name": "npm"
+    "name": "cli"
   },
   {
     "owner": "MithrilJS",
@@ -230,6 +230,14 @@
   {
     "owner": "sveltejs",
     "name": "svelte"
+  },
+  {
+    "owner": "sveltejs",
+    "name": "sapper"
+  },
+  {
+    "owner": "rich-harris",
+    "name": "degit"
   },
   {
     "owner": "Microsoft",
@@ -680,11 +688,15 @@
     "name": "loopback"
   },
   {
-    "owner": "nestjs",
-    "name": "nest"
-  },
-  {
     "owner": "mirrorjs",
     "name": "mirror"
+  },
+  {
+    "owner": "mdx-js",
+    "name": "mdx"
+  },
+  {
+    "owner": "storybookjs",
+    "name": "storybook"
   }
 ]

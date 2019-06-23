@@ -96,10 +96,23 @@ export function attachExamples() {
  * @return void
  */
 export function renderTimeLineViz(container, reposDataArray, options) {
-    var prepareContentHTML = function(d) {
+    const prepareContentHTML = function (d) {
         // https://octicons.github.com/
         // Maybe use GitHub star svg and stargazer number to show somehow
-        const tmpl = `<a href="${d.url}" target="_blank"><img class="avatar" src="${d.owner.avatarUrl}" title="${d.name}\n${d.description}\nCreated: ${moment(d.createdAt).format('YYYY/MM/DD')}"></a>`;
+
+        // const isFlag = d.iArchived;
+
+        let titleContent = `${d.name}\n${d.description}\nCreated: ${moment(d.createdAt).format('YYYY/MM/DD')}`;
+
+        if (d.isArchived) {
+            titleContent += `\nAttention! Archived.`;
+        }
+
+        const tmpl = `
+        <a href="${d.url}" target="_blank">
+            <img class="avatar ${d.isArchived ? 'blinky' : ''}" src="${d.owner.avatarUrl}" title="${titleContent}">
+        </a>`;
+
         return tmpl;
     }
 
@@ -108,9 +121,9 @@ export function renderTimeLineViz(container, reposDataArray, options) {
     //     content: itemHtml, // itemHtmlObject
     //     start: '2013/12/30'
     // }
-    var buildTimelineEntityData = function(data) {
+    const buildTimelineEntityData = function (data) {
         const dataArr = [];
-        data.forEach(function(repoRecord, index, arr) {
+        data.forEach(function (repoRecord, index, arr) {
             const obj = {
                 id: index,
                 content: prepareContentHTML(repoRecord),

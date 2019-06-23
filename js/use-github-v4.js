@@ -156,6 +156,12 @@ export function createRepositoriesQueryBody(myData) {
             homepageUrl
             url
             projectsUrl
+            isDisabled
+            isArchived
+            isFork
+            isMirror
+            isLocked
+            isTemplate
         }
     `;
     // updatedAt - @deprecated
@@ -330,6 +336,15 @@ export function convertToArrayAndSortByStars(finalRepositoriesData) {
     //     arr.push(finalRepositoriesData[key]);
     // }
 
+    const isArr = [
+        'isDisabled',
+        'isArchived',
+        'isFork',
+        'isMirror',
+        'isLocked',
+        'isTemplate'
+    ]
+
     //
     // If finalRepositoriesData is single Array
     //
@@ -339,6 +354,14 @@ export function convertToArrayAndSortByStars(finalRepositoriesData) {
                 continue // so that not to push "null" to array
             }
             arr.push(dataElem[key]);
+
+            const repo = dataElem[key];
+
+            isArr.forEach(isFlag => {
+                if (repo[isFlag]) {
+                    console.log(`Attention! Repository ${repo.nameWithOwner} (Created - ${repo.createdAt}) ${isFlag}. Checkout ${repo.url} for more details.`);
+                }
+            });
         }
     }
 

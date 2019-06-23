@@ -76,3 +76,13 @@ progress {
 .vis-panel {
     box-sizing: content-box;
 }
+
+@keyframes blink {
+	0% {opacity: 0}
+	49%{opacity: 0}
+	50% {opacity: 1}
+}
+
+.avatar.blinky{
+    animation: blink 1s infinite;
+}
