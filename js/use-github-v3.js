@@ -17,7 +17,7 @@ export function getInfo(TOKEN, myData, renderList) {
             headers: {
                 // 'Content-Type': 'application/json', // OPTIONS => GET
                 // 'Content-Type': 'text/plain', // doesn't matter. Anyway OPTIONS => GET
-                'Authorization': `token ${TOKEN}`
+                Authorization: `token ${TOKEN}`
             }
         }
         fetch(window.useUrl ? strUrl : strJSON, options)

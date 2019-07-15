@@ -35,7 +35,7 @@ export async function getInfo(TOKEN, myData, renderList) {
     // const repos = await performRequest(TOKEN, queryBody, 'json'); // here it's function call, with returning Promise
     // const repos = performRequestOnlyOne(TOKEN, queryBody); // Sends only one POST request
 
-    const repos = splitDataFetch(myData, graphQlCallback);
+    const repos = await splitDataFetch(myData, graphQlCallback);
 
     const data = convertToArrayAndSortByStars(repos);
 
@@ -277,14 +277,14 @@ function prepareGraphqlOptions(queryBody, contentType, TOKEN) {
             // 'Authorization': `${TOKEN}`, // doesn't work
             // 'Authorization': `AnyString ${TOKEN}`, // doesn't work
             // 'Authorization': `Bearer ${TOKEN}`, // also works
-            'Authorization': `token ${TOKEN}`, // works
+            Authorization: `token ${TOKEN}`, // works
             'Content-Type': 'application/json' // if provided, then OPTIONS + POST. If commented, anyway OPTIONS + POST
         };
         options.body = JSON.stringify(queryObject);
     } else if (contentType === 'graphql') {
         options.headers = {
             // 'Accept': 'application/json', // looks no effect
-            'Authorization': `token ${TOKEN}`,
+            Authorization: `token ${TOKEN}`,
             'Content-Type': 'application/graphql' // not sure if it works. As far as I tested - nothing changed.
         };
         options.body = JSON.stringify(queryObject); // Based on xhr example, should be stringified object with "query"
@@ -344,6 +344,8 @@ export function convertToArrayAndSortByStars(finalRepositoriesData) {
         'isLocked',
         'isTemplate'
     ]
+
+    // const isArray = Array.isArray(finalRepositoriesData); // TODO - maybe
 
     //
     // If finalRepositoriesData is single Array

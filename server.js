@@ -71,7 +71,7 @@ app.get('/auth/github/callback', function(req, res) {
       // })
 
       // console.log(user.accessToken);
-      // This is kinda manual workaround, how to pass token to index.js. 
+      // This is kinda manual workaround, how to pass token to index.js.
       // I feel, like there should be smarter approach
       res.redirect('/?access_token=' + user.accessToken);
 
