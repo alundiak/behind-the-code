@@ -532,6 +532,10 @@
     "name": "glimmer.js"
   },
   {
+    "owner": "immerjs",
+    "name": "immer"
+  },
+  {
     "owner": "guess-js",
     "name": "guess"
   },
@@ -710,5 +714,17 @@
   {
     "owner": "tailwindcss",
     "name": "tailwindcss"
+  },
+  {
+    "owner": "ReactTraining",
+    "name": "react-router"
+  },
+  {
+    "owner": "tschaub",
+    "name": "gh-pages"
+  },
+  {
+    "owner": "nfl",
+    "name": "react-helmet"
   }
 ]
