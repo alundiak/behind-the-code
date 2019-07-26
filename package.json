@@ -61,6 +61,10 @@
     "passport-github2": "^0.1.11",
     "popper.js": "^1.15.0",
     "pug": "^2.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "prop-types": "^15.7.2",
+    "react-vis": "1.11.7",
     "request": "^2.88.0",
     "vis": "^4.21.0"
   }

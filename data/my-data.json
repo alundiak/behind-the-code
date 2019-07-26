@@ -388,8 +388,12 @@
     "name": "lerna"
   },
   {
-    "owner": "almende",
-    "name": "vis"
+    "owner": "visjs",
+    "name": "vis_original"
+  },
+  {
+    "owner": "uber",
+    "name": "react-vis"
   },
   {
     "owner": "jscs-dev",

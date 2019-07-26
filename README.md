@@ -4,6 +4,7 @@ Behind The Code
 - Visualized timeline of Web Tools, Libraries, Frameworks and people... I know since I started as Web Developer (2007).
 - GraphQL + GitHub API case study
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5eb8fbfe-12b7-4ab4-822f-32a9dd248035/deploy-status)](https://app.netlify.com/sites/keen-shaw-ff3e2c/deploys)
 [![TravisCI Build Status](https://travis-ci.org/alundiak/behind-the-code.svg?branch=master)](https://travis-ci.org/alundiak/behind-the-code)
 [![CircleCI Build Status](https://circleci.com/gh/alundiak/behind-the-code.svg?style=svg)](https://circleci.com/gh/alundiak/behind-the-code)
 [![Coverage Status](https://coveralls.io/repos/github/alundiak/behind-the-code/badge.svg)](https://coveralls.io/github/alundiak/behind-the-code)
@@ -93,6 +94,9 @@ Behind The Code
 - http://visjs.org/index.html#download_install
 - http://visjs.org/timeline_examples.html
 - http://visjs.org/examples/timeline/other/verticalScroll.html
+
+### Timeline feature (ReactJS)
+- https://github.com/uber/react-vis
 
 ### OAuth and GitHub OAuth Apps
 - https://gist.github.com/technoweenie/419219 - GitHub OAuth Busy Developer's Guide (based on GitHi API v2)
