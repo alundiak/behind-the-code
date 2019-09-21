@@ -94,9 +94,11 @@ Behind The Code
 - http://visjs.org/index.html#download_install
 - http://visjs.org/timeline_examples.html
 - http://visjs.org/examples/timeline/other/verticalScroll.html
+- new Vis - https://github.com/visjs/vis-timeline
 
 ### Timeline feature (ReactJS)
 - https://github.com/uber/react-vis
+- https://github.com/Lighthouse-io/react-visjs-timeline (maybe)
 
 ### OAuth and GitHub OAuth Apps
 - https://gist.github.com/technoweenie/419219 - GitHub OAuth Busy Developer's Guide (based on GitHi API v2)

@@ -392,6 +392,10 @@
     "name": "vis_original"
   },
   {
+    "owner": "visjs",
+    "name": "vis-timeline"
+  },
+  {
     "owner": "uber",
     "name": "react-vis"
   },
