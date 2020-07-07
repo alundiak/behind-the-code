@@ -100,10 +100,6 @@
     "name": "phonegap-start"
   },
   {
-    "owner": "astoilkov",
-    "name": "jsblocks"
-  },
-  {
     "owner": "vuejs",
     "name": "vue"
   },
@@ -400,10 +396,6 @@
     "name": "react-vis"
   },
   {
-    "owner": "jscs-dev",
-    "name": "node-jscs"
-  },
-  {
     "owner": "broccolijs",
     "name": "broccoli"
   },
@@ -644,10 +636,6 @@
     "name": "ui-grid"
   },
   {
-    "owner": "angular-ui",
-    "name": "bootstrap"
-  },
-  {
     "owner": "lumapps",
     "name": "lumX"
   },
@@ -734,5 +722,9 @@
   {
     "owner": "nfl",
     "name": "react-helmet"
+  },
+  {
+    "owner": "reactstrap",
+    "name": "reactstrap"
   }
 ]
