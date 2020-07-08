@@ -1,18 +1,20 @@
 import { renderListRowv3 } from './use-github-v3.js'
+import { parseMyData } from './use-github-v4_helpers.js';
 
 // import GitHub from '../bower_components/github-api/lib/GitHub.js'; // doesn't work in Chrome Canary
 // var GitHub = require('github-api'); // from node_modules (using NodeJS env or RequireJS)
 
 export function getInfo(TOKEN, myData, renderList) {
     const gh = getGitHubInstance(TOKEN);
-    const clbck = function(err, data) {
+    const clbck = function (err, data) {
         if (renderList) {
             renderListRowv3(data);
         }
     }
-    myData.forEach(function(element) {
-        const requestableObject = getUserRepos(gh, element.owner, element.name, clbck);
-        requestableObject.then(function() {
+    myData.forEach(function (element) {
+        const { owner, name } = parseMyData(element);
+        const requestableObject = getUserRepos(gh, owner, name, clbck);
+        requestableObject.then(function () {
             $('.loader').hide();
         })
         // and yes, requestableObject is instanceof Promise.
@@ -39,7 +41,7 @@ export function apiTest1(TOKEN) {
     // createGist(gh);
     // getUserStarredRepos(gh);
     // getUserNotifications(gh);
-    getUserRepos(gh, 'alundiak', 'behind-the-code', function(err, data) {
+    getUserRepos(gh, 'alundiak', 'behind-the-code', function (err, data) {
         renderListRowv3(data);
     });
 }
@@ -59,13 +61,13 @@ function createGist(gh) {
                 content: 'TEST'
             }
         }
-    }).then(function({
+    }).then(function ({
         data
     }) {
         // Promises!
         const createdGist = data;
         return gist.read();
-    }).then(function({
+    }).then(function ({
         data
     }) {
         const retrievedGist = data;
@@ -75,14 +77,14 @@ function createGist(gh) {
 
 function getUserStarredRepos(gh) {
     var ghUser = gh.getUser('alundiak');
-    ghUser.listStarredRepos(function(err, repos) {
+    ghUser.listStarredRepos(function (err, repos) {
         console.log(repos, err);
     });
 }
 
 function getUserNotifications(gh) {
     var me = gh.getUser(); // no user specified defaults to the user for whom credentials were provided
-    me.listNotifications(function(err, notifications) {
+    me.listNotifications(function (err, notifications) {
         console.log(notifications, err); // works - returns 50 records by default
     });
 }

@@ -181,3 +181,23 @@ function performAjaxRequest(TOKEN, queryBody) {
     // xhr.send({query: queryBody});  // doesn't work with any Content-Type
     // xhr.send(queryBody); // doesn't work with any Content-Type
 }
+
+/**
+ *
+ * @param {object | string} element
+ */
+export function parseMyData(element) {
+    let owner, name;
+
+    if (typeof element === 'string') {
+        const splitted = element.split('/');
+        [owner, name] = splitted;
+    } else {
+        ({ owner, name } = element);
+    }
+
+    return {
+        owner,
+        name
+    }
+}

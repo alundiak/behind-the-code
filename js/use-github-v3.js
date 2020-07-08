@@ -1,3 +1,5 @@
+import { parseMyData } from './use-github-v4_helpers.js';
+
 export const apiUrl = 'https://api.github.com';
 
 /**
@@ -10,9 +12,9 @@ export const apiUrl = 'https://api.github.com';
  */
 export function getInfo(TOKEN, myData, renderList) {
     myData.forEach(function (element) {
-        // let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name + `&access_token=${TOKEN}`; // '&access_token=' doesn't work
-        const strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name;
-        const strJSON = 'data/_' + element.name + '.json';
+        const { owner, name } = parseMyData(element);
+        // let strUrl = apiUrl + '/repos/' + owner + '/' + name + `&access_token=${TOKEN}`; // '&access_token=' doesn't work
+        const strUrl = apiUrl + '/repos/' + owner + '/' + name;
         const options = {
             headers: {
                 // 'Content-Type': 'application/json', // OPTIONS => GET
@@ -20,11 +22,11 @@ export function getInfo(TOKEN, myData, renderList) {
                 Authorization: `token ${TOKEN}`
             }
         }
-        fetch(window.useUrl ? strUrl : strJSON, options)
+        fetch(strUrl, options)
             .then(response => response.json())
             .then(data => {
                 if (renderList) {
-                    renderListRowv3(data)
+                    renderListRowv3(data);
                     $('.loader').hide();
                 }
             });

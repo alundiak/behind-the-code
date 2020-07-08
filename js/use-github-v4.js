@@ -2,6 +2,7 @@
 // I tried all - fail - 400 error.
 // I tried different smaller sets - works.
 import * as timelineVis from './timeline-vis.js';
+import { parseMyData } from './use-github-v4_helpers.js';
 
 export const apiUrl = 'https://api.github.com/graphql';
 
@@ -164,8 +165,10 @@ export function createRepositoriesQueryBody(myData) {
 
     const strings = [];
     myData.forEach(function (repo, index) {
+        const { owner, name } = parseMyData(repo);
+
         // Note: repository() expects ONLY 2 fields: owner and name
-        const lineTemplate = `repo${++index}: repository(name: "${repo.name}", owner: "${repo.owner}") { ...repositoryFragment }`;
+        const lineTemplate = `repo${++index}: repository(name: "${name}", owner: "${owner}") { ...repositoryFragment }`;
         strings.push(lineTemplate);
     });
 

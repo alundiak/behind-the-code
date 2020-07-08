@@ -4,11 +4,22 @@
 // https://developer.github.com/v3/repos
 //
 
+// before 2020
+// doesn't work in browser because of CJS
+// import Octokit from '../node_modules/@octokit/rest/lib/core.js';
+// Also doesn't work
+// import Octokit from '/lib/octokit-rest.js';
+
+// 2020-07-09
+// https://octokit.github.io/rest.js/v18
+import { Octokit } from "https://cdn.pika.dev/@octokit/rest";
+
 import { renderListRowv3 } from './use-github-v3.js'
+import { parseMyData } from './use-github-v4_helpers.js';
 
 export function getInfo(token, myData, renderList) {
-    // Object "Octokit" from index.html
-    const octokitInstance = Octokit({
+    // Function "Octokit" from index.html
+    const octokitInstance = new Octokit({
         auth: token,
         userAgent: 'Behind The Code v1.2.3'
     });
@@ -25,7 +36,8 @@ export function getInfo(token, myData, renderList) {
     }
 
     myData.forEach(function (element) {
-        getUserRepos(element.owner, element.name)
+        const { owner, name } = parseMyData(element);
+        getUserRepos(owner, name)
             .then(function () {
                 // yes, every row rendered, and then Promise resolved.
                 // TODO implement hiding AFTER ALL rows rendered

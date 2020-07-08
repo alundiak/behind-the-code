@@ -105,13 +105,31 @@
     <script type="application/javascript" src="node_modules/github-api/dist/GitHub.bundle.min.js"></script>
     <script type="application/javascript" src="node_modules/pace-progress/pace.js"></script>
 
-    <!-- @octokit/rest CommonJS -->
-    <!-- <script type="application/javascript" src="node_modules/@octokit/rest/lib/core.js"></script> -->
-    <script src="https://github.com/octokit/rest.js/releases/download/v16.43.2/octokit-rest.js"></script>
+    <!-- @octokit/rest -->
+    <!-- v18.0.0 Node/CommonJS or ES module-->
+    <!-- <script type="application/javascript" src="node_modules/@octokit/rest/dist-web/index.js"></script> -->
+    <!-- <script type="module" src="node_modules/@octokit/rest/dist-web/index.js"></script> -->
+    <!-- v16.43.2 - Last which has download -->
+    <!-- <script src="https://github.com/octokit/rest.js/releases/download/v16.43.2/octokit-rest.js"></script> -->
+    <!-- v18.0.0  UNIVERSAL -->
+    <script type="module">
+        // import { Octokit } from "https://cdn.pika.dev/@octokit/rest";
+        // console.log(Octokit);
+        // WORKS here also - Octokit fetched, but scoped to THIS only <script>
+    </script>
 
-    <!-- @octokit/graphql CommonJS -->
-    <!-- <script type="application/javascript" src="node_modules/@octokit/graphql/index.js"></script> -->
-    <script src="https://github.com/octokit/graphql.js/releases/download/v3.0.1/octokit-graphql.min.js"></script>
+    <!-- @octokit/graphql -->
+    <!-- v4.5.1 Node/CommonJS or ES module -->
+    <!-- <script type="application/javascript" src="node_modules/@octokit/graphql/dist-web/index.js"></script> -->
+    <!-- <script type="module" src="node_modules/@octokit/graphql/dist-web/index.js"></script> -->
+    <!-- v3.0.1 - Last which has downloads -->
+    <!-- <script src="https://github.com/octokit/graphql.js/releases/download/v3.0.1/octokit-graphql.min.js"></script> -->
+    <!-- v4.5.1 UNIVERSAL -->
+    <script type="module">
+        // import { graphql, withCustomRequest } from "https://cdn.pika.dev/@octokit/graphql";
+        // console.log(graphql, withCustomRequest);
+        // WORKS here
+    </script>
 
     <script type="module" src="./js/index.js"></script>
     <!-- <script src="/js/perf.js"></script> -->

@@ -9,13 +9,7 @@ import * as bestOfJsApi from './use-best-of-js-org.js';
 import * as gitHubApi3 from './use-github-v3.js';
 import * as gitHubTools from './use-github-tools.js';
 import * as gitHubApi4 from './use-github-v4.js';
-import * as gitHubApi4Helpers from './use-github-v4_helpers.js';
-
-// doesn't work in browser because of CJS
-// import Octokit from '../node_modules/@octokit/rest/lib/core.js';
-// Also doesn't work
-// import Octokit from '/lib/octokit-rest.js';
-
+// import * as gitHubApi4Helpers from './use-github-v4_helpers.js';
 import * as gitOctokitRest from './use-octokit-rest.js';
 import * as gitOctokitGraphql from './use-octokit-graphql.js';
 

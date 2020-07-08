@@ -727,12 +727,7 @@
     "owner": "reactstrap",
     "name": "reactstrap"
   },
-  {
-    "owner": "apvarun",
-    "name": "toastify-js"
-  },
-  {
-    "owner": "stewdio",
-    "name": "q.js"
-  }
+  "apvarun/toastify-js",
+  "stewdio/q.js",
+  "beautifulinteractions/beautiful-react-hooks"
 ]

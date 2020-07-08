@@ -2,11 +2,15 @@
 // https://github.com/octokit/graphql.js
 //
 
+// Before 2020
 // Node/CJS
-// const octokitGraphql = require('@octokit/graphql');
-
+// const { graphql, withCustomRequest } = require('@octokit/graphql');
 // Browser
-// window.octokitGraphql
+// window.graphql
+
+// 2020-07-09
+// https://github.com/octokit/graphql.js/
+import { graphql/* , withCustomRequest */ } from "https://cdn.pika.dev/@octokit/graphql";
 
 import {
     splitDataFetch,
@@ -23,7 +27,7 @@ export async function getInfo(token, myData, renderList) {
 }
 
 async function fetchGraphQlData(TOKEN, myData) {
-    const graphql = octokitGraphql.defaults({
+    const graphqlWithAuth = graphql.defaults({
         headers: {
             authorization: `token ${TOKEN}`
         }
@@ -32,7 +36,7 @@ async function fetchGraphQlData(TOKEN, myData) {
     // const options = {}; // in case
 
     const octoGraphqlCallback = (queryBody) => {
-        return graphql(queryBody/* , options */);
+        return graphqlWithAuth(queryBody/* , options */);
     };
 
     return splitDataFetch(myData, octoGraphqlCallback);
