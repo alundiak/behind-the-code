@@ -27,9 +27,13 @@
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-timeline-graph2d.min.js"></script> -->
 </head>
 
-<body __onload="init()">
+<!-- Performance related -->
+<!-- <body onload="loadResources()"> -->
+<!-- <body onload="init()"> -->
+
+<body>
     <div class="container with-heading">
-        <h1 class="display-3">Behind The Code</h1>
+        <h1 class="title">Behind The Code</h1>
 
         <p class="lead">List of frontend tools for web development.
             <span> Author:
@@ -66,14 +70,15 @@
             <span> | </span>
             <div class="info">
                 <button id="authorizeApp" type="button" class="btn btn-primary">Authorize via GitHub</button>
-                <span class="badge badge-secondary">This page requires GitHub OAuth token, to perform POST requests on
+                <span class="badge bg-secondary">This page requires GitHub OAuth token, to perform POST requests on
                     behalf of end user</span>
             </div>
         </div>
 
-        <div class="info">
-            Total <span class="all badge badge-pill badge-info"></span> repositories.
-            Split into <span class="filtered badge badge-pill badge-info"></span> per request.
+        <div class="split-info">
+            Requesting information about <span class="all badge rounded-pill bg-info"></span> repositories.
+            GraphQL requests split into <span class="filtered badge rounded-pill bg-info"></span> repositories per
+            request.
         </div>
     </div>
 
@@ -82,29 +87,31 @@
     </div> -->
 
     <div id="visualization"></div>
-    <div class="loader colorful"></div>
+    <div class="loader-container">
+        <div class="loader colorful"></div>
+    </div>
 
     <ul class="list-group"></ul>
     <template id="listGroupTemplate">
         <li class="list-group-item d-flex justify-content-between align-items-center"></li>
     </template>
 
-    <!-- <link rel="import" href="libs_remote.html"> -->
-
     <script type="application/javascript" src="node_modules/jquery/dist/jquery.js"></script>
     <script type="application/javascript" src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <!-- Since Bootstrap v5, no need JQuery, but I need for my custom code. Soon will be refactored -->
+
     <script type="application/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script type="application/javascript" src="node_modules/moment/min/moment.min.js"></script>
     <script type="application/javascript" src="node_modules/github-api/dist/GitHub.bundle.min.js"></script>
     <script type="application/javascript" src="node_modules/pace-progress/pace.js"></script>
 
-    <!-- @octokit/rest -->
+    <!-- @octokit/rest CommonJS -->
     <!-- <script type="application/javascript" src="node_modules/@octokit/rest/lib/core.js"></script> -->
-    <script src="https://github.com/octokit/rest.js/releases/download/v16.28.2/octokit-rest.js"></script>
+    <script src="https://github.com/octokit/rest.js/releases/download/v16.43.2/octokit-rest.js"></script>
 
-    <!-- @octokit/graphql -->
+    <!-- @octokit/graphql CommonJS -->
     <!-- <script type="application/javascript" src="node_modules/@octokit/graphql/index.js"></script> -->
-    <script src="https://github.com/octokit/graphql.js/releases/download/v2.1.2/octokit-graphql.min.js"></script>
+    <script src="https://github.com/octokit/graphql.js/releases/download/v3.0.1/octokit-graphql.min.js"></script>
 
     <script type="module" src="./js/index.js"></script>
     <!-- <script src="/js/perf.js"></script> -->

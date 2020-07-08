@@ -23,8 +23,26 @@ import * as gitOctokitGraphql from './use-octokit-graphql.js';
 // import bootstrap from './node_modules/bootstrap/dist/js/bootstrap.js';
 // console.log(bootstrap);
 
-async function main () {
+// TODO create as components
+function showLoader() {
+    $('.loader').show();
+}
+
+function hideSplitInfo() {
+    $('.split-info').hide();
+}
+
+function showSplitInfo(dataLength) {
+    $('.split-info .all').text(dataLength);
+    $('.split-info .filtered').text(50);
+    $('.split-info').show();
+}
+// TODO create as components
+
+async function main() {
     'use strict';
+
+    $('.left-aligned-container').show();
 
     let renderList = true;
 
@@ -46,10 +64,8 @@ async function main () {
     // Default approach
     // gitHubApi4.getInfo(token, repoData, false);
     gitOctokitGraphql.getInfo(token, repoData, false);
-
-    const dataLength = repoData.length;
-    $('.info .all').text(dataLength);
-    $('.info .filtered').text(50);
+    showLoader();
+    showSplitInfo(repoData.length);
 
     $('.dropdown-menu').delegate('a', 'click', function (e) {
         const value = $(e.target).data('value');
@@ -65,27 +81,32 @@ async function main () {
 
         $('#visualization').html('');
         $('.list-group').html('');
-        $('.loader').show();
+        showLoader();
 
         switch (value) {
             case 'githubApiV3': // v3
+                hideSplitInfo();
                 gitHubApi3.getInfo(token, repoData, renderList);
                 break;
 
             case 'githubApiV3_wrapper': // v3
+                hideSplitInfo();
                 gitHubTools.getInfo(token, repoData, renderList);
                 break;
 
             case 'octokit/rest': // v3
+                hideSplitInfo();
                 gitOctokitRest.getInfo(token, repoData, renderList);
                 break;
 
             case 'githubApiV4': // v4
+                showSplitInfo(repoData.length);
                 gitHubApi4.getInfo(token, repoData, renderList);
                 break;
 
             case 'octokit/graphql': // v4
             case 'default':
+                showSplitInfo(repoData.length);
                 gitOctokitGraphql.getInfo(token, repoData, renderList);
                 break;
         }
@@ -93,17 +114,16 @@ async function main () {
 };
 
 async function experiments() {
-    const repoData = await dataPromises.getMyData();
     const token = await dataPromises.getUserAccessToken();
 
-    if (!token || !repoData) {
+    if (!token) {
         return false;
     }
 
     //
     // https://bestofjs.org/
     //
-    // bestOfJsApi.getInfo(repoData);
+    // bestOfJsApi.getInfo(); // look in Network.
 
     //
     // https://developer.github.com/v3/

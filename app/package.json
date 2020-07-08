@@ -1,0 +1,20 @@
+{
+  "name": "btc-react",
+  "version": "1.0.0",
+  "description": "Behind The Code - React App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-vis": "^1.11.7",
+    "react-visjs-timeline": "^1.6.0",
+    "reactstrap": "^8.5.1",
+    "vis": "^4.21.0-EOL",
+    "vis-timeline": "^7.3.7"
+  }
+}

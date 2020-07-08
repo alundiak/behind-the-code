@@ -726,5 +726,13 @@
   {
     "owner": "reactstrap",
     "name": "reactstrap"
+  },
+  {
+    "owner": "apvarun",
+    "name": "toastify-js"
+  },
+  {
+    "owner": "stewdio",
+    "name": "q.js"
   }
 ]

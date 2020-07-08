@@ -10,8 +10,13 @@
     vertical-align: top;
 }
 
-.display-3 {
+.title {
     display: inline;
+}
+
+.loader-container {
+    width: 50px;
+    margin: 0 auto;
 }
 
 .loader {
@@ -19,19 +24,6 @@
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 2s linear infinite;
-}
-
-._loader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-    width: 50px;
-    height: 50px;
-    margin: -75px 0 0 -75px;
-    border-radius: 50%;
-    -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
 }
 
@@ -85,4 +77,10 @@ progress {
 
 .avatar.blinky{
     animation: blink 1s infinite;
+}
+
+.loader,
+.left-aligned-container,
+.split-info {
+    display: none;
 }

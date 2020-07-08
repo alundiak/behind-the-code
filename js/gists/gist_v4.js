@@ -35,8 +35,6 @@ function createRepositoriesQueryBody(myData) {
             forks {
                 totalCount
             }
-            viewerHasStarred
-            viewerSubscription
             owner {
                 login
                 __typename

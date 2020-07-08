@@ -5,15 +5,13 @@ fragment repositoryFragment on Repository {
     createdAt
     updatedAt
     pushedAt
-    isFork
     forks {
         totalCount
     }
-    viewerHasStarred
-    viewerSubscription
     owner {
         login
         __typename
+        avatarUrl
     }
     stargazers {
         totalCount
@@ -22,8 +20,13 @@ fragment repositoryFragment on Repository {
         totalCount
     }
     homepageUrl
-    projectsUrl
     url
+    isDisabled
+    isArchived
+    isFork
+    isMirror
+    isLocked
+    isTemplate
 }
 
 query {

@@ -3,6 +3,8 @@
 // http://visjs.org/timeline_examples.html
 // http://visjs.org/examples/timeline/items/htmlContents.html
 //
+// VERY @deprecated - delete later
+//
 
 export function attachExamples() {
     var item1 = document.createElement('div');

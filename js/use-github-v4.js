@@ -99,15 +99,15 @@ export function renderListWithTemplate(data) {
         </span>
 
         <span>
-        Watchers: <span class="badge badge-secondary badge-pill">${repoRecord.watchers.totalCount}</span>
+        Watchers: <span class="badge bg-secondary rounded-pill">${repoRecord.watchers.totalCount}</span>
         </span>
 
         <span>
-        Forks: <span class="badge badge-secondary badge-pill">${repoRecord.forks.totalCount}</span>
+        Forks: <span class="badge bg-secondary rounded-pill">${repoRecord.forks.totalCount}</span>
         </span>
 
         <span>
-        Stars: <span class="badge badge-primary badge-pill">${repoRecord.stargazers.totalCount}</span>
+        Stars: <span class="badge bg-primary rounded-pill">${repoRecord.stargazers.totalCount}</span>
         </span>`;
 
         const tmpl = listGroupTemplate.content.cloneNode(true);
@@ -136,12 +136,9 @@ export function createRepositoriesQueryBody(myData) {
             createdAt
             updatedAt
             pushedAt
-            isFork
             forks {
                 totalCount
             }
-            viewerHasStarred
-            viewerSubscription
             owner {
                 login
                 __typename
@@ -155,7 +152,6 @@ export function createRepositoriesQueryBody(myData) {
             }
             homepageUrl
             url
-            projectsUrl
             isDisabled
             isArchived
             isFork

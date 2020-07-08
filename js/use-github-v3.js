@@ -9,7 +9,7 @@ export const apiUrl = 'https://api.github.com';
  * @return {Promise?}
  */
 export function getInfo(TOKEN, myData, renderList) {
-    myData.forEach(function(element) {
+    myData.forEach(function (element) {
         // let strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name + `&access_token=${TOKEN}`; // '&access_token=' doesn't work
         const strUrl = apiUrl + '/repos/' + element.owner + '/' + element.name;
         const strJSON = 'data/_' + element.name + '.json';
@@ -52,7 +52,7 @@ export function renderListRowv3(data) {
         Created ${m.created}, Updated: ${m.updated}</span>`;
 
     // STARS = WATCHERS => BUG !!! in GitHub API v3
-    var span = $('<span class="badge badge-primary badge-pill">').html(m.stars);
+    var span = $('<span class="badge bg-primary rounded-pill">').html(m.stars);
     var li = $('<li class="list-group-item d-flex justify-content-between align-items-center">').html(str);
     li.append(span);
     $('.list-group').append(li);

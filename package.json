@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node test.js",
+    "test": "echo 'No Tests'",
     "r": "node ./js/use-octokit-rest-node.js",
     "g": "node ./js/use-octokit-graphql-node.js",
     "eslint": "eslint --fix ./js/*.js"
@@ -31,23 +31,19 @@
     "eslint-plugin-node": "^9.2.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.3",
-    "eslint-plugin-standard": "^4.0.1",
-    "tape": "^4.13.3"
+    "eslint-plugin-standard": "^4.0.1"
   },
   "dependencies": {
     "@octokit/graphql": "^3.0.1",
     "@octokit/rest": "^16.43.2",
-    "@wrakky-bootstrap/bootstrap": "^1.0.5",
     "auth0-js": "^9.13.4",
     "body-parser": "^1.19.0",
-    "bootstrap": "^4.5.0",
-    "bootstrap-css": "^4.0.0-alpha.5",
+    "bootstrap": "^5.0.0-alpha1",
     "client-oauth2": "^4.3.0",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "ejs": "^2.7.4",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "github-api": "^3.3.0",
@@ -60,12 +56,6 @@
     "passport-github": "^1.1.0",
     "passport-github2": "^0.1.12",
     "popper.js": "^1.16.1",
-    "prop-types": "^15.7.2",
-    "pug": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-vis": "1.11.7",
-    "react-visjs-timeline": "^1.6.0",
     "request": "^2.88.2",
     "vis": "^4.21.0",
     "vis-timeline": "^5.1.0"
