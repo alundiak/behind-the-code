@@ -119,10 +119,8 @@
     "owner": "mongodb",
     "name": "mongo"
   },
-  {
-    "owner": "ionic-team",
-    "name": "ionic"
-  },
+  "ionic-team/ionic",
+  "ionic-team/stencil",
   {
     "owner": "knockout",
     "name": "knockout"
@@ -183,10 +181,7 @@
     "owner": "highcharts",
     "name": "highcharts"
   },
-  {
-    "owner": "emeeks",
-    "name": "semiotic"
-  },
+  "nteract/semiotic",
   {
     "owner": "totaljs",
     "name": "framework"
@@ -423,6 +418,7 @@
     "owner": "fabricjs",
     "name": "fabric.js"
   },
+  "microsoft/fluentui",
   {
     "owner": "js-joda",
     "name": "js-joda"
@@ -729,5 +725,15 @@
   },
   "apvarun/toastify-js",
   "stewdio/q.js",
-  "beautifulinteractions/beautiful-react-hooks"
+  "beautifulinteractions/beautiful-react-hooks",
+  "liaisonjs/liaison",
+  "tastejs/todomvc",
+  "gothinkster/realworld",
+  "andev-software/graphql-ide",
+  "dotansimha/graphql-code-generator",
+  "JedWatson/classnames",
+  "blocks/blocks",
+  "taskforcesh/bullmq",
+  "salesforce-ux/design-system",
+  "oclif/oclif"
 ]

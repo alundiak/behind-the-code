@@ -43,9 +43,9 @@ Behind The Code
 
 ## Notes / Conclusions / Lessons Learned
 - HTML imports works, but JS files are loaded later, than simple HTML inside inside of main index.html file. Sometimes MomentJS is not yet available.
-- Preflighted Requests. When `options.headers` provided for Fetch API it does send OPTIONS and then POST request. Simple XmlHttprequest goes only one POST.
+- Preflighted Requests. When `options.headers` provided for Fetch API it does send OPTIONS and then POST request. Simple XmlHttpRequest goes only one POST.
 - GraphQL is the winner for sure. Using simple Fetch calls to GitHub API v3 is ok, but to much request. And using github-api with Requestable is the slowest.
-- Twitter Bootstrap `v4.0.0-beta` is not stable enough - there are at least UI issues with list-group. Sep-05-2017 they dropped bower support. npm module `bootstrap` is ok (contains js, css and scss). But there is also unverified `bootstrap-css` which contains css files but also scss file pointing to `../node_modules/bootstrap/scss` folder. Odd.
+- 2019: Twitter Bootstrap `v4.0.0-beta` is not stable enough - there are at least UI issues with list-group. Sep-05-2017 they dropped bower support. npm module `bootstrap` is ok (contains js, css and scss). But there is also unverified `bootstrap-css` which contains css files but also scss file pointing to `../node_modules/bootstrap/scss` folder. Odd. 2020 - not relevant anymore.
 - HTML `<template>` still not supported by IE and partially supported by Edge. Chrome+, Firefox+.
 
 
@@ -155,3 +155,4 @@ GitHub + GraphQL + React
 - Implement scroll by scrollbar, instead of scroll wheel.
 - Add search of repos or list of repos below timeline, with ability to slick and locate it on timeline.
 - Rewrite server in HTTP/2 manner
+- https://npmaddict.com/ ?
