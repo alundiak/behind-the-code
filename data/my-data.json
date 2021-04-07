@@ -264,10 +264,8 @@
     "owner": "moment",
     "name": "moment"
   },
-  {
-    "owner": "semantic-org",
-    "name": "semantic-ui"
-  },
+  "semantic-org/semantic-ui",
+  "Semantic-Org/Semantic-UI-React",
   {
     "owner": "requirejs",
     "name": "requirejs"
@@ -362,10 +360,6 @@
   },
   "visjs/vis-timeline",
   {
-    "owner": "visjs",
-    "name": "vis-timeline"
-  },
-  {
     "owner": "uber",
     "name": "react-vis"
   },
@@ -442,6 +436,7 @@
     "owner": "ReactiveX",
     "name": "rxjs"
   },
+  "material-components/material-components-web",
   {
     "owner": "Dogfalo",
     "name": "materialize"
@@ -519,10 +514,6 @@
     "name": "flutter"
   },
   {
-    "owner": "material-components",
-    "name": "material-components-web"
-  },
-  {
     "owner": "riot",
     "name": "riot"
   },
@@ -538,10 +529,8 @@
     "owner": "chartjs",
     "name": "Chart.js"
   },
-  {
-    "owner": "jgthms",
-    "name": "bulma"
-  },
+  "jgthms/bulma",
+  "couds/react-bulma-components",
   {
     "owner": "denoland",
     "name": "deno"
@@ -682,10 +671,7 @@
     "owner": "storybookjs",
     "name": "storybook"
   },
-  {
-    "owner": "tailwindcss",
-    "name": "tailwindcss"
-  },
+  "tailwindlabs/tailwindcss",
   {
     "owner": "ReactTraining",
     "name": "react-router"
@@ -705,7 +691,7 @@
   "apvarun/toastify-js",
   "stewdio/q.js",
   "beautifulinteractions/beautiful-react-hooks",
-  "liaisonjs/liaison",
+  "layrjs/layr",
   "tastejs/todomvc",
   "gothinkster/realworld",
   "andev-software/graphql-ide",
@@ -715,5 +701,8 @@
   "taskforcesh/bullmq",
   "salesforce-ux/design-system",
   "oclif/oclif",
-  "mui-org/material-ui"
+  "mui-org/material-ui",
+  "react-hook-form/react-hook-form",
+  "krisk/fuse",
+  "yairEO/tagify"
 ]

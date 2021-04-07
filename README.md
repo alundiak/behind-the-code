@@ -155,5 +155,6 @@ GitHub + GraphQL + React
 ## TODO
 - Implement scroll by scrollbar, instead of scroll wheel.
 - Add search of repos or list of repos below timeline, with ability to slick and locate it on timeline.
+    - Maybe somehow using Fuse.JS https://github.com/krisk/fuse
 - Rewrite server in HTTP/2 manner
 - https://npmaddict.com/ ?
