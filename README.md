@@ -95,6 +95,7 @@ Behind The Code
 - http://visjs.org/timeline_examples.html
 - http://visjs.org/examples/timeline/other/verticalScroll.html
 - new Vis - https://github.com/visjs/vis-timeline
+- https://visjs.github.io/vis-timeline/examples/timeline/
 
 ### Timeline feature (ReactJS)
 - https://github.com/uber/react-vis

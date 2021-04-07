@@ -63,18 +63,9 @@
     "owner": "facebook",
     "name": "create-react-app"
   },
-  {
-    "owner": "facebook",
-    "name": "immutable-js"
-  },
-  {
-    "owner": "facebook",
-    "name": "reason"
-  },
-  {
-    "owner": "bucklescript",
-    "name": "bucklescript"
-  },
+  "immutable-js/immutable-js",
+  "reasonml/reason",
+  "rescript-lang/rescript-compiler",
   {
     "owner": "yarnpkg",
     "name": "yarn"
@@ -350,10 +341,6 @@
     "name": "lesshint"
   },
   {
-    "owner": "palantir",
-    "name": "tslint"
-  },
-  {
     "owner": "yeoman",
     "name": "yeoman"
   },
@@ -373,10 +360,7 @@
     "owner": "lerna",
     "name": "lerna"
   },
-  {
-    "owner": "visjs",
-    "name": "vis_original"
-  },
+  "visjs/vis-timeline",
   {
     "owner": "visjs",
     "name": "vis-timeline"
