@@ -107,14 +107,9 @@
     "owner": "vuejs",
     "name": "vuex"
   },
-  {
-    "owner": "nuxt",
-    "name": "nuxt.js"
-  },
-  {
-    "owner": "zeit",
-    "name": "next.js"
-  },
+  "nuxt/nuxt.js",
+  "vercel/next.js",
+  "nestjs/nest",
   {
     "owner": "mongodb",
     "name": "mongo"
@@ -735,5 +730,6 @@
   "blocks/blocks",
   "taskforcesh/bullmq",
   "salesforce-ux/design-system",
-  "oclif/oclif"
+  "oclif/oclif",
+  "mui-org/material-ui"
 ]
