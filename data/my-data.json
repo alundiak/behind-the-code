@@ -404,10 +404,7 @@
     "owner": "BorisMoore",
     "name": "jsviews"
   },
-  {
-    "owner": "substack",
-    "name": "tape"
-  },
+  "substack/tape",
   {
     "owner": "tapjs",
     "name": "node-tap"
@@ -490,10 +487,6 @@
     "name": "jekyll"
   },
   {
-    "owner": "nestjs",
-    "name": "nest"
-  },
-  {
     "owner": "telerik",
     "name": "kendo-ui-core"
   },
@@ -517,10 +510,7 @@
     "owner": "riot",
     "name": "riot"
   },
-  {
-    "owner": "jorgebucaran",
-    "name": "hyperapp"
-  },
+  "jorgebucaran/hyperapp",
   {
     "owner": "ractivejs",
     "name": "ractive"
@@ -551,10 +541,7 @@
     "owner": "josdejong",
     "name": "mathjs"
   },
-  {
-    "owner": "date-fns",
-    "name": "date-fns"
-  },
+  "date-fns/date-fns",
   {
     "owner": "andrewplummer",
     "name": "Sugar"
@@ -704,5 +691,13 @@
   "mui-org/material-ui",
   "react-hook-form/react-hook-form",
   "krisk/fuse",
-  "yairEO/tagify"
+  "yairEO/tagify",
+  "tannerlinsley/react-query",
+  "knex/knex",
+  "prisma/prisma",
+  "typeorm/typeorm",
+  "visionmedia/supertest",
+  "diegomura/react-pdf",
+  "ranisalt/node-argon2",
+  "mikro-orm/mikro-orm"
 ]

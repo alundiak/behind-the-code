@@ -58,6 +58,6 @@
     "popper.js": "^1.16.1",
     "request": "^2.88.2",
     "vis": "^4.21.0",
-    "vis-timeline": "^7.4.6"
+    "vis-timeline": "^7.4.7"
   }
 }
