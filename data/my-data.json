@@ -699,5 +699,6 @@
   "visionmedia/supertest",
   "diegomura/react-pdf",
   "ranisalt/node-argon2",
-  "mikro-orm/mikro-orm"
+  "mikro-orm/mikro-orm",
+  "pmndrs/react-spring"
 ]

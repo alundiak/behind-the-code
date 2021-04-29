@@ -1,5 +1,5 @@
 {
-  "name": "behind-the-code",
+  "name": "@lundiak/behind-the-code",
   "version": "1.0.0",
   "description": "Behind The Code - Visualized timeline of Web Tools, Libraries, Frameworks and people... I know since I started as Web Developer (2007). GraphQL + GitHub API case study.",
   "main": "index.js",
