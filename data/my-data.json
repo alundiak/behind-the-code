@@ -700,5 +700,8 @@
   "diegomura/react-pdf",
   "ranisalt/node-argon2",
   "mikro-orm/mikro-orm",
-  "pmndrs/react-spring"
+  "pmndrs/react-spring",
+  "gatsbyjs/gatsby",
+  "blitz-js/blitz",
+  "redwoodjs/redwood"
 ]
