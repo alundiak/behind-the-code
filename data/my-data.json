@@ -703,5 +703,7 @@
   "pmndrs/react-spring",
   "gatsbyjs/gatsby",
   "blitz-js/blitz",
-  "redwoodjs/redwood"
+  "redwoodjs/redwood",
+  "libuv/libuv",
+  "alephjs/aleph.js"
 ]
