@@ -12,7 +12,7 @@ Behind The Code
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
 ## Goal #1 - List of GitHub repositories
-- Create (static) web page to represent main information about trending frontned tools.
+- Create (static) web page to represent main information about trending frontend tools.
 - Represent next entities: repo owner, first commit date ("since" date), last commit date ("update/pushed" date).
 
 

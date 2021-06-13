@@ -1,5 +1,9 @@
-export function getMyData() {
-    return fetch('data/my-data.json').then(response => response.json());
+export async function getMyData() {
+    const data1 = await fetch('data/my-data.json').then(response => response.json());
+    const data2 = await fetch('data/my-data-react.json').then(response => response.json());
+    // return Promise.all([data1, data2])
+    // return data2;
+    return data1.concat(data2);
 }
 
 // url is related to web-root, not to the folder - location of file (if file ./properties exists).

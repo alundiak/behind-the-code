@@ -1,0 +1,48 @@
+[
+    {
+        "owner": "facebook",
+        "name": "react"
+    },
+    {
+        "owner": "facebook",
+        "name": "react-native"
+    },
+    {
+        "owner": "developit",
+        "name": "preact"
+    },
+    {
+        "owner": "facebook",
+        "name": "create-react-app"
+    },
+    {
+        "owner": "reduxjs",
+        "name": "react-redux"
+    },
+    {
+        "owner": "nfl",
+        "name": "react-helmet"
+    },
+    {
+        "owner": "reactstrap",
+        "name": "reactstrap"
+    },
+    {
+        "owner": "ReactTraining",
+        "name": "react-router"
+    },
+    {
+        "owner": "uber",
+        "name": "react-vis"
+    },
+    "couds/react-bulma-components",
+    "Semantic-Org/Semantic-UI-React",
+    "beautifulinteractions/beautiful-react-hooks",
+    "react-hook-form/react-hook-form",
+    "tannerlinsley/react-query",
+    "diegomura/react-pdf",
+    "pmndrs/react-spring",
+    "open-source-labs/ReacType",
+    "davidkpiano/xstate",
+    "cassiozen/useStateMachine"
+]

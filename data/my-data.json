@@ -59,24 +59,12 @@
     "owner": "facebook",
     "name": "graphql"
   },
-  {
-    "owner": "facebook",
-    "name": "create-react-app"
-  },
   "immutable-js/immutable-js",
   "reasonml/reason",
   "rescript-lang/rescript-compiler",
   {
     "owner": "yarnpkg",
     "name": "yarn"
-  },
-  {
-    "owner": "facebook",
-    "name": "react"
-  },
-  {
-    "owner": "facebook",
-    "name": "react-native"
   },
   {
     "owner": "facebook",
@@ -152,10 +140,6 @@
     "name": "rollup"
   },
   {
-    "owner": "developit",
-    "name": "preact"
-  },
-  {
     "owner": "d3",
     "name": "d3"
   },
@@ -183,10 +167,6 @@
   {
     "owner": "reduxjs",
     "name": "redux"
-  },
-  {
-    "owner": "reduxjs",
-    "name": "react-redux"
   },
   {
     "owner": "Hashnode",
@@ -249,10 +229,6 @@
     "name": "less.js"
   },
   {
-    "owner": "sass",
-    "name": "sass"
-  },
-  {
     "owner": "pugjs",
     "name": "pug"
   },
@@ -265,7 +241,6 @@
     "name": "moment"
   },
   "semantic-org/semantic-ui",
-  "Semantic-Org/Semantic-UI-React",
   {
     "owner": "requirejs",
     "name": "requirejs"
@@ -359,10 +334,6 @@
     "name": "lerna"
   },
   "visjs/vis-timeline",
-  {
-    "owner": "uber",
-    "name": "react-vis"
-  },
   {
     "owner": "broccolijs",
     "name": "broccoli"
@@ -520,7 +491,6 @@
     "name": "Chart.js"
   },
   "jgthms/bulma",
-  "couds/react-bulma-components",
   {
     "owner": "denoland",
     "name": "deno"
@@ -660,24 +630,11 @@
   },
   "tailwindlabs/tailwindcss",
   {
-    "owner": "ReactTraining",
-    "name": "react-router"
-  },
-  {
     "owner": "tschaub",
     "name": "gh-pages"
   },
-  {
-    "owner": "nfl",
-    "name": "react-helmet"
-  },
-  {
-    "owner": "reactstrap",
-    "name": "reactstrap"
-  },
   "apvarun/toastify-js",
   "stewdio/q.js",
-  "beautifulinteractions/beautiful-react-hooks",
   "layrjs/layr",
   "tastejs/todomvc",
   "gothinkster/realworld",
@@ -689,21 +646,22 @@
   "salesforce-ux/design-system",
   "oclif/oclif",
   "mui-org/material-ui",
-  "react-hook-form/react-hook-form",
   "krisk/fuse",
   "yairEO/tagify",
-  "tannerlinsley/react-query",
   "knex/knex",
   "prisma/prisma",
   "typeorm/typeorm",
   "visionmedia/supertest",
-  "diegomura/react-pdf",
   "ranisalt/node-argon2",
   "mikro-orm/mikro-orm",
-  "pmndrs/react-spring",
   "gatsbyjs/gatsby",
   "blitz-js/blitz",
   "redwoodjs/redwood",
   "libuv/libuv",
-  "alephjs/aleph.js"
+  "alephjs/aleph.js",
+  "raineorshine/npm-check-updates",
+  "sass/sass",
+  "sass/node-sass",
+  "sass/dart-sass",
+  "Microsoft/botbuilder-js"
 ]

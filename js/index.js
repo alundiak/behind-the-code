@@ -49,6 +49,7 @@ async function main() {
     });
 
     const repoData = await dataPromises.getMyData(); // in fact it's just Promise
+    console.log(`${repoData.length} GitHub repositories loaded for view...`);
     const token = await dataPromises.getUserAccessToken(); // string value, stored in user's browser storage
 
     if (!token || !repoData) {
