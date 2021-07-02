@@ -43,6 +43,9 @@
     "diegomura/react-pdf",
     "pmndrs/react-spring",
     "open-source-labs/ReacType",
+    "infinitered/reactotron",
     "davidkpiano/xstate",
-    "cassiozen/useStateMachine"
+    "cassiozen/useStateMachine",
+    "grommet/grommet",
+    "segmentio/evergreen"
 ]
